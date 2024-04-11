@@ -15,6 +15,11 @@
     <!-- Theme Config Js -->
     <script src="../assets/js/config.js"></script>
 
+    <!-- Quill css -->
+    <link href="../assets/vendor/quill/quill.core.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/vendor/quill/quill.snow.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet" type="text/css" />
+
     <!-- App css -->
     <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
 
@@ -84,13 +89,13 @@
               </div>
 
               <!-- item-->
-              <a href="pages-profile.html" class="dropdown-item">
+              <a href="profile.php" class="dropdown-item">
                 <i class="ri-account-pin-circle-line fs-16 align-middle me-1 "></i>
                 <span>My Account</span>
               </a>
 
               <!-- item-->
-              <a href="auth-logout.html" class="dropdown-item">
+              <a href="#" class="dropdown-item">
                 <i class="ri-logout-circle-r-line align-middle me-1"></i>
                 <span>Logout</span>
               </a>

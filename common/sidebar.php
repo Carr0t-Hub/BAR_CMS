@@ -26,30 +26,98 @@
     <ul class="side-nav">
       <li class="side-nav-title">Main</li>
       <li class="side-nav-item">
-        <a href="#" class="side-nav-link">
+        <a href="../views/index.php" class="side-nav-link">
           <i class="ri-dashboard-2-line"></i>
           <span> Dashboard </span>
         </a>
       </li>
 
       <li class="side-nav-title">Extra Pages</li>
+      <!-- About Us -->
+      <li class="side-nav-item">
+          <a data-bs-toggle="collapse" href="#about-us" aria-expanded="false" aria-controls="about-us" class="side-nav-link">
+            <i class="ri-information-line"></i>
+            <span> About Us </span>
+            <span class="menu-arrow"></span>
+          </a>
+          <div class="collapse" id="about-us">
+            <ul class="side-nav-second-level">
+              <li class="side-nav-item">
+                <a class="side-nav-link" href="../aboutus/mvvm.php">Mission & Vision</a>
+              </li>   
+              <li class="side-nav-item">
+                <a class="side-nav-link" href="../aboutus/directory_officials.php">Directory of Officials</a>
+              </li>   
+              <li class="side-nav-item">
+                <a class="side-nav-link" href="../aboutus/org_chart.php">Organizational Chart</a>
+              </li>
+              <li class="side-nav-item">
+                <a class="side-nav-link" href="../aboutus/contact.php">Contact Us</a>
+              </li>     
+            </ul>
+          </div>
+        </li>
+      <!-- PUBLICATIONS -->
         <li class="side-nav-item">
           <a data-bs-toggle="collapse" href="#publications" aria-expanded="false" aria-controls="publications" class="side-nav-link">
-            <i class="ri-newspaper-line"></i>
+            <i class="ri-draft-line"></i>
             <span> Publications </span>
             <span class="menu-arrow"></span>
           </a>
           <div class="collapse" id="publications">
             <ul class="side-nav-second-level">
               <li class="side-nav-item">
-                <a class="side-nav-link" href="#">News & Events</a>
+                <a class="side-nav-link" href="../publications/news_events.php">News & Events</a>
               </li>
               <li class="side-nav-item">
-                <a class="side-nav-link" href="#">Photo Releases</a>
+                <a class="side-nav-link" href="../publications/photo_releases.php">Photo Releases</a>
               </li>
               <li class="side-nav-item">
-                <a class="side-nav-link" href="#">Articles</a>
+                <a class="side-nav-link" href="../publications/articles.php">Articles</a>
               </li>
+              <li class="side-nav-item">
+                <a class="side-nav-link" href="../publications/career.php">Career</a>
+              </li>           
+            </ul>
+          </div>
+        </li>
+        <li class="side-nav-item">
+          <a data-bs-toggle="collapse" href="#transparency" aria-expanded="false" aria-controls="publications" class="side-nav-link">
+            <i class="ri-file-list-line"></i>
+            <span> Transparency </span>
+            <span class="menu-arrow"></span>
+          </a>
+          <div class="collapse" id="transparency">
+            <ul class="side-nav-second-level">
+              <li class="side-nav-item">
+                <a class="side-nav-link" href="../transparency/lddap.php">LDDAP-ADA</a>
+              </li>
+              <li class="side-nav-item">
+                <a class="side-nav-link" href="../transparency/procurement.php">Procurement</a>
+              </li>     
+            </ul>
+          </div>
+        </li>
+        <li class="side-nav-item">
+          <a data-bs-toggle="collapse" href="#partners" aria-expanded="false" aria-controls="publications" class="side-nav-link">
+            <i class="ri-hand-heart-line"></i>
+            <span> Partners </span>
+            <span class="menu-arrow"></span>
+          </a>
+          <div class="collapse" id="partners">
+            <ul class="side-nav-second-level">
+              <li class="side-nav-item">
+                <a class="side-nav-link" href="../partners/bfarro.php">BFAR - RO</a>
+              </li>
+              <li class="side-nav-item">
+                <a class="side-nav-link" href="../partners/attached.php">DA - AA</a>
+              </li>
+              <li class="side-nav-item">
+                <a class="side-nav-link" href="../partners/darfo.php">DA - RFO</a>
+              </li>  
+              <li class="side-nav-item">
+                <a class="side-nav-link" href="../partners/international.php">International</a>
+              </li> 
             </ul>
           </div>
         </li>
@@ -72,14 +140,17 @@
         </li>
         <li class="side-nav-item">
           <a data-bs-toggle="collapse" href="#sidebarPages" aria-expanded="false" aria-controls="sidebarPages" class="side-nav-link">
-            <i class="ri-stack-line"></i>
+            <i class="ri-team-line"></i>
             <span> Users </span>
             <span class="menu-arrow"></span>
           </a>
           <div class="collapse" id="sidebarPages">
             <ul class="side-nav-second-level">
               <li class="side-nav-item">
-                <a class="side-nav-link" href="#">Manage Users</a>
+                <a class="side-nav-link" href="../users/authors.php">Manage Authors</a>
+              </li>
+              <li class="side-nav-item">
+                <a class="side-nav-link" href="../users/user_accounts.php">Manage Users</a>
               </li>
             </ul>
           </div>

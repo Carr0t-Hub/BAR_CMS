@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-12 text-center">
-            <script>document.write(new Date().getFullYear())</script> © Techmin - Theme by <b>Techzaa</b>
+            <script>document.write(new Date().getFullYear())</script> KMISD - IMS</b>
           </div>
         </div>
       </div>
@@ -23,5 +23,12 @@
     
     <!-- App js -->
     <script src="../assets/js/app.min.js"></script>
+
+    <!-- Quill Editor js -->
+    <script src="../assets/vendor/quill/quill.min.js"></script>
+
+    <!-- Quill Demo js -->
+    <script src="../assets/js/pages/quilljs.init.js"></script>
+
   </body>
 </html>
