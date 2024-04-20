@@ -41,7 +41,15 @@
                   <ul id="mainmenu">
                     <li><a href="https://www.gov.ph">GOVPH</a></li>
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="about.php">About</a></li>
+                    <li>
+                      <a href="#">About</a>
+                      <ul>
+                        <li><a href="directors_message.php">Director's Message</a></li>
+                        <li><a href="mandates.php">Mission & Vision</a></li>
+                        <li><a href="#">Directory of Officials</a></li>
+                        <li><a href="#">Organizational Chart</a></li>
+                      </ul>
+                    </li>
                     <li>
                       <a href="#">Media Resources</a>
                       <ul>
@@ -91,7 +99,15 @@
                   <ul id="mo-menu">
                     <li><a href="https://www.gov.ph">GOVPH</a></li>
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="about.php">About</a></li>
+                    <li>
+                      <a href="#">About</a>
+                      <ul>
+                        <li><a href="directors_message.php">Director's Message</a></li>
+                        <li><a href="mandates.php">Mission & Vision</a></li>
+                        <li><a href="#">Directory of Officials</a></li>
+                        <li><a href="#">Organizational Chart</a></li>
+                      </ul>
+                    </li>
                     <li>
                       <a href="#">Media Resources</a>
                       <ul>
