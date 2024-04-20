@@ -1,34 +1,26 @@
-  </div> <!-- content -->
-
-    <!-- Footer Start -->
-    <footer class="footer">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12 text-center">
-            <script>document.write(new Date().getFullYear())</script> KMISD - IMS</b>
+    <footer class="no-top pl20 pr20">
+      <div class="subfooter">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">&copy; Copyright 2024 | DA-BAR by <span class="id-color">KMISD-IMS</span></div>
+            <div class="col-md-6 text-right">
+              <div class="social-icons">
+                <a href="https://www.facebook.com/DABAROfficial"><i class="fa fa-facebook fa-lg"></i></a>
+                <a href="https://www.instagram.com/DABAROfficial"><i class="fa fa-instagram fa-lg"></i></a>
+                <a href="https://www.youtube.com/DABAROfficial"><i class="fa fa-youtube fa-lg"></i></a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <a href="#" id="back-to-top"></a>
     </footer>
-    <!-- end Footer -->
-
   </div>
+</body>
 
-</div>
-<!-- END wrapper -->
-
-    <!-- Vendor js -->
-    <script src="../assets/js/vendor.min.js"></script>
-    <script src="../assets/vendor/lucide/umd/lucide.min.js"></script>
-    
-    <!-- App js -->
-    <script src="../assets/js/app.min.js"></script>
-
-    <!-- Quill Editor js -->
-    <script src="../assets/vendor/quill/quill.min.js"></script>
-
-    <!-- Quill Demo js -->
-    <script src="../assets/js/pages/quilljs.init.js"></script>
-
-  </body>
+  <!-- Javascript Files -->
+  <script src="js/plugins.js"></script>
+  <script src="js/designesia.js"></script>
+  <script src='https://www.google.com/recaptcha/api.js' async defer></script>
+  <script src="form.js"></script>
 </html>

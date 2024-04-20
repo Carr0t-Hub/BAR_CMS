@@ -1,107 +1,134 @@
-<?php include("../functions/function.php"); ?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="utf-8" />
-    <title>DABAR | Website</title>
+    <meta charset="utf-8">
+    <title>DA-BAR Officials</title>
+    <link rel="icon" href="images/favicon.png" type="image/gif" sizes="16x16">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="A fully responsive admin theme which can be used to build CRM, CMS,ERP etc." name="description" />
-    <meta content="DABAR_IMS" name="author" />
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
 
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="../assets/images/favicon.png">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" id="bootstrap">
+    <link rel="stylesheet" href="css/plugins.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/color.css" type="text/css">
 
-    <!-- Theme Config Js -->
-    <script src="../assets/js/config.js"></script>
+    <!-- supersized -->
+    <link rel='stylesheet' href='js/supersized/css/supersized.css' type='text/css'>
+    <link rel='stylesheet' href='js/supersized/theme/supersized.shutter.css' type='text/css'>
 
-    <!-- Quill css -->
-    <link href="../assets/vendor/quill/quill.core.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/vendor/quill/quill.snow.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet" type="text/css" />
-
-    <!-- App css -->
-    <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
-
-    <!-- Icons css -->
-    <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- color scheme -->
+    <link rel="stylesheet" href="css/colors/brown.css" type="text/css" id="colors">
   </head>
 
-<body>
-  <!-- Begin page -->
-  <div class="wrapper">
-    <!-- ========== Topbar Start ========== -->
-    <div class="navbar-custom">
-      <div class="topbar container-fluid">
-        <div class="d-flex align-items-center gap-1">
-          <!-- Topbar Brand Logo -->
-          <div class="logo-topbar">
-            <!-- Logo light -->
-            <a href="#" class="logo-light">
-              <span class="logo-lg">
-                <img src="../assets/images/logo-dark.png" alt="logo">
-              </span>
-              <span class="logo-sm">
-                <img src="../assets/images/logo-sm.png" alt="small logo">
-              </span>
-            </a>
-
-            <!-- Logo Dark -->
-            <a href="#" class="logo-dark">
-              <span class="logo-lg">
-                <img src="../assets/images/logo-dark.png" alt="dark logo">
-              </span>
-              <span class="logo-sm">
-                <img src="../assets/images/logo-sm.png" alt="small logo">
-              </span>
-            </a>
-          </div>
-
-          <!-- Sidebar Menu Toggle Button -->
-          <button class="button-toggle-menu">
-            <i class="mdi mdi-menu"></i>
-          </button>
-
-          <!-- Page Title -->
-          <h4 class="page-title d-none d-sm-block">Content Management System</h4>
-        </div>
-
-        <ul class="topbar-menu d-flex align-items-center gap-3">
-          <li class="d-none d-sm-inline-block">
-            <div class="nav-link" id="light-dark-mode">
-              <i class="ri-moon-line fs-22"></i>
-            </div>
-          </li>
-
-          <li class="dropdown">
-            <a class="nav-link dropdown-toggle arrow-none nav-user" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-              <span class="account-user-avatar">
-                <img src="../assets/images/users/avatar-1.jpg" alt="user-image" width="32" class="rounded-circle">
-              </span>
-              <span class="d-lg-block d-none">
-                <h5 class="my-0 fw-normal">#NAME<i class="ri-arrow-down-s-line fs-22 d-none d-sm-inline-block align-middle"></i></h5>
-              </span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated profile-dropdown">
-              <!-- item-->
-              <div class=" dropdown-header noti-title">
-                <h6 class="text-overflow m-0">Welcome</h6>
+  <body class="has-menu-bar">
+    <div id="wrapper">
+      <header class="header-fullwidth menu-expand transparent">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="de-flex">
+                <div class="de-flex-col">
+                  <div id="logo">
+                    <a href="#">
+                      <img class="logo" src="images/logo_DABAR.png" alt="">
+                    </a>
+                  </div>
+                </div>
+                <div class="de-flex-col">
+                  <ul id="mainmenu">
+                    <li><a href="https://www.gov.ph">GOVPH</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li>
+                      <a href="#">Media Resources</a>
+                      <ul>
+                        <li><a href="news_events.php">News & Events</a></li>
+                        <li><a href="photo_releases.php">Photo Releases</a></li>
+                        <li>
+                          <a href="#">Publications</a>
+                          <ul>
+                            <li><a href="digest.php">Digest</a></li>
+                            <li><a href="chronicles.php">Chronicles</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Downloadables</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Programs</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="contact.php">Contact</a></li>
+                  </ul>
+                </div>
+                <div class="de-flex-col">
+                  <div class="d-extra">
+                    <a class="btn-main" data-bs-toggle="modal" data-bs-target="#searchModal">Search</a>
+                  </div>
+                  <div id="menu-btn"></div>
+                </div>
               </div>
-
-              <!-- item-->
-              <a href="profile.php" class="dropdown-item">
-                <i class="ri-account-pin-circle-line fs-16 align-middle me-1 "></i>
-                <span>My Account</span>
-              </a>
-
-              <!-- item-->
-              <a href="#" class="dropdown-item">
-                <i class="ri-logout-circle-r-line align-middle me-1"></i>
-                <span>Logout</span>
-              </a>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
+      </header>
+      <div id="menu-overlay" class="slideDown">
+        <div class="container-fluid">
+          <div class="row-fluid">
+            <div class="col-md-12">
+              <div id="mo-button-close">
+                <div class="line-1"></div>
+                <div class="line-2"></div>
+              </div>
+              <div class="pt80 pb80">
+                <div class="mo-nav text-center">
+                  <a href="#">
+                    <img class="logo" src="images/logo_DABAR.png" alt="">
+                  </a>
+                  <div class="spacer-single"></div>
+                  <!-- mainmenu begin -->
+                  <ul id="mo-menu">
+                    <li><a href="https://www.gov.ph">GOVPH</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li>
+                      <a href="#">Media Resources</a>
+                      <ul>
+                        <li><a href="news_events.php">News & Events</a></li>
+                        <li><a href="photo_releases.php">Photo Releases</a></li>
+                        <li>
+                          <a href="#">Publications</a>
+                          <ul>
+                            <li><a href="digest.php">Digest</a></li>
+                            <li><a href="chronicles.php">Chronicles</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Downloadables</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Programs</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="contact.php">Contact</a></li>
+                  </ul>
+                  <!-- mainmenu close -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>  
-<!-- ========== Topbar End ========== -->
+    </div>
+
+    <!-- content begin -->
+    <div id="content" class="no-bottom no-top">
+      <div class="float-text">
+        <div class="de_social-icons">
+          <a href="https://www.facebook.com/DABAROfficial"><i class="fa fa-facebook fa-lg"></i></a>
+          <a href="https://www.instagram.com/DABAROfficial"><i class="fa fa-instagram fa-lg"></i></a>
+          <a href="https://www.youtube.com/DABAROfficial"><i class="fa fa-youtube fa-lg"></i></a>
+        </div>
+      </div>
+
+      <div class='slider-overlay'></div>
+      <div id="slidecaption"></div>
