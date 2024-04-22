@@ -132,10 +132,10 @@
           <div class="collapse" id="page_layout">
             <ul class="side-nav-second-level">
               <li class="side-nav-item">
-                <a class="side-nav-link" href="#">Menubar</a>
+                <a class="side-nav-link" href="../page_layout/menu.php">Menubar</a>
               </li>
               <li class="side-nav-item">
-                <a class="side-nav-link" href="#">Slider</a>
+                <a class="side-nav-link" href="../page_layout/slider.php">Slider</a>
               </li>
             </ul>
           </div>

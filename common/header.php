@@ -45,7 +45,7 @@
                       <a href="#">About</a>
                       <ul>
                         <li><a href="directors_message.php">Director's Message</a></li>
-                        <li><a href="mandates.php">Mission & Vision</a></li>
+                        <li><a href="mandates.php">Mission, Vision & Mandates</a></li>
                         <li><a href="#">Directory of Officials</a></li>
                         <li><a href="#">Organizational Chart</a></li>
                       </ul>
@@ -118,7 +118,7 @@
                       <a href="#">About</a>
                       <ul>
                         <li><a href="directors_message.php">Director's Message</a></li>
-                        <li><a href="mandates.php">Mission & Vision</a></li>
+                        <li><a href="mandates.php">Mission, Vision & Mandates</a></li>
                         <li><a href="#">Directory of Officials</a></li>
                         <li><a href="#">Organizational Chart</a></li>
                       </ul>
