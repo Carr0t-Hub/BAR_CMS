@@ -65,15 +65,30 @@
                         <li><a href="#">Downloadables</a></li>
                       </ul>
                     </li>
+                    <li>
+                      <a href="#">Transparency</a>
+                      <ul>
+                        <li>
+                          <a href="#">Bids and Awards</a>
+                          <ul>
+                            <li><a href="#">Purchase Order</a></li>
+                            <li><a href="#">Invitation to BID</a></li>
+                            <li><a href="#">Notice of Award</a></li>
+                            <li><a href="#">BAC Resolution</a></li>
+                            <li><a href="#">Notice to Proceed</a></li>
+                            <li><a href="#">Work Order</a></li>
+                            <li><a href="#">Bidding Documents</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Transparency Seal</a></li>
+                        <li><a href="#">LDDAP-ADA</a></li>
+                      </ul>
+                    </li>
                     <li><a href="#">Programs</a></li>
                     <li><a href="#">Partners</a></li>
                     <li><a href="contact.php">Contact</a></li>
+                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i> Search</a></li>
                   </ul>
-                </div>
-                <div class="de-flex-col">
-                  <div class="d-extra">
-                    <a class="btn-main" data-bs-toggle="modal" data-bs-target="#searchModal">Search</a>
-                  </div>
                   <div id="menu-btn"></div>
                 </div>
               </div>
@@ -123,9 +138,29 @@
                         <li><a href="#">Downloadables</a></li>
                       </ul>
                     </li>
+                    <li>
+                      <a href="#">Transparency</a>
+                      <ul>
+                        <li>
+                          <a href="#">Bids and Awards</a>
+                          <ul>
+                            <li><a href="#">Purchase Order</a></li>
+                            <li><a href="#">Invitation to BID</a></li>
+                            <li><a href="#">Notice of Award</a></li>
+                            <li><a href="#">BAC Resolution</a></li>
+                            <li><a href="#">Notice to Proceed</a></li>
+                            <li><a href="#">Work Order</a></li>
+                            <li><a href="#">Bidding Documents</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Transparency Seal</a></li>
+                        <li><a href="#">LDDAP-ADA</a></li>
+                      </ul>
+                    </li>
                     <li><a href="#">Programs</a></li>
                     <li><a href="#">Partners</a></li>
                     <li><a href="contact.php">Contact</a></li>
+                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i> Search</a></li>
                   </ul>
                   <!-- mainmenu close -->
                 </div>

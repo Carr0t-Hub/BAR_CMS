@@ -1,3 +1,5 @@
+<?php include("../common/modals.php"); ?>
+
 <!-- Left Sidebar Start -->
 <div class="leftside-menu">
 
