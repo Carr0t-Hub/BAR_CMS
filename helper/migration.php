@@ -65,9 +65,10 @@ $migration->create('publications', function (Blueprint $table) {
     $table->text('title');
     $table->text('body');
     $table->integer('attachment')->nullable();
+    $table->string('image_path')->nullable();
     $table->date('datePosted');
     $table->string('author');
-    $table->string('status', 50);
+    $table->string('status', 50); // published, unpublished
     $table->string('type', 50);
     $table->boolean('isDeleted')->default('0');
     $table->timestamps();
