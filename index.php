@@ -65,9 +65,9 @@
     $.supersized({
       // Functionality
       slide_interval      :   5000, // Length between transitions
-      transition          :   1, // 0-None, 1-Fad e, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+      transition          :   1, // 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
       transition_speed    :   500, // Speed of tr ansition
-      slide_links         :   'blank',    // Indi vidual links for each slide (Options: false, 'num', 'name', 'blank')
+      slide_links         :   'blank',    // Individual links for each slide (Options: false, 'num', 'name', 'blank')
       slides              :   slides, 
       autoplay            :   1,                   
       fit_always          :   0, 
