@@ -1,31 +1,40 @@
-<?php include("../functions/function.php"); ?>
+<?php include("../../functions/functions.php");
+
+
+if (!isset($_SESSION['id'])) {
+  header("Location: ../index.php");
+}
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>DABAR | Website</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="A fully responsive admin theme which can be used to build CRM, CMS,ERP etc." name="description" />
-    <meta content="DABAR_IMS" name="author" />
 
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="../assets/images/favicon.png">
+<head>
+  <meta charset="utf-8" />
+  <title>DABAR | Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="A fully responsive admin theme which can be used to build CRM, CMS,ERP etc." name="description" />
+  <meta content="DABAR_IMS" name="author" />
 
-    <!-- Theme Config Js -->
-    <script src="../assets/js/config.js"></script>
+  <!-- App favicon -->
+  <link rel="shortcut icon" href="../assets/images/favicon.png">
 
-    <!-- Quill css -->
-    <link href="../assets/vendor/quill/quill.core.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/vendor/quill/quill.snow.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet" type="text/css" />
+  <!-- Theme Config Js -->
+  <script src="../assets/js/config.js"></script>
 
-    <!-- App css -->
-    <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
+  <!-- Quill css -->
+  <link href="../assets/vendor/quill/quill.core.css" rel="stylesheet" type="text/css" />
+  <link href="../assets/vendor/quill/quill.snow.css" rel="stylesheet" type="text/css" />
+  <link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet" type="text/css" />
 
-    <!-- Icons css -->
-    <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-  </head>
+  <!-- App css -->
+  <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
+
+  <!-- Icons css -->
+  <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+</head>
 
 <body>
   <!-- Begin page -->
@@ -95,7 +104,7 @@
               </a>
 
               <!-- item-->
-              <a href="../../index.php" class="dropdown-item">
+              <a href="../../process/logout.php" class="dropdown-item">
                 <i class="ri-logout-circle-r-line align-middle me-1"></i>
                 <span>Logout</span>
               </a>
@@ -103,5 +112,5 @@
           </li>
         </ul>
       </div>
-    </div>  
-<!-- ========== Topbar End ========== -->
+    </div>
+    <!-- ========== Topbar End ========== -->

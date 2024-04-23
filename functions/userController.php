@@ -34,8 +34,8 @@ function addUser($mysqli)
 function userLogin($mysqli)
 {
     try {
-        $username = "jposorio";
-        $password = "barpassword";
+        $username = $_POST['username'];
+        $password = $_POST['password'];
 
         $sql = "SELECT * FROM credentials WHERE username = :username";
 
@@ -48,19 +48,33 @@ function userLogin($mysqli)
         );
 
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if ($result['updatePassword'] == 0) {
-            $dbpassword = $result['password'];
-
-            if ($dbpassword == $password)
-                return "success";
-            else
-                return "failed";
+        if ($stmt->rowCount() == 0) {
+            return "User not found";
         } else {
-            if (password_verify($password, $result['password']))
-                return "success";
-            else
-                return "failed";
+            if ($result['updatePassword'] == 0) {
+                $dbpassword = $result['password'];
+
+                if ($dbpassword == $password) {
+                    $_SESSION['id'] = $result['id'];
+                    $_SESSION['username'] = $result['username'];
+                    $_SESSION['role'] = $result['role'];
+
+                    return "success";
+                } else {
+                    return "Password is incorrect";
+                }
+            } else {
+                if (password_verify($password, $result['password'])) {
+
+                    $_SESSION['id'] = $result['id'];
+                    $_SESSION['username'] = $result['username'];
+                    $_SESSION['role'] = $result['role'];
+
+                    return "success";
+                } else {
+                    return "Password is incorrect";
+                }
+            }
         }
     } catch (PDOException $e) {
         return $e->getMessage();
@@ -178,4 +192,10 @@ function updateUserInfo($mysqli, $id)
     } catch (PDOException $e) {
         return $e->getMessage();
     }
+}
+
+
+function test()
+{
+    return "Hello World!";
 }

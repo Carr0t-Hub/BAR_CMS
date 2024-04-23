@@ -21,9 +21,10 @@ $migration->create('credentials', function (Blueprint $table) {
     $table->id();
     $table->string('firstName', 100);
     $table->string('lastName', 100);
+    $table->string('email', 100);
     $table->string('username', 100);
     $table->text('password');
-    $table->boolean('updatedPassword')->default('0');
+    $table->boolean('updatePassword')->default('0');
     $table->tinyint('role', 2);
     $table->boolean('disabled')->default('0');
     $table->timestamps();

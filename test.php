@@ -1,17 +1,7 @@
 <?php
-include('Schema/Migration.php');
-include('Schema/Blueprint.php');
+include('functions/configuration.php');
+?>
 
-
-$migration = new Migration();
-
-$migration->create('attachments', function (Blueprint $table) {
-    $table->id();
-
-    $table->string('fileName');
-    $table->string('fileExtension', 15);
-    $table->string('fileType', 15);
-
-
-    $table->timestamps();
-});
+<div class="">
+    HELLO WOLRD
+</div>
