@@ -10,3 +10,5 @@ session_start();
 include('db.config.php');
 include('userController.php');
 include('publicationController.php');
+include('partnerController.php');
+include('transparencyController.php');
