@@ -10,7 +10,7 @@
           <h3>Uncategorized Articles</h3>
         </div>
         <div>
-        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#articles"><i class="ri-file-add-line"></i> Add New</button>
+          <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#articles"><i class="ri-file-add-line"></i> Add New</button>
         </div>
       </div>
       <div class="row mt-2">
@@ -45,6 +45,6 @@
       </div>
     </div>
   </div>
-</div> 
+</div>
 
 <?php include("../common/footer.php"); ?>

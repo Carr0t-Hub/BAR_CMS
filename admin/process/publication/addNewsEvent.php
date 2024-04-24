@@ -7,11 +7,13 @@ if (isset($_POST['title'])) {
 
     $result = addNewsEventArticle($mysqli, 'newsevent');
 
-    if ($result) {
-        echo "News event added successfully";
-    } else {
-        echo "Error adding news and event";
-    }
+    echo $result;
+
+    // if ($result) {
+    //     header("Location: ../../publications/news_events.php");
+    // } else {
+    //     header("Location: ../../publications/news_events.php");
+    // }
 }
 // } else {
 //     echo "You are not authorized to access this page";

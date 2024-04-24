@@ -33,6 +33,3 @@ function viewLDDAP($mysqli)
   }
   return $temp;
 }
-
-
-?>
