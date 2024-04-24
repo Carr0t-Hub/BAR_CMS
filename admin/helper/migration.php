@@ -106,3 +106,13 @@ $migration->create('lddap', function (Blueprint $table) {
     $table->integer('uploadedBy')->nullable();
     $table->timestamps();
 });
+
+$migration->create('mvvm', function (Blueprint $table) {
+    $table->id();
+    $table->text('bar_mission');
+    $table->text('bar_vision');
+    $table->text('bar_values');
+    $table->text('bar_mandates');
+    $table->integer('updatedBy')->nullable();
+    $table->timestamps();
+});
