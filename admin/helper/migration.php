@@ -95,3 +95,14 @@ $migration->create('user_logs', function (Blueprint $table) {
     $table->text('sessionInfo');
     $table->timestamps();
 });
+
+$migration->create('lddap', function (Blueprint $table) {
+    $table->id();
+    $table->string('lddap_month', 11)->nullable();
+    $table->string('lddap_year', 5)->nullable();
+    $table->string('lddap_no', 18)->nullable();
+    $table->string('lddap_post', 18)->nullable();
+    $table->boolean('isDeleted')->default('0');
+    $table->integer('uploadedBy')->nullable();
+    $table->timestamps();
+});

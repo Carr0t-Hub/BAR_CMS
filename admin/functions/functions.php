@@ -12,3 +12,5 @@ include_once HELPER_PATH . '/Attachment.php';
 include('db.config.php');
 include('userController.php');
 include('publicationController.php');
+include('partnerController.php');
+include('transparencyController.php');
