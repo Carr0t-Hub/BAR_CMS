@@ -1,7 +1,8 @@
 <?php include("../common/header.php"); ?>
 <?php include("../common/sidebar.php"); ?>
 
-<!-- Start Content-->
+<?php $res = viewMVVM($mysqli); ?>
+
 <div class="container-fluid">
   <div class="row">
     <div class="col-12">
@@ -9,37 +10,39 @@
         <div class="card-header">
           <h3>Mission, Vision, Values & Mandates</h3>
         </div>
-        <div class="card-body">
-          <form action="#" method="POST">
-            <div class="row mb-3">
-              <div class="col-6">
-                <label class="form-label" for="mission">Mission</label>
-                <textarea class="form-control" name="mission" id="mission" cols="30" rows="5"></textarea>
+        <form action="../process/mvvm/mvvm.php" class="MVVM" id="saveMVVM" method="POST">
+          <?php foreach ($res as $key) : ?>
+            <div class="card-body">
+              <div class="row mb-3">
+                <div class="col-6">
+                  <label class="form-label" for="bar_mission">Mission</label>
+                  <textarea class="form-control" name="bar_mission" id="bar_mission" cols="30" rows="5"><?php echo strtoupper($key['bar_mission']); ?></textarea>
+                </div>
+                <div class="col-6">
+                  <label class="form-label" for="bar_vision">Vision</label>
+                  <textarea class="form-control" name="bar_vision" id="bar_vision" cols="30" rows="5"><?php echo strtoupper($key['bar_vision']); ?></textarea>
+                </div>
               </div>
-              <div class="col-6">
-                <label class="form-label" for="vision">Vision</label>
-                <textarea class="form-control" name="vision" id="vision" cols="30" rows="5"></textarea>
+              <div class="row">
+                <div class="col-6">
+                  <label class="form-label" for="bar_values">Values</label>
+                  <textarea class="form-control" name="bar_values" id="bar_values" cols="30" rows="10"><?php echo strtoupper($key['bar_values']); ?></textarea>
+                </div>
+                <div class="col-6">
+                  <label class="form-label" for="bar_mandates">Mandates</label>
+                  <textarea class="form-control" name="bar_mandates" id="bar_mandates" cols="30" rows="10"><?php echo strtoupper($key['bar_mandates']); ?></textarea>
+                </div>
               </div>
             </div>
+          <?php endforeach ?>
+          <div class="card-footer">
             <div class="row">
-              <div class="col-6">
-                <label class="form-label" for="values">Values</label>
-                <textarea class="form-control" name="values" id="values" cols="30" rows="10"></textarea>
+              <div class="col-12">
+                <button class="btn btn-success btn-md" id="saveMVVM" name="saveMVVM" type="submit"><i class="ri-save-line"></i> Save</button>
               </div>
-              <div class="col-6">
-                <label class="form-label" for="mandates">Mandates</label>
-                <textarea class="form-control" name="mandates" id="mandates" cols="30" rows="10"></textarea>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="card-footer">
-          <div class="row">
-            <div class="col-12">
-              <button class="btn btn-success btn-md" id="saveMVVM" name="saveMVVM" type="submit"><i class="ri-save-line"></i> Save</button>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>

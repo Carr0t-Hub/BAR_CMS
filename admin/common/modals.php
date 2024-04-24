@@ -125,7 +125,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-lg btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal"><i class="ri-close-line"></i>Close</button>
         <button type="button" class="btn btn-lg btn-success"><i class="ri-save-line"></i> Save</button>
       </div>
     </div>
@@ -191,7 +191,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-lg btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal"><i class="ri-close-line"></i>Close</button>
         <button type="button" class="btn btn-lg btn-success"><i class="ri-save-line"></i> Save</button>
       </div>
     </div>
@@ -249,7 +249,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-lg btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal"><i class="ri-close-line"></i>Close</button>
         <button type="button" class="btn btn-lg btn-success"><i class="ri-save-line"></i> Save</button>
       </div>
     </div>
@@ -342,7 +342,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-lg btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal"><i class="ri-close-line"></i>Close</button>
           <button type="submit" class="btn btn-lg btn-success"><i class="ri-save-line"></i> Save</button>
         </div>
       </form>
@@ -424,7 +424,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-lg btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal"><i class="ri-close-line"></i>Close</button>
           <button type="submit" class="btn btn-lg btn-success"><i class="ri-save-line"></i> Save</button>
         </div>
       </form>
@@ -563,7 +563,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-lg btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal"><i class="ri-close-line"></i>Close</button>
           <button type="submit" class="btn btn-lg btn-success"><i class="ri-save-line"></i> Save</button>
         </div>
       </form>
@@ -572,7 +572,7 @@
 </div>
 
 <!-- List of Due and Demandable Accounts Payable – Advice to Debit Accounts -->
-<div class="modal fade" id="lddap" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="darfo" aria-hidden="true">
+<div class="modal fade" id="lddap" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="lddap" aria-hidden="true">
   <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header bg-dark text-light">
@@ -629,7 +629,129 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-lg btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal"><i class="ri-close-line"></i>Close</button>
+          <button type="submit" class="btn btn-lg btn-success"><i class="ri-save-line"></i> Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Directory of Officials -->
+<div class="modal fade" id="directory" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="directory" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-dark text-light">
+        <h3 class="modal-title">Directory of Officials</h3>
+        <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="ri-close-line"></i></span>
+        </button>
+      </div>
+      <form action="../process/directory/directories.php" class="Directory" id="saveDirectory" method="POST">
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-3">
+                <div id="imagePreview"></div>
+                <input type="file" class="form-control" id="imageInput" accept="image/*" required>
+              </div>
+              <div class="col-9">
+                <div class="row mb-3">
+                  <div class="col-4">
+                    <div class="form-floating">
+                      <input class="form-control" type="text" name="firstName" id="firstName" placeholder="First Name" required>
+                      <label for="firstName" class="form-label">First Name</label>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="form-floating">
+                      <input class="form-control" type="text" name="middleName" id="middleName" placeholder="Middle Name" required>
+                      <label for="middleName" class="form-label">Middle Name</label>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="form-floating">
+                      <input class="form-control" type="text" name="lastName" id="lastName" placeholder="Last Name" required>
+                      <label for="lastName" class="form-label">Last Name</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-6">
+                    <div class="form-floating">
+                      <select class="form-control" name="division" id="division" required>
+                        <option disabled selected>-- Please Choose --</option>
+                        <option value="Office of the Director">Office of the Director</option>
+                        <option value="Office of the Assistant Director">Office of the Assistant Director</option>
+                        <option value="Program Development Division">Program Development Division</option>
+                        <option value="Program Monitoring, Evaluation, and Linkaging Divisio">Program Monitoring, Evaluation, and Linkaging Division</option>
+                        <option value="Knowledge Management and Information Systems Division">Knowledge Management and Information Systems Division</option>
+                        <option value="Administrative & Finance Division">Administrative & Finance Division</option>
+                      </select>
+                      <label class="form-label" for="division">Division</label>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-floating">
+                      <select class="form-control" name="section" id="section" required>
+                        <option disabled selected>-- Please Choose --</option>
+                        <optgroup label="Office of the Director">
+                          <option value="Compliance Officer">Compliance Officer</option>
+                          <option value="Planning & Monitoring Unit">Planning & Monitoring Unit</option>
+                        </optgroup>
+                        <optgroup label="Program Development Division">
+                          <option value="Project Packaging and Evaluation Sectio">Project Packaging and Evaluation Section</option>
+                          <option value="Institutional Development Section">Institutional Development Section</option>
+                          <option value="Impact Evaluation and Policy Section">Impact Evaluation and Policy Section</option>
+                          <option value="Technology Management Section">Technology Management Section</option>
+                        </optgroup>
+                        <optgroup label="Program Monitoring, Evaluation, and Linkaging Division">
+                          <option value="Monitoring & Evaluation Section">Monitoring & Evaluation Section</option>
+                          <option value="Research Linkages Section">Research Linkages Section</option>
+                          <option value="Results Management Section">Results Management Section</option>
+                          <option value="International R4D Relation Section">International R4D Relation Section</option>
+                        </optgroup>
+                        <optgroup label="Knowledge Management and Information Systems Division">
+                          <option value="Applied Communication Section">Applied Communication Section</option>
+                          <option value="Information Management Section">Information Management Section</option>
+                          <option value="Scientific Literature Section">Scientific Literature Section</option>
+                        </optgroup>
+                        <optgroup label="Administrative & Finance Division">
+                          <option value="Human Resource Management Unit">Human Resource Management Unit</option>
+                          <option value="Procurement Unit">Procurement Unit</option>
+                          <option value="Property and Supply Unit">Property and Supply Unit</option>
+                          <option value="Cash Unit">Cash Unit</option>
+                          <option value="Records Unit">Records Unit</option>
+                          <option value="Accounting Unit">Accounting Unit</option>
+                          <option value="Budget Unit">Budget Unit</option>
+                          <option value="Building Maintenance, Security and General Utility Services Unit">Building Maintenance, Security and General Utility Services Unit</option>
+                          <option value="Transportation Maintenance and Services Unit">Transportation Maintenance and Services Unit</option>
+                        </optgroup>
+                      </select>
+                      <label class="form-label" for="section">Section</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-6">
+                    <div class="form-floating">
+                      <input class="form-control" type="email" name="email" id="email" placeholder="Email Address">
+                      <label for="email" class="form-label">Email Address</label>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-floating">
+                      <input class="form-control" type="text" name="telephone" id="telephone" value="8461-2900 Local " placeholder="Telephone Local">
+                      <label for="telephone" class="form-label">Telephone Local</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal"><i class="ri-close-line"></i>Close</button>
           <button type="submit" class="btn btn-lg btn-success"><i class="ri-save-line"></i> Save</button>
         </div>
       </form>
