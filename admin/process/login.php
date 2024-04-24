@@ -6,9 +6,9 @@ if (isset($_POST['username'])) {
     $result = userLogin($mysqli);
 
     if ($result == "success") {
-        header("Location: ../admin/views/index.php");
+        header("Location: ../views/index.php");
     } else {
         $_SESSION['error'] = $result;
-        header("Location: ../admin/index.php");
+        header("Location: ../index.php");
     }
 }

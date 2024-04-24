@@ -1,7 +1,6 @@
 <?php
 
 
-
 class Migration
 {
     private $host;
@@ -53,6 +52,24 @@ class Migration
             echo "Error creating table: " . $this->conn->error . "\n";
         }
     }
+
+    public function alter($table, $callback)
+    {
+        $this->conn->select_db($this->dbname);
+
+        $blueprint = new Blueprint();
+        $callback($blueprint);
+
+        $query = "ALTER TABLE $table ";
+        $query .= implode(", ", $blueprint->getFields());
+
+        if ($this->conn->query($query) === true) {
+            echo "Table $table altered successfully in database $this->dbname\n";
+        } else {
+            echo "Error altering table: " . $this->conn->error . "\n";
+        }
+    }
+
 
     public function drop($table)
     {

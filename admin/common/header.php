@@ -1,4 +1,4 @@
-<?php include("../../functions/functions.php");
+<?php include("../functions/functions.php");
 
 
 if (!isset($_SESSION['id'])) {
@@ -104,7 +104,7 @@ if (!isset($_SESSION['id'])) {
               </a>
 
               <!-- item-->
-              <a href="../../process/logout.php" class="dropdown-item">
+              <a href="../process/logout.php" class="dropdown-item">
                 <i class="ri-logout-circle-r-line align-middle me-1"></i>
                 <span>Logout</span>
               </a>

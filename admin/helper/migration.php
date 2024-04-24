@@ -85,3 +85,8 @@ $migration->create('user_logs', function (Blueprint $table) {
     $table->text('sessionInfo');
     $table->timestamps();
 });
+
+
+$migration->alter('attachments', function (Blueprint $table) {
+    $table->addColumn('uploadDateTime', 'datetime');
+});

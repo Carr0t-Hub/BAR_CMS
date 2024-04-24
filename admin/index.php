@@ -1,5 +1,5 @@
 <?php
-include("../functions/functions.php");
+include("functions/functions.php");
 
 
 if (isset($_SESSION['username'])) {
@@ -52,7 +52,7 @@ if (isset($_SESSION['username'])) {
                     </div> -->
                   <div class="p-4 my-auto text-center">
                     <h4 class="fs-20">Sign In</h4>
-                    <form action="../process/login.php" method="POST" class="text-start">
+                    <form action="process/login.php" method="POST" class="text-start">
                       <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
                         <input class="form-control" type="text" id="username" name="username" required="" placeholder="Enter your username">

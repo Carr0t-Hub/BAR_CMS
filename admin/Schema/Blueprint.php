@@ -1,5 +1,6 @@
 <?php
 
+
 class Blueprint
 {
     private $fields = [];
@@ -112,10 +113,6 @@ class Blueprint
         return $this;
     }
 
-
-
-
-
     public function timestamps()
     {
         $this->fields[] = 'created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP';
@@ -126,5 +123,12 @@ class Blueprint
     {
 
         return $this->fields;
+    }
+
+    public function addColumn($name, $type, $length = null)
+    {
+        $this->currentField = "ADD COLUMN `$name` $type NOT NULL";
+        $this->fields[] = $this->currentField;
+        return $this;
     }
 }
