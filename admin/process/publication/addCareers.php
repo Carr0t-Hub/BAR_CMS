@@ -1,13 +1,18 @@
 <?php
 include('../../functions/functions.php');
 
-if (isset($_POST['title'])) {
+if (isset($_SESSION['id'])) {
 
-    $result = addCareers($mysqli);
+    if (isset($_POST['title'])) {
 
-    // if ($result) {
-    //     echo "Careers added successfully";
-    // } else {
-    echo $result;
-    // }
+        $result = addCareers($mysqli);
+
+        if ($result) {
+            echo "Careers added successfully";
+        } else {
+            echo "Error adding careers";
+        }
+    }
+} else {
+    echo "You are not authorized to access this page";
 }

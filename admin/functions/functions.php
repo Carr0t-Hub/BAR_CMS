@@ -1,9 +1,11 @@
 <?php
+include_once('config.php');
+
 date_default_timezone_set('Asia/Manila');
 ini_set('display_errors', 1);
 session_start();
 
-// include_once '../helper/Attachment.php';
+include_once HELPER_PATH . '/Attachment.php';
 
 
 

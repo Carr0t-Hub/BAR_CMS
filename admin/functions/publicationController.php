@@ -1,20 +1,19 @@
 <?php
 
-
 function addNewsEventArticle($mysqli, $type)
 {
 
     try {
 
-        $title = "This is a title";
-        $body = "This is the content of the news event";
-        $datePosted = date('Y-m-d');
-        $author = "John Doe";
-        $status = "published";
+        $title = $_POST['title'];
+        $body = $_POST['body'];
+        $datePosted = $_POST['datePosted'];
+        $author = $_POST['author'];
+        $status = $_POST['status'];
         $type = $type;
 
 
-        $sql = "INSERT INTO (title, body, datePosted, author, status, type) VALUES (:title, :body, :datePosted, :author, :status, :type)";
+        $sql = "INSERT INTO publications (title, body, datePosted, author, status, type) VALUES (:title, :body, :datePosted, :author, :status, :type)";
 
         $stmt = $mysqli->prepare($sql);
 
@@ -38,14 +37,14 @@ function addPhotoRelease($mysqli)
 {
     try {
 
-        $title = "This is a title";
-        $imagepath = "path/to/image.jpg";
-        $datePosted = date('Y-m-d');
-        $author = "John Doe";
-        $status = "published";
+        $title = $_POST['title'];
+        $imagepath = $_POST['imagepath'];
+        $datePosted = $_POST['datePosted'];
+        $author = $_POST['author'];
+        $status = $_POST['status'];
 
 
-        $sql = "INSERT INTO (title, imagepath, datePosted, author, status) VALUES (:title, :imagepath, :datePosted, :author, :status)";
+        $sql = "INSERT INTO publications (title, image_path, datePosted, author, status, type) VALUES (:title, :imagepath, :datePosted, :author, :status, :type)";
 
         $stmt = $mysqli->prepare($sql);
 
@@ -54,10 +53,11 @@ function addPhotoRelease($mysqli)
             'imagepath' => $imagepath,
             'datePosted' => $datePosted,
             'author' => $author,
-            'status' => $status
+            'status' => $status,
+            'type' => 'photorelease'
         ]);
 
-        return "Photo release added successfully";
+        return true;
     } catch (PDOException $e) {
         return $e->getMessage();
     }
@@ -73,14 +73,14 @@ function addCareers($mysqli)
         $attachment->execute();
         $attachment_id = $mysqli->lastInsertId();
 
-        Attachment::Upload($_FILES['attachment'], '../../storage/', 'careers', $attachment_id);
+        Attachment::Upload($_FILES['attachment'], STORAGE_PATH, 'careers', $attachment_id);
 
 
         $datePosted = $_POST['datePosted'];
         $status = $_POST['status'];
 
 
-        $sql = "INSERT INTO (title, attachment, datePosted, status) VALUES (:title, :attachment, :datePosted, :status)";
+        $sql = "INSERT INTO publications (title, attachment, datePosted, status, type) VALUES (:title, :attachment, :datePosted, :status,:type)";
 
 
         $stmt = $mysqli->prepare($sql);
@@ -89,11 +89,12 @@ function addCareers($mysqli)
             'title' => $title,
             'attachment' => $attachment_id,
             'datePosted' => $datePosted,
-            'status' => $status
+            'status' => $status,
+            'type' => 'careers'
         ]);
 
         return  true;
     } catch (PDOException $e) {
-        return $e->getMessage();
+        return false;
     }
 }

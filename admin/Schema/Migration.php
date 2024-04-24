@@ -35,7 +35,7 @@ class Migration
 
         $this->conn->select_db($this->dbname);
 
-        $blueprint = new Blueprint();
+        $blueprint = new Blueprint($this->conn);
         $callback($blueprint);
 
         $query = "CREATE TABLE IF NOT EXISTS $table (";
@@ -57,7 +57,7 @@ class Migration
     {
         $this->conn->select_db($this->dbname);
 
-        $blueprint = new Blueprint();
+        $blueprint = new Blueprint($this->conn, $table);
         $callback($blueprint);
 
         $query = "ALTER TABLE $table ";

@@ -5,6 +5,16 @@ class Blueprint
 {
     private $fields = [];
     private $currentField = '';
+    private $connection;
+
+    private $table;
+
+    //construct
+    public function __construct($connection, $table = null)
+    {
+        $this->connection = $connection;
+        $this->table = $table;
+    }
 
     public function id()
     {
@@ -71,18 +81,20 @@ class Blueprint
 
     public function nullable()
     {
+
+
+
         foreach ($this->fields as &$field) {
             // If the current field matches, modify it
             if (strpos($field, $this->currentField) !== false) {
                 // Remove "NOT NULL" constraint
                 $field = str_replace('NOT NULL', '', $field);
 
+
                 // Add or update "NULL" constraint
                 if (strpos($field, 'NULL') === false) {
-                    // If there's no NULL constraint, add it
                     $field .= ' NULL';
                 } else {
-                    // If there's already a NULL constraint, ensure it's positioned correctly
                     $field = str_replace('NULL', '', $field);
                     $field .= ' NULL';
                 }
@@ -124,10 +136,44 @@ class Blueprint
 
         return $this->fields;
     }
-
-    public function addColumn($name, $type, $length = null)
+    public function columnExists($name)
     {
-        $this->currentField = "ADD COLUMN `$name` $type NOT NULL";
+        $query = "SHOW COLUMNS FROM $this->table LIKE '$name'";
+        $result = $this->connection->query($query);
+        return $result->num_rows > 0;
+    }
+
+    public function addColumn($name, $type, $after = null)
+    {
+
+        if ($this->columnExists($name)) {
+            return $this;
+        }
+
+        if ($after) {
+            $this->currentField = "ADD COLUMN `$name` $type NOT NULL AFTER `$after` ";
+        } else {
+            $this->currentField = "ADD COLUMN `$name` $type NOT NULL";
+        }
+
+        $this->fields[] = $this->currentField;
+        return $this;
+    }
+
+
+    public function addNullColumn($name, $type, $after = null)
+    {
+
+        if ($this->columnExists($name)) {
+            return $this;
+        }
+
+        if ($after) {
+            $this->currentField = "ADD COLUMN `$name` $type AFTER `$after` ";
+        } else {
+            $this->currentField = "ADD COLUMN `$name` $type";
+        }
+
         $this->fields[] = $this->currentField;
         return $this;
     }

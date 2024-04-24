@@ -193,9 +193,3 @@ function updateUserInfo($mysqli, $id)
         return $e->getMessage();
     }
 }
-
-
-function test()
-{
-    return "Hello World!";
-}

@@ -16,6 +16,11 @@ $migration->create('attachments', function (Blueprint $table) {
     $table->timestamps();
 });
 
+$migration->alter('attachments', function (Blueprint $table) {
+    $table->addColumn('uploadDateTime', 'datetime', 'size');
+});
+
+
 
 $migration->create('credentials', function (Blueprint $table) {
     $table->id();
@@ -74,6 +79,11 @@ $migration->create('publications', function (Blueprint $table) {
     $table->timestamps();
 });
 
+$migration->alter('publications', function (Blueprint $table) {
+    $table->addNullColumn('image_path', 'varchar(255)', 'body');
+});
+
+
 $migration->create('user_logs', function (Blueprint $table) {
     $table->id();
     $table->integer('userID');
@@ -84,9 +94,4 @@ $migration->create('user_logs', function (Blueprint $table) {
     $table->text('userAgent');
     $table->text('sessionInfo');
     $table->timestamps();
-});
-
-
-$migration->alter('attachments', function (Blueprint $table) {
-    $table->addColumn('uploadDateTime', 'datetime');
 });
