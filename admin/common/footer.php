@@ -51,7 +51,7 @@
   <!-- Datatable Demo Aapp js -->
   <script src="assets/js/pages/datatable.init.js"></script>
 
-
+  
 
   </body>
 

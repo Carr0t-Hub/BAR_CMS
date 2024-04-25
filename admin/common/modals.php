@@ -579,7 +579,7 @@
   <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header bg-dark text-light">
-        <h3 class="modal-title">DA - Regional Field Offices</h3>
+        <h3 class="modal-title">List of Due and Demandable Accounts Payable – Advice to Debit Accounts</h3>
         <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal" aria-label="Close">
           <span aria-hidden="true"><i class="ri-close-line"></i></span>
         </button>

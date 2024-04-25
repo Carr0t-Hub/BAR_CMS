@@ -38,7 +38,8 @@
           <div class="card-footer">
             <div class="row">
               <div class="col-12">
-                <button class="btn btn-success btn-md" id="saveMVVM" name="saveMVVM" type="submit"><i class="ri-save-line"></i> Save</button>
+                <button class="btn btn-success btn-lg" id="saveMVVM" name="saveMVVM" type="submit"><i class="ri-save-line"></i> Save</button>
+                <button class="btn btn-warning btn-lg" id="saveMVVM" name="saveMVVM" type="submit"><i class="ri-draft-line"></i> Draft</button>
               </div>
             </div>
           </div>
