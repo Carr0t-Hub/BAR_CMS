@@ -33,3 +33,48 @@ function viewLDDAP($mysqli)
   }
   return $temp;
 }
+
+function getLDDAP($mysqli, $lddap_no)
+{
+  try {
+    $sql = "SELECT * FROM LDDAP WHERE lddap_no = :lddap_no AND isDeleted = 0 ORDER BY id DESC";
+    $stmt = $mysqli->prepare($sql);
+    $stmt->execute([
+      'lddap_no' => $lddap_no
+    ]);
+    return $stmt->fetchAll();
+  } catch (PDOException $e) {
+    return $e->getMessage();
+  }
+}
+
+function getLDDAPById($mysqli, $id)
+{
+  try {
+    $sql = "SELECT * FROM lddap WHERE id = :id";
+    $stmt = $mysqli->prepare($sql);
+    $stmt->execute([
+      'id' => $id
+    ]);
+    return $stmt->fetch();
+  } catch (PDOException $e) {
+    return $e->getMessage();
+  }
+}
+
+function editLDDAP($mysqli)
+{
+  try {
+    $sql = "UPDATE lddap SET lddap_month = :lddap_month, lddap_year = :lddap_year, lddap_no = :lddap_no WHERE id = :id";
+    $stmt = $mysqli->prepare($sql);
+    $stmt->execute([
+      'lddap_month' => $_POST['lddap_month'],
+      'lddap_year' => $_POST['lddap_year'],
+      'lddap_no' => $_POST['lddap_no'],
+      'id' => $_POST['id']
+    ]);
+    return true;
+  } catch (PDOException $e) {
+    return $e->getMessage();
+  }
+}
