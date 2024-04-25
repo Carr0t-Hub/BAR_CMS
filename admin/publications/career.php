@@ -41,45 +41,47 @@ $data = getPublications($mysqli, 'careers');
       }
 
       ?>
-      <div class="row mt-2">
-        <div class="col-12">
-          <div class="table-responsive">
-            <table class="table table-bordered table-hover table-striped">
-              <thead>
-                <tr>
-                  <td class="text-center">Title</td>
-                  <td class="text-center">Date Posted</td>
-                  <td class="text-center">Post Type</td>
-                  <td class="text-center">Action</td>
-                </tr>
-              </thead>
-              <tbody>
-                <?php
-                foreach ($data as $key => $value) {
+      <br>
+      <table id="pubTable" class="table table-bordered table-hover table-striped">
+        <thead>
+          <tr>
+            <td class="text-center">Title</td>
+            <td class="text-center">Date Posted</td>
+            <td class="text-center">Post Type</td>
+            <td class="text-center">Action</td>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+          foreach ($data as $key => $value) {
 
-                ?>
-                  <tr>
-                    <td><?= $value['title'] ?></td>
-                    <td>
-                      <?= date('M d, Y', strtotime($value['datePosted'])) ?>
-                    </td>
-                    <td><?= $value['status'] ?></td>
-                    <td>
-                      <div class="d-grid gap-2">
-                        <button class="btn btn-primary publicationItem" type="button" data-id="<?= $value['id'] ?>"><i class="ri-edit-line"></i> Edit</button>
-                      </div>
-                    </td>
-                  </tr>
+          ?>
+            <tr>
+              <td><?= $value['title'] ?></td>
+              <td>
+                <?= date('M d, Y', strtotime($value['datePosted'])) ?>
+              </td>
+              <td><?= $value['status'] ?></td>
+              <td>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-primary publicationItem" type="button" data-id="<?= $value['id'] ?>"><i class="ri-edit-line"></i> Edit</button>
+                </div>
+              </td>
+            </tr>
 
-                <?php
-                } ?>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
+          <?php
+          } ?>
+        </tbody>
+      </table>
+
     </div>
   </div>
 </div>
 
+
+<script>
+  $(document).ready(function() {
+    $('#pubTable').DataTable();
+  });
+</script>
 <?php include("../common/footer.php"); ?>
