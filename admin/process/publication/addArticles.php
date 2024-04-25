@@ -1,18 +1,20 @@
 <?php
 include('../../functions/functions.php');
 
-// if (isset($_SESSION['id'])) {
+if (isset($_SESSION['id'])) {
 
-if (isset($_POST['title'])) {
+    if (isset($_POST['title'])) {
 
-    $result = addNewsEventArticle($mysqli, 'article');
+        $result = addNewsEventArticle($mysqli, 'article');
 
-    if ($result) {
-        echo "Articles added successfully";
-    } else {
-        echo "Error adding articles";
+        if ($result) {
+            $_SESSION['success'] = "Article successfully added";
+            header("Location:" . $_SERVER['HTTP_REFERER']);
+        } else {
+            $_SESSION['error'] = "Failed to add article";
+            header("Location:" . $_SERVER['HTTP_REFERER']);
+        }
     }
+} else {
+    echo "You are not authorized to access this page";
 }
-// } else {
-//     echo "You are not authorized to access this page";
-// }

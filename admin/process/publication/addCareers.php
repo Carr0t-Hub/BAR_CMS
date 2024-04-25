@@ -8,9 +8,11 @@ if (isset($_SESSION['id'])) {
         $result = addCareers($mysqli);
 
         if ($result) {
-            echo "Careers added successfully";
+            $_SESSION['success'] = "Careers successfully added";
+            header("Location:" . $_SERVER['HTTP_REFERER']);
         } else {
-            echo "Error adding careers";
+            $_SESSION['error'] = "Failed to add careers";
+            header("Location:" . $_SERVER['HTTP_REFERER']);
         }
     }
 } else {

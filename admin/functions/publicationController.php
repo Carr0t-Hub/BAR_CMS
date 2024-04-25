@@ -98,3 +98,67 @@ function addCareers($mysqli)
         return false;
     }
 }
+
+function getPublications($mysqli, $type)
+{
+
+    try {
+        $sql = "SELECT * FROM publications WHERE type = :type AND isDeleted = 0 ORDER BY id DESC";
+
+        $stmt = $mysqli->prepare($sql);
+
+        $stmt->execute([
+            'type' => $type
+        ]);
+
+        return $stmt->fetchAll();
+    } catch (PDOException $e) {
+        return $e->getMessage();
+    }
+}
+
+
+function getPublicationById($mysqli, $id)
+{
+
+    try {
+
+        $sql = "SELECT * FROM publications WHERE id = :id";
+
+
+        $stmt = $mysqli->prepare($sql);
+
+        $stmt->execute([
+            'id' => $id
+        ]);
+
+        return $stmt->fetch();
+    } catch (PDOException $e) {
+        return $e->getMessage();
+    }
+}
+
+
+function editNewsEventArticle($mysqli)
+{
+
+    try {
+
+        $sql = "UPDATE publications SET title = :title, body = :body, datePosted = :datePosted, author = :author, status = :status WHERE id = :id";
+
+        $stmt = $mysqli->prepare($sql);
+
+        $stmt->execute([
+            'title' => $_POST['title'],
+            'body' => $_POST['body'],
+            'datePosted' => $_POST['datePosted'],
+            'author' => $_POST['author'],
+            'status' => $_POST['status'],
+            'id' => $_POST['id']
+        ]);
+
+        return true;
+    } catch (PDOException $e) {
+        return $e->getMessage();
+    }
+}

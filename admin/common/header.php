@@ -41,6 +41,7 @@ if (!isset($_SESSION['id'])) {
 
   <!-- App css -->
   <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
 
   <!-- Icons css -->
   <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
