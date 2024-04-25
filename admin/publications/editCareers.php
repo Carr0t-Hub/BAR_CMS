@@ -23,7 +23,7 @@ if (isset($_POST['id'])) {
                             <div class="col-12">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="title" name="title" placeholder="Title" value="<?= $data['title']  ?>">
-                                    <label for="title" name="title">Title</label>
+                                    <label for="title">Title</label>
                                 </div>
                             </div>
                         </div>
@@ -31,25 +31,25 @@ if (isset($_POST['id'])) {
                             <div class="col-12">
                                 <div class="form-floating">
                                     <input type="file" class="form-control" id="filePath" name="attachment" accept="application/pdf" required>
-                                    <label for="filePath" name="filePath">Document File</label>
+                                    <label for="filePath">Document File</label>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-6">
                                 <div class="form-floating">
-                                    <input type="date" class="form-control" id="date_posted" name="datePosted" placeholder="Date Posted">
-                                    <label for="date_posted" name="date_posted">Date Posted</label>
+                                    <input type="date" class="form-control" id="date_posted" name="datePosted" placeholder="Date Posted" value="<?= $data['datePosted'] ?>">
+                                    <label for="date_posted">Date Posted</label>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="form-floating">
                                     <select name="status" id="post_type" class="form-control">
                                         <option selected disabled>-- Please Choose --</option>
-                                        <option value="published">Published</option>
-                                        <option value="unpublished">Unpublished</option>
+                                        <option value="published" <?= $data['status'] == "published" ? "selected" : "" ?>>Published</option>
+                                        <option value="unpublished" <?= $data['status'] == "unpublished" ? "selected" : "" ?>>Unpublished</option>
                                     </select>
-                                    <label for="post_type" name="post_type">Post Type</label>
+                                    <label for="post_type">Post Type</label>
                                 </div>
                             </div>
                         </div>
@@ -57,7 +57,7 @@ if (isset($_POST['id'])) {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal"><i class="ri-close-line"></i>Close</button>
-                    <button type="submit" class="btn btn-lg btn-success"><i class="ri-save-line"></i> Save</button>
+                    <button type="submit" class="btn btn-lg btn-success"><i class="ri-save-line"></i>Save</button>
                 </div>
             </div>
         </div>

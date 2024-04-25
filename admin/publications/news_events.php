@@ -60,6 +60,9 @@ $data = getPublications($mysqli, 'newsevent');
 
           ?>
             <tr>
+              <td>
+                <?= $value['id'] ?>
+              </td>
               <td><?= $value['title'] ?></td>
               <td><?= $value['datePosted'] ?></td>
               <td><?= $value['author'] ?></td>
@@ -84,6 +87,50 @@ $data = getPublications($mysqli, 'newsevent');
 
 <script>
   $(document).ready(function() {
+    //editable table
+    // $('#tb-ditable').Tabledit({
+    //   buttons: {
+    //     edit: {
+    //       class: "btn btn-success",
+    //       html: '<span class="mdi mdi-pencil"></span>',
+    //       action: "edit",
+    //     },
+    //   },
+    //   url: 'example.php',
+    //   columns: {
+    //     identifier: [0, 'id'],
+    //     editable: [
+    //       [1, 'title'],
+    //       [2, 'datePosted'],
+    //       [3, 'author'],
+    //       [4, 'status'],
+    //     ]
+    //   },
+    //   onDraw: function() {
+    //     console.log('onDraw()');
+    //   },
+    //   onSuccess: function(data, textStatus, jqXHR) {
+    //     console.log('onSuccess(data, textStatus, jqXHR)');
+    //     console.log(data);
+    //     console.log(textStatus);
+    //     console.log(jqXHR);
+    //   },
+    //   onFail: function(jqXHR, textStatus, errorThrown) {
+    //     console.log('onFail(jqXHR, textStatus, errorThrown)');
+    //     console.log(jqXHR);
+    //     console.log(textStatus);
+    //     console.log(errorThrown);
+    //   },
+    //   onAlways: function() {
+    //     console.log('onAlways()');
+    //   },
+    //   onAjax: function(action, serialize) {
+    //     console.log('onAjax(action, serialize)');
+    //     console.log(action);
+    //     console.log(serialize);
+    //   }
+    // });
+
     $('#pubTable').DataTable();
   })
 </script>

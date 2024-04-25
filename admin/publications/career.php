@@ -77,10 +77,28 @@ $data = getPublications($mysqli, 'careers');
     </div>
   </div>
 </div>
-
+<div class="modal fade" id="editmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="articles" aria-hidden="true">
+</div>
 
 <script>
   $(document).ready(function() {
+
+    $('.publicationItem').click(function() {
+      var id = $(this).attr('data-id');
+
+      $.ajax({
+        url: 'editCareers.php',
+        type: 'POST',
+        data: {
+          id: id
+        },
+        success: function(data) {
+          $('#editmodal').html(data);
+          $('#editmodal').modal('show');
+        }
+      });
+    });
+
     $('#pubTable').DataTable();
   });
 </script>

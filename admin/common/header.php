@@ -99,7 +99,10 @@ if (!isset($_SESSION['id'])) {
                 <img src="../assets/images/users/avatar-1.jpg" alt="user-image" width="32" class="rounded-circle">
               </span>
               <span class="d-lg-block d-none">
-                <h5 class="my-0 fw-normal">#NAME<i class="ri-arrow-down-s-line fs-22 d-none d-sm-inline-block align-middle"></i></h5>
+                <h5 class="my-0 fw-normal">
+                  <?= $_SESSION['name'] ?>
+                  <i class="ri-arrow-down-s-line fs-22 d-none d-sm-inline-block align-middle"></i>
+                </h5>
               </span>
             </a>
             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated profile-dropdown">

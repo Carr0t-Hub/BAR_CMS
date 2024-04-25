@@ -51,29 +51,38 @@ function userLogin($mysqli)
         if ($stmt->rowCount() == 0) {
             return "User not found";
         } else {
-            if ($result['updatePassword'] == 0) {
-                $dbpassword = $result['password'];
+            if (!$result['disabled']) {
 
-                if ($dbpassword == $password) {
-                    $_SESSION['id'] = $result['id'];
-                    $_SESSION['username'] = $result['username'];
-                    $_SESSION['role'] = $result['role'];
+                if ($result['updatePassword'] == 0) {
+                    $dbpassword = $result['password'];
 
-                    return "success";
+                    if ($dbpassword == $password) {
+                        $_SESSION['id'] = $result['id'];
+                        $_SESSION['username'] = $result['username'];
+                        $_SESSION['role'] = $result['role'];
+                        $_SESSION['name'] = $result['firstName'] . " " . $result['lastName'];
+
+                        return "success";
+                    } else {
+                        return "Password is incorrect";
+                    }
                 } else {
-                    return "Password is incorrect";
+                    if (password_verify($password, $result['password'])) {
+
+                        $_SESSION['id'] = $result['id'];
+                        $_SESSION['username'] = $result['username'];
+                        $_SESSION['role'] = $result['role'];
+                        $_SESSION['name'] = $result['firstName'] . " " . $result['lastName'];
+
+
+
+                        return "success";
+                    } else {
+                        return "Password is incorrect";
+                    }
                 }
             } else {
-                if (password_verify($password, $result['password'])) {
-
-                    $_SESSION['id'] = $result['id'];
-                    $_SESSION['username'] = $result['username'];
-                    $_SESSION['role'] = $result['role'];
-
-                    return "success";
-                } else {
-                    return "Password is incorrect";
-                }
+                return "User is disabled";
             }
         }
     } catch (PDOException $e) {

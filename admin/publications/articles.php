@@ -82,10 +82,8 @@ $data = getPublications($mysqli, 'article');
   </div>
 </div>
 
-<form id="editform">
-  <div class="modal fade" id="editmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="articles" aria-hidden="true">
-  </div>
-</form>
+<div class="modal fade" id="editmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="articles" aria-hidden="true">
+</div>
 
 
 <script>

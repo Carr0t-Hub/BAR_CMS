@@ -49,9 +49,13 @@
   <script src="../assets/vendor/datatables.net-select/js/dataTables.select.min.js"></script>
 
   <!-- Datatable Demo Aapp js -->
-  <script src="assets/js/pages/datatable.init.js"></script>
+  <script src="../assets/js/pages/datatable.init.js"></script>
 
-  
+  <!-- Table Editable plugin-->
+  <script src="../assets/vendor/jquery-tabledit/jquery.tabledit.min.js"></script>
+
+  <!-- Table editable init-->
+  <script src="../assets/js/pages/tabledit.init.js"></script>
 
   </body>
 
