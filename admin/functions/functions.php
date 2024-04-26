@@ -7,8 +7,6 @@ session_start();
 
 include_once HELPER_PATH . '/Attachment.php';
 
-
-
 include('db.config.php');
 include('userController.php');
 include('directoryController.php');
@@ -16,3 +14,4 @@ include('publicationController.php');
 include('partnerController.php');
 include('transparencyController.php');
 include('mvvmController.php');
+include('menuController.php');

@@ -287,27 +287,29 @@
               </div>
             </div>
             <h4>Director</h4>
-            <div class="row mb-3">
-              <div class="col-lg-3">
+            <div class="row mb-1">
+              <div class="col-lg-6">
                 <div class="form-floating">
                   <input type="text" class="form-control" name="fullName[]" id="fullName" placeholder="Full Name" required>
                   <label for="fullName" class="form-label">Full Name</label>
                 </div>
               </div>
-              <div class="col-lg-3">
+              <div class="col-lg-6">
                 <div class="form-floating">
                   <input type="text" class="form-control" name="designation[]" id="designation" placeholder="Designation" required>
                   <label for="designation" class="form-label">Designation</label>
                 </div>
                 <input type="text" class="form-control" name="position[]" id="position" value="Director" readonly hidden>
               </div>
-              <div class="col-lg-3">
+            </div>
+            <div class="row mb-3">
+              <div class="col-lg-6">
                 <div class="form-floating">
                   <input type="text" class="form-control" name="emailAddress[]" id="emailAddress" placeholder="Email Address" required>
                   <label for="emailAddress" class="form-label">Email Address</label>
                 </div>
               </div>
-              <div class="col-lg-3">
+              <div class="col-lg-6">
                 <div class="form-floating">
                   <input type="text" class="form-control" name="telephone[]" id="telephone" placeholder="Telephone Number" required>
                   <label for="telephone" class="form-label">Telephone Number</label>
@@ -315,27 +317,29 @@
               </div>
             </div>
             <h4>Assistant Director</h4>
-            <div class="row">
-              <div class="col-lg-3">
+            <div class="row mb-1">
+              <div class="col-lg-6">
                 <div class="form-floating">
                   <input type="text" class="form-control" name="fullName[]" id="fullName" placeholder="Full Name">
                   <label for="fullName" class="form-label">Full Name</label>
                 </div>
               </div>
-              <div class="col-lg-3">
+              <div class="col-lg-6">
                 <div class="form-floating">
                   <input type="text" class="form-control" name="designation[]" id="designation" placeholder="Designation">
                   <label for="designation" class="form-label">Designation</label>
                 </div>
                 <input type="text" class="form-control" name="position[]" id="position" value="Assistant Director" readonly hidden>
               </div>
-              <div class="col-lg-3">
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
                 <div class="form-floating">
                   <input type="text" class="form-control" name="emailAddress[]" id="emailAddress" placeholder="Email Address">
                   <label for="emailAddress" class="form-label">Email Address</label>
                 </div>
               </div>
-              <div class="col-lg-3">
+              <div class="col-lg-6">
                 <div class="form-floating">
                   <input type="text" class="form-control" name="telephone[]" id="telephone" placeholder="Telephone Number">
                   <label for="telephone" class="form-label">Telephone Number</label>
@@ -687,7 +691,7 @@
                         <option value="Office of the Director">Office of the Director</option>
                         <option value="Office of the Assistant Director">Office of the Assistant Director</option>
                         <option value="Program Development Division">Program Development Division</option>
-                        <option value="Program Monitoring, Evaluation, and Linkaging Divisio">Program Monitoring, Evaluation, and Linkaging Division</option>
+                        <option value="Program Monitoring, Evaluation, and Linkaging Division">Program Monitoring, Evaluation, and Linkaging Division</option>
                         <option value="Knowledge Management and Information Systems Division">Knowledge Management and Information Systems Division</option>
                         <option value="Administrative & Finance Division">Administrative & Finance Division</option>
                       </select>
@@ -703,7 +707,7 @@
                           <option value="Planning & Monitoring Unit">Planning & Monitoring Unit</option>
                         </optgroup>
                         <optgroup label="Program Development Division">
-                          <option value="Project Packaging and Evaluation Sectio">Project Packaging and Evaluation Section</option>
+                          <option value="Project Packaging and Evaluation Section">Project Packaging and Evaluation Section</option>
                           <option value="Institutional Development Section">Institutional Development Section</option>
                           <option value="Impact Evaluation and Policy Section">Impact Evaluation and Policy Section</option>
                           <option value="Technology Management Section">Technology Management Section</option>
@@ -761,7 +765,6 @@
     </div>
   </div>
 </div>
-
 
 <script type="text/javascript" src="../assets/js/formsubmission.js" defer>
 

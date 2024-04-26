@@ -2,8 +2,8 @@
   include('../../functions/functions.php');
 
 if (isset($_SESSION['id'])) {
-  if (isset($_POST['lddap_no'])) {
-      $result = editLDDAP($mysqli);
+  if (isset($_POST['type'])) {
+      $result = editAttached($mysqli);
       echo $result;
     if ($result) {
       $_SESSION['success'] = "Successfully updated";
