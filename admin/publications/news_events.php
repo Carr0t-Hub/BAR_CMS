@@ -60,9 +60,6 @@ $data = getPublications($mysqli, 'newsevent');
 
           ?>
             <tr>
-              <td>
-                <?= $value['id'] ?>
-              </td>
               <td><?= $value['title'] ?></td>
               <td><?= $value['datePosted'] ?></td>
               <td><?= $value['author'] ?></td>
