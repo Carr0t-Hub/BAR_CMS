@@ -120,3 +120,25 @@ $migration->create('mvvm', function (Blueprint $table) {
     $table->integer('updatedBy')->nullable();
     $table->timestamps();
 });
+
+$migration->create('value_focus', function (Blueprint $table) {
+    $table->id();
+    $table->text('weekNum');
+    $table->text('valueTitle');
+    $table->text('valueDescription');
+    $table->text('actionPlan');
+    $table->text('prayer');
+    $table->integer('updatedBy')->nullable();
+    $table->timestamps();
+});
+
+$migration->create('laws_issuances', function (Blueprint $table) {
+    $table->id();
+    $table->text('codeNo');
+    $table->text('title');
+    $table->text('description');
+    $table->text('datePosted');
+    $table->text('type');
+    $table->integer('updatedBy')->nullable();
+    $table->timestamps();
+});
