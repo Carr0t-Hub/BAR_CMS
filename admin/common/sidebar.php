@@ -79,7 +79,10 @@
               </li>
               <li class="side-nav-item">
                 <a class="side-nav-link" href="../publications/career.php">Career</a>
-              </li>           
+              </li>
+              <li class="side-nav-item">
+                <a class="side-nav-link" href="../publications/values.php">Value Focus</a>
+              </li>             
             </ul>
           </div>
         </li>
@@ -120,6 +123,23 @@
               <li class="side-nav-item">
                 <a class="side-nav-link" href="../partners/international.php">International</a>
               </li> 
+            </ul>
+          </div>
+        </li>
+        <li class="side-nav-item">
+          <a data-bs-toggle="collapse" href="#laws_issuance" aria-expanded="false" aria-controls="laws_issuance" class="side-nav-link">
+            <i class="ri-file-list-3-line"></i>
+            <span> Laws & Issuances </span>
+            <span class="menu-arrow"></span>
+          </a>
+          <div class="collapse" id="laws_issuance">
+            <ul class="side-nav-second-level">
+              <li class="side-nav-item">
+                <a class="side-nav-link" href="../laws_issuance/memo.php">Memorandum</a>
+              </li>
+              <li class="side-nav-item">
+                <a class="side-nav-link" href="../laws_issuance/so.php">Special Order</a>
+              </li>
             </ul>
           </div>
         </li>

@@ -11,7 +11,7 @@
         </div>
         <div class="modal-body">
           <div class="container-fluid">
-            <div class="row mb-3">
+            <div class="row mb-2">
               <div class="col-12">
                 <div class="form-floating">
                   <input type="text" class="form-control" id="title" name="title" placeholder="Title">
@@ -19,7 +19,7 @@
                 </div>
               </div>
             </div>
-            <div class="row mb-3">
+            <div class="row mb-2">
               <div class="col-12">
                 <label for="article_body" class="h4">Article Body</label>
                 <textarea id="newseventeditor" class="body editor" name="body" style="height: 300px;"></textarea>
@@ -78,7 +78,7 @@
         </div>
         <div class="modal-body">
           <div class="container-fluid">
-            <div class="row mb-3">
+            <div class="row mb-2">
               <div class="col-12">
                 <div class="form-floating">
                   <input type="text" class="form-control" id="title" name="title" placeholder="Title">
@@ -86,7 +86,7 @@
                 </div>
               </div>
             </div>
-            <div class="row mb-3">
+            <div class="row mb-2">
               <div class="col-12">
                 <div class="form-floating">
                   <input type="text" class="form-control" id="imagePath" name="imagepath" placeholder="Image Path">
@@ -147,7 +147,7 @@
         </div>
         <div class="modal-body">
           <div class="container-fluid">
-            <div class="row mb-3">
+            <div class="row mb-2">
               <div class="col-12">
                 <div class="form-floating">
                   <input type="text" class="form-control" id="title" name="title" placeholder="Title">
@@ -155,7 +155,7 @@
                 </div>
               </div>
             </div>
-            <div class="row mb-3">
+            <div class="row mb-2">
               <div class="col-12">
                 <label for="article_body" class="h4">Article Body</label>
                 <textarea id="articleeditor" class="body" name="body" style="height: 300px;"></textarea>
@@ -214,7 +214,7 @@
         </div>
         <div class="modal-body">
           <div class="container-fluid">
-            <div class="row mb-3">
+            <div class="row mb-2">
               <div class="col-12">
                 <div class="form-floating">
                   <input type="text" class="form-control" id="title" name="title" placeholder="Title">
@@ -222,7 +222,7 @@
                 </div>
               </div>
             </div>
-            <div class="row mb-3">
+            <div class="row mb-2">
               <div class="col-12">
                 <div class="form-floating">
                   <input type="file" class="form-control" id="filePath" name="attachment" accept="application/pdf" required>
@@ -259,6 +259,68 @@
   </div>
 </form>
 
+<!-- Value Focus -->
+<form method="POST" action="../process/publication/addCareers.php" enctype="multipart/form-data">
+  <div class="modal fade" id="valueFocus" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="career" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-light">
+          <h3 class="modal-title">Value Focus</h3>
+          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"><i class="ri-close-line"></i></span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-2">
+                <div class="form-floating">
+                  <input type="number" maxlength="3" class="form-control" id="weekNum" name="weekNum" placeholder="Week Number">
+                  <label for="weekNum" name="weekNum">Week Number</label>
+                </div>
+              </div>
+              <div class="col-10">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="title" name="title" placeholder="Title">
+                  <label for="title" name="title">Title</label>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-12">
+                <div class="form-floating">
+                  <textarea class="form-control" id="valueDescription" name="valueDescription" placeholder="Description" style="height: 100px"></textarea>
+                  <label for="valueDescription" name="valueDescription">Description</label>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-12">
+                <div class="form-floating">
+                  <textarea class="form-control" id="actionPlan" name="actionPlan" placeholder="Action Plan" style="height: 100px"></textarea>
+                  <label for="actionPlan" name="actionPlan">Action Plan</label>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-12">
+                <div class="form-floating">
+                  <textarea class="form-control" id="prayer" name="prayer" placeholder="Prayer" style="height: 100px"></textarea>
+                  <label for="prayer" name="prayer">Prayer</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal"><i class="ri-close-line"></i>Close</button>
+          <button type="submit" class="btn btn-lg btn-success"><i class="ri-save-line"></i> Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
 <!-- DA - Bureaus, Attached Agencies and Attached Corporations -->
 <div class="modal fade" id="attached" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="attached" aria-hidden="true">
   <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
@@ -272,7 +334,7 @@
       <form action="../process/partners/addAttached.php" class="Attached" id="saveAttached" method="POST">
         <div class="modal-body">
           <div class="container-fluid">
-            <div class="row mb-3">
+            <div class="row mb-2">
               <div class="col-lg-6">
                 <div class="form-floating">
                   <input type="text" class="form-control" name="agencyName" id="agencyName" placeholder="Name of Agency" required>
@@ -302,7 +364,7 @@
                 <input type="text" class="form-control" name="position[]" id="position" value="Director" readonly hidden>
               </div>
             </div>
-            <div class="row mb-3">
+            <div class="row mb-2">
               <div class="col-lg-6">
                 <div class="form-floating">
                   <input type="text" class="form-control" name="emailAddress[]" id="emailAddress" placeholder="Email Address" required>
@@ -663,7 +725,7 @@
                 <input type="file" class="form-control" id="imageInput" accept="image/*" required>
               </div>
               <div class="col-9">
-                <div class="row mb-3">
+                <div class="row mb-2">
                   <div class="col-4">
                     <div class="form-floating">
                       <input class="form-control" type="text" name="firstName" id="firstName" placeholder="First Name" required>
@@ -683,7 +745,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="row mb-3">
+                <div class="row mb-2">
                   <div class="col-6">
                     <div class="form-floating">
                       <select class="form-control" name="division" id="division" required>
@@ -739,7 +801,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="row mb-3">
+                <div class="row mb-2">
                   <div class="col-6">
                     <div class="form-floating">
                       <input class="form-control" type="email" name="email" id="email" placeholder="Email Address">
@@ -752,6 +814,110 @@
                       <label for="telephone" class="form-label">Telephone Local</label>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal"><i class="ri-close-line"></i>Close</button>
+          <button type="submit" class="btn btn-lg btn-success"><i class="ri-save-line"></i> Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Memorandum -->
+<div class="modal fade" id="memo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="memo" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-dark text-light">
+        <h3 class="modal-title">Memorandum</h3>
+        <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="ri-close-line"></i></span>
+        </button>
+      </div>
+      <form action="../process/laws_issuance/memo.php" class="memo" id="saveMemo" method="POST">
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-3">
+                <div class="form-floating">
+                  <input class="form-control" type="text" name="codeNo" id="codeNo" placeholder="Code Number" required>
+                  <label for="codeNo" class="form-label">Code Number</label>
+                </div>
+              </div>
+              <div class="col-9">
+                <div class="form-floating">
+                  <input class="form-control" type="text" name="title" id="title" placeholder="Title" required>
+                  <label for="title" class="form-label">Title</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-9">
+                <div class="form-floating">
+                  <input class="form-control" type="text" name="description" id="description" placeholder="Description" required>
+                  <label for="description" class="form-label">Description</label>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-floating">
+                  <input class="form-control" type="date" name="datePosted" id="datePosted" placeholder="Date Posted" required>
+                  <label for="datePosted" class="form-label">Date Posted</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal"><i class="ri-close-line"></i>Close</button>
+          <button type="submit" class="btn btn-lg btn-success"><i class="ri-save-line"></i> Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Special Order -->
+<div class="modal fade" id="so" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="so" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-dark text-light">
+        <h3 class="modal-title">Special Order</h3>
+        <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="ri-close-line"></i></span>
+        </button>
+      </div>
+      <form action="../process/laws_issuance/so.php" class="so" id="saveSo" method="POST">
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-3">
+                <div class="form-floating">
+                  <input class="form-control" type="text" name="codeNo" id="codeNo" placeholder="Code Number" required>
+                  <label for="codeNo" class="form-label">Code Number</label>
+                </div>
+              </div>
+              <div class="col-9">
+                <div class="form-floating">
+                  <input class="form-control" type="text" name="title" id="title" placeholder="Title" required>
+                  <label for="title" class="form-label">Title</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-9">
+                <div class="form-floating">
+                  <input class="form-control" type="text" name="description" id="description" placeholder="Description" required>
+                  <label for="description" class="form-label">Description</label>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-floating">
+                  <input class="form-control" type="date" name="datePosted" id="datePosted" placeholder="Date Posted" required>
+                  <label for="datePosted" class="form-label">Date Posted</label>
                 </div>
               </div>
             </div>
