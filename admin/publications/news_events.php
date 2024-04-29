@@ -66,7 +66,7 @@ $data = getPublications($mysqli, 'newsevent');
               <td><?= $value['status'] ?></td>
               <td>
                 <div class="d-grid gap-2">
-                  <button class="btn btn-primary" type="button" name="editData" id="editData"><i class="ri-edit-line"></i> Edit</button>
+                  <button class="btn btn-primary publicationItem" type="button" data-id="<?= $value['id'] ?>"><i class="ri-edit-line"></i> Edit</button>
                 </div>
               </td>
             </tr>
@@ -80,6 +80,12 @@ $data = getPublications($mysqli, 'newsevent');
     </div>
   </div>
 </div>
+
+
+
+<div class="modal fade" id="editmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="articles" aria-hidden="true">
+</div>
+
 
 
 <script>
@@ -126,10 +132,28 @@ $data = getPublications($mysqli, 'newsevent');
     //     console.log(action);
     //     console.log(serialize);
     //   }
-    // });
+    // });<script>
+    $('.publicationItem').click(function() {
+      var id = $(this).attr('data-id');
+
+      $.ajax({
+        url: 'editNewsEventArticles.php',
+        type: 'POST',
+        data: {
+          id: id
+        },
+        success: function(data) {
+          $('#editmodal').html(data);
+          $('#editmodal').modal('show');
+        }
+      });
+    });
 
     $('#pubTable').DataTable();
+
   })
 </script>
+
+
 
 <?php include("../common/footer.php"); ?>

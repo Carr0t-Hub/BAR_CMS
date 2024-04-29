@@ -160,6 +160,23 @@ class Blueprint
         return $this;
     }
 
+    public function onUpdate()
+    {
+        $this->currentField = "ON UPDATE CURRENT_TIMESTAMP";
+        $this->fields[] = $this->currentField;
+        return $this;
+    }
+
+
+    public function rawQuery($query)
+    {
+        $this->fields[] = $query;
+        return $this;
+    }
+
+
+
+
 
     public function addNullColumn($name, $type, $after = null)
     {

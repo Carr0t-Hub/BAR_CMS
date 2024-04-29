@@ -158,7 +158,7 @@
             <div class="row mb-3">
               <div class="col-12">
                 <label for="article_body" class="h4">Article Body</label>
-                <textarea id="articleeditor" class="body" name="body" style="height: 300px;"></textarea>
+                <textarea id="articleeditor" class="body editor" name="body" style="height: 300px;"></textarea>
               </div>
             </div>
             <div class="row">
@@ -613,10 +613,25 @@
                 </div>
               </div>
               <div class="col-6">
+
                 <div class="form-floating">
-                  <input type="number" class="form-control" name="lddap_year" id="lddap_year" max-length="4" placeholder="Year">
-                  <label for="lddap_year" class="form-label">Year</label>
+                  <select name="lddap_year" id="lddap_year" class="form-control">
+                    <option selected disabled>-- Please Choose Year --</option>
+
+                    <?php
+
+                    $year = date('Y');
+
+                    for ($i = 0; $i < 10; $i++) {
+                      echo '<option value="' . $year . '">' . $year . '</option>';
+                      $year--;
+                    }
+
+                    ?>
+                  </select>
+                  <label for="lddap_year">Year</label>
                 </div>
+
               </div>
             </div>
             <div class="row">
@@ -766,6 +781,7 @@
   </div>
 </div>
 
-<script type="text/javascript" src="../assets/js/formsubmission.js" defer>
+
+<script>
 
 </script>

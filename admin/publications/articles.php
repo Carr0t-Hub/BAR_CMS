@@ -92,7 +92,7 @@ $data = getPublications($mysqli, 'article');
       var id = $(this).attr('data-id');
 
       $.ajax({
-        url: 'editArticles.php',
+        url: 'editNewsEventArticles.php',
         type: 'POST',
         data: {
           id: id

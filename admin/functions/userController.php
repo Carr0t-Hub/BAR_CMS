@@ -62,6 +62,8 @@ function userLogin($mysqli)
                         $_SESSION['role'] = $result['role'];
                         $_SESSION['name'] = $result['firstName'] . " " . $result['lastName'];
 
+                        userLastLogin($mysqli, $result['id']);
+
                         return "success";
                     } else {
                         return "Password is incorrect";
@@ -75,6 +77,7 @@ function userLogin($mysqli)
                         $_SESSION['name'] = $result['firstName'] . " " . $result['lastName'];
 
 
+                        userLastLogin($mysqli, $result['id']);
 
                         return "success";
                     } else {
@@ -85,6 +88,25 @@ function userLogin($mysqli)
                 return "User is disabled";
             }
         }
+    } catch (PDOException $e) {
+        return $e->getMessage();
+    }
+}
+
+function userLastLogin($mysqli, $id)
+{
+    try {
+        $sql = "UPDATE credentials SET last_login = NOW() WHERE id = :id";
+
+        $stmt = $mysqli->prepare($sql);
+
+        $stmt->execute(
+            array(
+                ':id' => $id
+            )
+        );
+
+        return "success";
     } catch (PDOException $e) {
         return $e->getMessage();
     }
@@ -117,7 +139,7 @@ function updatePassword($mysqli, $id)
 function getAllUsers($mysqli)
 {
     try {
-        $sql = "SELECT * FROM credentials";
+        $sql = "SELECT id, firstName, lastName, username, last_login, disabled FROM credentials";
 
         $stmt = $mysqli->prepare($sql);
 

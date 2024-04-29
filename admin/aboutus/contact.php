@@ -15,6 +15,8 @@
         <div class="card-header">
           <h5>Contact Us</h5>
         </div>
+        <div id="gmaps-markers" class="gmaps"></div>
+
         <div class="card-body">
           <div class="row mb-3">
             <div class="col-12">
@@ -33,7 +35,7 @@
               </div>
             </div>
             <div class="col-6">
-            <div class="form-floating">
+              <div class="form-floating">
                 <input class="form-control" type="text" name="directLine" id="directLine" placeholder="Direct Line">
                 <label for="directLine" class="form-label">Direct Line</label>
               </div>
@@ -50,21 +52,26 @@
       </div>
     </div>
   </div>
-</div> 
+</div>
 
 <script>
   let map;
 
   function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
-      center: { lat: 14.654768034467967, lng: 121.04763773662236 },
+      center: {
+        lat: 14.654768034467967,
+        lng: 121.04763773662236
+      },
     });
   }
 
   function searchLocation() {
     const location = document.getElementById("locationInput").value;
     const geocoder = new google.maps.Geocoder();
-    geocoder.geocode({ address: location }, function(results, status) {
+    geocoder.geocode({
+      address: location
+    }, function(results, status) {
       if (status === "OK") {
         map.setCenter(results[0].geometry.location);
         const marker = new google.maps.Marker({

@@ -29,8 +29,6 @@ if (!isset($_SESSION['id'])) {
   <link href="../assets/vendor/quill/quill.snow.css" rel="stylesheet" type="text/css" />
   <link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet" type="text/css" /> -->
 
-  <link type="text/css" href="ckeditor/sample/css/sample.css" rel="stylesheet" media="screen" />
-
   <!-- Datatables css -->
   <link href="../assets/vendor/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
   <link href="../assets/vendor/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
