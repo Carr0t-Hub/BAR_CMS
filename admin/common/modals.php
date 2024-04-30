@@ -731,13 +731,13 @@
           <span aria-hidden="true"><i class="ri-close-line"></i></span>
         </button>
       </div>
-      <form action="../process/directory/directories.php" class="Directory" id="saveDirectory" method="POST">
+      <form action="../process/directory/directories.php" class="Directory" id="saveDirectory" method="POST" enctype="multipart/form-data">
         <div class="modal-body">
           <div class="container-fluid">
             <div class="row">
               <div class="col-3">
                 <div id="imagePreview"></div>
-                <input type="file" class="form-control" id="imageInput" accept="image/*" required>
+                <input type="file" name="attachment" class="form-control" id="imageInput" accept="image/*" required>
               </div>
               <div class="col-9">
                 <div class="row mb-2">

@@ -5,10 +5,10 @@ if (isset($_POST['firstName'])) {
 
     $result = addDirectory($mysqli);
 
-    // if ($result) {
-    //     echo "Careers added successfully";
-    // } else {
-    // echo $result;
-    header("Location: ".$_SERVER['HTTP_REFERER']);
-    // }
+    if ($result) {
+        $_SESSION['success'] = "Directory successfully added";
+    } else {
+        $_SESSION['error'] = "Failed to add directory";
+    }
+    header("Location: " . $_SERVER['HTTP_REFERER']);
 }

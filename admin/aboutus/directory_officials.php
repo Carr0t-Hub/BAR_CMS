@@ -23,7 +23,7 @@
           <h4>Directory of Officials</h4>
         </div>
         <div>
-        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#directory"><i class="ri-file-add-line"></i> Add New</button>
+          <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#directory"><i class="ri-file-add-line"></i> Add New</button>
         </div>
       </div>
     </div>
@@ -32,14 +32,16 @@
     <div class="alert alert-success mt-2" role="alert">
       <i class="ri-checkbox-circle-fill"></i> <?= $_SESSION['success'] ?>
     </div>
-  <?php unset($_SESSION['success']); }
-    if (isset($_SESSION['error'])) {
+  <?php unset($_SESSION['success']);
+  }
+  if (isset($_SESSION['error'])) {
   ?>
     <div class="alert alert-danger mt-2" role="alert">
       <i class="ri-alert-fill"></i> <?= $_SESSION['error'] ?>
     </div>
   <?php
-    unset($_SESSION['error']); }
+    unset($_SESSION['error']);
+  }
   ?>
   <div class="row">
     <div class="col-lg-12">
@@ -59,9 +61,14 @@
             </tr>
           </thead>
           <tbody>
-            <?php foreach ($res as $key => $value) : ?>
+            <?php foreach ($res as $key => $value) :
+              $img = $value['fileName'] . '_' . $value['size'] . $value['attachment'] . '.' . $value['fileExtension'];
+
+            ?>
               <tr>
-                <td><img src="" alt=""></td>
+                <td>
+                  <img src="../storage/directories/<?= $img ?>" alt="" class="border" style="height: 128px; width: 128px;object-fit: cover">
+                </td>
                 <td><?php echo strtoupper($value['firstName']); ?></td>
                 <td><?php echo strtoupper($value['middleName']); ?></td>
                 <td><?php echo strtoupper($value['lastName']); ?></td>
@@ -81,7 +88,7 @@
       </div>
     </div>
   </div>
-</div> 
+</div>
 
 <script>
   const input = document.getElementById('imageInput');
@@ -108,7 +115,7 @@
 
 <!-- <form id="editform"> -->
 <div class="modal fade" id="editmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="lddap" aria-hidden="true">
-  </div>
+</div>
 <!-- </form> -->
 
 <script>
