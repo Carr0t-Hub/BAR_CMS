@@ -13,10 +13,10 @@ $result = getAllUsers($mysqli);
         <div class="col-12">
             <div class="d-flex justify-content-between">
                 <div>
-                    <h3>Uncategorized Articles</h3>
+                    <h3>Users</h3>
                 </div>
                 <div>
-                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#articles"><i class="ri-file-add-line"></i> Add New</button>
+                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addUser"><i class="ri-file-add-line"></i> Add New</button>
                 </div>
             </div>
 

@@ -100,6 +100,8 @@ class Attachment
                     if (!file_exists($fileDestination)) {
                         throw new Exception("File upload failed.");
                     }
+
+                    return $newFullFileName;
                 } else {
                     throw new Exception("File size exceeds set limit.");
                 }

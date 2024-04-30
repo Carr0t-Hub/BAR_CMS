@@ -1,3 +1,9 @@
+<?php
+
+$path = $_SERVER['DOCUMENT_ROOT'] . '/BAR_CMS/admin';
+include($path . "/functions/functions.php");
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -23,6 +29,14 @@
   <!-- color scheme -->
   <link rel="stylesheet" href="css/colors/brown.css" type="text/css" id="colors">
 </head>
+<style>
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
 
 <body class="has-menu-bar">
   <div id="wrapper">

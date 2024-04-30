@@ -37,7 +37,6 @@ $data = getPublications($mysqli, 'article');
         unset($_SESSION['error']);
       }
       ?>
-      ?>
       <br>
 
       <table id="pubTable" class="table table-bordered table-hover table-striped">
