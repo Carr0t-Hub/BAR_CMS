@@ -117,13 +117,16 @@ function editDirectory($mysqli)
 {
   try {
 
+    if ($_FILES['attachment']['size'] > 0) {
+      $attachment = Attachment::constructStatement($mysqli, 'attachments', $_FILES['attachment'], 1);
+      $attachment->execute();
+      $attachment_id = $mysqli->lastInsertId();
+      Attachment::Upload($_FILES['attachment'], STORAGE_PATH, 'directories', $attachment_id);
+    } else {
+      $attachment_id = $_POST['attachment_id'];
+    }
 
 
-    $attachment = Attachment::constructStatement($mysqli, 'attachments', $_FILES['attachment'], 1);
-    $attachment->execute();
-    $attachment_id = $mysqli->lastInsertId();
-
-    Attachment::Upload($_FILES['attachment'], STORAGE_PATH, 'directories', $attachment_id);
 
 
     $sql = "UPDATE directories SET firstName = :firstName, middleName = :middleName, 

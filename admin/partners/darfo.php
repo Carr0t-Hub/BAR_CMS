@@ -11,23 +11,27 @@
           <h4>DA - Regional Field Offices</h4>
         </div>
         <div>
-        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#darfo"><i class="ri-file-add-line"></i> Add New</button>
+          <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#darfo"><i class="ri-file-add-line"></i> Add New</button>
         </div>
       </div>
     </div>
   </div>
   <?php if (isset($_SESSION['success'])) { ?>
-    <div class="alert alert-success mt-2" role="alert">
+    <div class="alert alert-success alert-dismissible text-bg-success border-0 fade show" role="alert">
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
       <i class="ri-checkbox-circle-fill"></i> <?= $_SESSION['success'] ?>
     </div>
-  <?php unset($_SESSION['success']); }
-    if (isset($_SESSION['error'])) {
+  <?php unset($_SESSION['success']);
+  }
+  if (isset($_SESSION['error'])) {
   ?>
-    <div class="alert alert-danger mt-2" role="alert">
+    <div class="alert alert-danger alert-dismissible text-bg-danger border-0 fade show" role="alert">
       <i class="ri-alert-fill"></i> <?= $_SESSION['error'] ?>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
   <?php
-    unset($_SESSION['error']); }
+    unset($_SESSION['error']);
+  }
   ?>
   <div class="row">
     <div class="col-lg-12">
@@ -65,11 +69,11 @@
       </div>
     </div>
   </div>
-</div> 
+</div>
 
 <!-- <form id="editform"> -->
 <div class="modal fade" id="editmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="lddap" aria-hidden="true">
-  </div>
+</div>
 <!-- </form> -->
 
 <script>

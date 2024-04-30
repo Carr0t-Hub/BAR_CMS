@@ -18,27 +18,22 @@ $data = getPublications($mysqli, 'newsevent');
           <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#news_events"><i class="ri-file-add-line"></i> Add New</button>
         </div>
       </div>
-      <?php
-
-      if (isset($_SESSION['success'])) {
-      ?>
-
-        <div class="alert alert-success mt-2" role="alert">
+      <?php if (isset($_SESSION['success'])) { ?>
+        <div class="alert alert-success alert-dismissible text-bg-success border-0 fade show" role="alert">
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
           <i class="ri-checkbox-circle-fill"></i> <?= $_SESSION['success'] ?>
         </div>
-      <?php
-        unset($_SESSION['success']);
+      <?php unset($_SESSION['success']);
       }
-
       if (isset($_SESSION['error'])) {
       ?>
-        <div class="alert alert-danger mt-2" role="alert">
+        <div class="alert alert-danger alert-dismissible text-bg-danger border-0 fade show" role="alert">
           <i class="ri-alert-fill"></i> <?= $_SESSION['error'] ?>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
       <?php
         unset($_SESSION['error']);
       }
-
       ?>
       <br>
 
