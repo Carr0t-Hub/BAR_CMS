@@ -47,6 +47,8 @@ $migration->create('directories', function (Blueprint $table) {
     $table->string('lastName', 100);
     $table->string('division', 100);
     $table->string('section', 100);
+    $table->string('position', 100);
+    $table->string('designation', 100);
     $table->string('email');
     $table->string('telephone', 100);
     $table->integer('attachment');

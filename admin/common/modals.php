@@ -819,6 +819,20 @@
                 <div class="row mb-2">
                   <div class="col-6">
                     <div class="form-floating">
+                      <input class="form-control" type="text" name="position" id="position" placeholder="Position">
+                      <label for="position" class="form-label">Position</label>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-floating">
+                      <input class="form-control" type="text" name="designation" id="designation" placeholder="Designation">
+                      <label for="designation" class="form-label">Designation</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col-6">
+                    <div class="form-floating">
                       <input class="form-control" type="email" name="email" id="email" placeholder="Email Address">
                       <label for="email" class="form-label">Email Address</label>
                     </div>
