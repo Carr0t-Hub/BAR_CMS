@@ -737,7 +737,7 @@
             <div class="row">
               <div class="col-3">
                 <div id="imagePreview"></div>
-                <input type="file" name="attachment" class="form-control" id="imageInput" accept="image/*" required>
+                <input type="file" name="attachment" class="form-control" id="imageInput" accept="image/jpeg, image/png" required>
               </div>
               <div class="col-9">
                 <div class="row mb-2">
@@ -1060,6 +1060,40 @@
               <div class="form-floating">
                 <input type="text" class="form-control" name="telephone" id="telephone" placeholder="Telephone" required>
                 <label for="telephone" class="form-control-label">Telephone</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal"><i class="ri-close-line"></i>Close</button>
+          <button type="submit" class="btn btn-lg btn-success"><i class="ri-save-line"></i> Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<!-- Image Slider -->
+<form action="../process/page_layout/addSlider.php" class="Slider" id="saveSlider" method="POST" enctype="multipart/form-data">
+  <div class="modal fade" id="addSlider" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="Slider" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-light">
+          <h3 class="modal-title">New Slider</h3>
+          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"><i class="ri-close-line"></i></span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row mb-2">
+            <div class="col-3">
+              <div id="sliderPreview"></div>
+              <input type="file" name="attachment" class="form-control" id="sliderInput" accept="image/jpeg, image/png" required>
+            </div>
+            <div class="col-9">
+              <div class="form-floating">
+                <textarea class="form-control" name="description" id="description" style="height: 300px;"></textarea>
+                <label for="middleName" class="form-control-label">Description</label>
               </div>
             </div>
           </div>

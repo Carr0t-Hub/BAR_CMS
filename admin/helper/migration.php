@@ -155,3 +155,11 @@ $migration->create('authors', function (Blueprint $table) {
     $table->boolean('isDeleted')->default('0');
     $table->timestamps();
 });
+
+$migration->create('sliders', function (Blueprint $table) {
+    $table->id();
+    $table->integer('attachment');
+    $table->text('description');
+    $table->boolean('isDeleted')->default('0');
+    $table->timestamps();
+});

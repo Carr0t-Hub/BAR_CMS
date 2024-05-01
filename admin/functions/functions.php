@@ -18,3 +18,4 @@ include('menuController.php');
 include('valuesController.php');
 include('lawsController.php');
 include('authorController.php');
+include('sliderController.php');
