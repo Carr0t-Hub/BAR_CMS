@@ -163,3 +163,13 @@ $migration->create('sliders', function (Blueprint $table) {
     $table->boolean('isDeleted')->default('0');
     $table->timestamps();
 });
+
+$migration->create('procurement', function (Blueprint $table) {
+    $table->id();
+    $table->text('title');
+    $table->integer('attachment')->nullable();
+    $table->date('datePosted');
+    $table->string('type', 50);
+    $table->boolean('isDeleted')->default('0');
+    $table->timestamps();
+});

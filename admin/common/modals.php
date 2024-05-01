@@ -322,7 +322,7 @@
 </form>
 
 <!-- DA - Bureaus, Attached Agencies and Attached Corporations -->
-<form action="../process/partners/addAttached.php" class="Attached" id="saveAttached" method="POST" enctype="multipart/form-data"s>
+<form method="POST" action="../process/partners/addAttached.php" enctype="multipart/form-data">
   <div class="modal fade" id="attached" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="attached" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -420,7 +420,7 @@
 </form>
 
 <!-- BFAR - Regional Offices -->
-<form action="../process/partners/addBFARRO.php" class="BFARRO" id="saveBFARRO" method="POST" enctype="multipart/form-data"s>
+<form method="POST" action="../process/partners/addBFARRO.php" enctype="multipart/form-data">
   <div class="modal fade" id="bfarro" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="bfarro" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -502,7 +502,7 @@
 </form>
   
 <!-- DA - Regional Field Offices -->
-<form action="../process/partners/addDARFO.php" class="DARFO" id="saveDARFO" method="POST" enctype="multipart/form-data">
+<form method="POST" action="../process/partners/addDARFO.php" enctype="multipart/form-data">
   <div class="modal fade" id="darfo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="darfo" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -641,7 +641,7 @@
 </form>
   
 <!-- List of Due and Demandable Accounts Payable – Advice to Debit Accounts -->
-<form action="../process/transparency/addLDDAP.php" class="LDDAP" id="saveLDDAP" method="POST" enctype="multipart/form-data">
+<form method="POST" action="../process/transparency/addLDDAP.php" enctype="multipart/form-data">
   <div class="modal fade" id="lddap" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="lddap" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -722,7 +722,7 @@
 </form>
   
 <!-- Directory of Officials -->
-<form action="../process/directory/directories.php" class="Directory" id="saveDirectory" method="POST" enctype="multipart/form-data">
+<form method="POST" action="../process/directory/directories.php" enctype="multipart/form-data">
   <div class="modal fade" id="directory" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="directory" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -858,7 +858,7 @@
 </form>
 
 <!-- Memorandum -->
-<form action="../process/laws_issuance/addMemo.php" class="memo" id="saveMemo" method="POST" enctype="multipart/form-data">
+<form method="POST" action="../process/laws_issuance/addMemo.php" enctype="multipart/form-data">
   <div class="modal fade" id="memo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="memo" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -910,7 +910,7 @@
 </form>
 
 <!-- Special Order -->
-<form action="../process/laws_issuance/addSo.php" class="so" id="saveSo" method="POST" enctype="multipart/form-data">
+<form method="POST" action="../process/laws_issuance/addSo.php" enctype="multipart/form-data">
   <div class="modal fade" id="so" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="so" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -962,7 +962,7 @@
 </form>
   
 <!-- User Accounts -->
-<form action="../process/user/addUser.php" class="user" id="saveUser" method="POST" enctype="multipart/form-data">
+<form method="POST" action="../process/user/addUser.php" senctype="multipart/form-data">
   <div class="modal fade" id="addUser" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="user" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -1018,7 +1018,7 @@
 </form>
 
 <!-- Author -->
-<form action="../process/user/addAuthor.php" class="Author" id="saveAuthor" method="POST" enctype="multipart/form-data">
+<form method="POST" action="../process/user/addAuthor.php" enctype="multipart/form-data">
   <div class="modal fade" id="addAuthor" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="Author" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -1074,7 +1074,7 @@
 </form>
 
 <!-- Image Slider -->
-<form action="../process/page_layout/addSlider.php" class="Slider" id="saveSlider" method="POST" enctype="multipart/form-data">
+<form method="POST" action="../process/page_layout/addSlider.php" enctype="multipart/form-data">
   <div class="modal fade" id="addSlider" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="Slider" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -1094,6 +1094,97 @@
               <div class="form-floating">
                 <textarea class="form-control" name="description" id="description" style="height: 300px;"></textarea>
                 <label for="middleName" class="form-control-label">Description</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal"><i class="ri-close-line"></i>Close</button>
+          <button type="submit" class="btn btn-lg btn-success"><i class="ri-save-line"></i> Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<!-- Menu Management -->
+<form method="POST" action="../process/page_layout/addMenu.php" enctype="multipart/form-data">
+  <div class="modal fade" id="addMenu" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="Menu" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-light">
+          <h3 class="modal-title">New Menu</h3>
+          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"><i class="ri-close-line"></i></span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row mb-2">
+            <div class="col-9">
+              <div class="form-floating">
+                <textarea class="form-control" name="description" id="description" style="height: 300px;"></textarea>
+                <label for="middleName" class="form-control-label">Description</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal"><i class="ri-close-line"></i>Close</button>
+          <button type="submit" class="btn btn-lg btn-success"><i class="ri-save-line"></i> Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<!-- Procurement -->
+<form method="POST" action="../process/transparency/addProcurement.php" enctype="multipart/form-data">
+  <div class="modal fade" id="addProcurement" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="Procurement" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-light">
+          <h3 class="modal-title">New Procurement</h3>
+          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"><i class="ri-close-line"></i></span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row mb-2">
+            <div class="col-3">
+              <br>
+              <input type="file" class="form-control" name="attachment" id="procurementInput" accept="application/pdf" required>
+            </div>
+            <div class="col-9">
+              <div class="form-floating">
+                <input type="text" class="form-control" name="title" id="title" placeholder="Particulars" required>
+                <label for="title" class="form-label">Particulars</label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="form-floating">
+                <input type="date" class="form-control" name="datePosted" id="datePosted" placeholder="Date Posted" required>
+                <label for="datePosted" class="form-label">Date Posted</label>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-floating">
+                <select class="form-control" name="type" id="type" required>
+                  <option disabled selected>-- Please Choose --</option>
+                  <option value="Annual Procurement Plan">Annual Procurement Plan</option>
+                  <option value="Bid Bulletin">Bid Bulletin</option>
+                  <option value="Request for Quotation">Request for Quotation</option>
+                  <option value="Invitation to BID">Invitation to BID</option>
+                  <option value="Bidding Documents">Bidding Documents</option>
+                  <option value="Notice of Awards">Notice of Awards</option>
+                  <option value="Notice to Proceed">Notice to Proceed</option>
+                  <option value="Purchase Order">Purchase Order</option>
+                  <option value="BAC Resolution">BAC Resolution</option>
+                  <option value="Work Order">Work Order</option>
+                  <option value="Notice of Postponement">Notice of Postponement</option>
+                </select>
+                <label for="type" class="form-label">Type</label>
               </div>
             </div>
           </div>

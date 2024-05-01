@@ -8,7 +8,7 @@
     <div class="col-lg-12">
       <div class="d-flex justify-content-between">
         <div>
-          <h4>List of Due and Demandable Accounts Payable – Advice to Debit Accounts</h4>
+          <h3>List of Due and Demandable Accounts Payable – Advice to Debit Accounts</h3>
         </div>
         <div>
         <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#lddap"><i class="ri-file-add-line"></i> Add New</button>

@@ -98,7 +98,7 @@
                 <a class="side-nav-link" href="../transparency/lddap.php">LDDAP-ADA</a>
               </li>
               <li class="side-nav-item">
-                <a class="side-nav-link" href="../transparency/procurement.php">Procurement</a>
+                <a class="side-nav-link" href="../transparency/addProcurement.php">Procurement</a>
               </li>     
             </ul>
           </div>

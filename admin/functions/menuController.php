@@ -1,43 +1,20 @@
 <?php
 
-// Menu Layout
 function addMenu($mysqli)
 {
   try {
-    $sql = "INSERT INTO `mvvm`
-      (`bar_mission`, `bar_vision`, `bar_values`, `bar_mandates`)
+    $sql = "INSERT INTO `menus`
+      (`firstName`, `middleName`, `lastName`, `email`, `telephone`)
         VALUES 
-      (:bar_mission, :bar_vision, :bar_values, :bar_mandates)";
+      (:firstName, :middleName, :lastName, :email, :telephone)";
     $stmt = $mysqli->prepare($sql);
     $stmt->execute(
       array(
-        ':bar_mission' => $_POST['bar_mission'],
-        ':bar_vision' => $_POST['bar_vision'],
-        ':bar_values' => $_POST['bar_values'],
-        ':bar_mandates' => $_POST['bar_mandates']
-      )
-    );
-  return "success";
-  } catch (PDOException $e) {
-    return $e->getMessage();
-  }
-}
-
-function updateMenu($mysqli)
-{
-  try {
-    $sql = "UPDATE `mvvm` SET 
-      bar_mission = :bar_mission, 
-      bar_vision = :bar_vision, 
-      bar_values = :bar_values,
-      bar_mandates = :bar_mandates"; 
-    $stmt = $mysqli->prepare($sql);
-    $stmt->execute(
-      array(
-        ':bar_mission' => $_POST['bar_mission'],
-        ':bar_vision' => $_POST['bar_vision'],
-        ':bar_values' => $_POST['bar_values'],
-        ':bar_mandates' => $_POST['bar_mandates']
+        ':firstName' => $_POST['firstName'],
+        ':middleName' => $_POST['middleName'],
+        ':lastName' => $_POST['lastName'],
+        ':email' => $_POST['email'],
+        ':telephone' => $_POST['telephone']
       )
     );
     return "success";
@@ -48,7 +25,7 @@ function updateMenu($mysqli)
 
 function viewMenu($mysqli)
 {
-  $sql = "SELECT * FROM mvvm";
+  $sql = "SELECT * FROM menus";
   $temp = array();
   $stmt = $mysqli->prepare($sql);
   $stmt->execute();
@@ -56,6 +33,55 @@ function viewMenu($mysqli)
     $temp[] = $row;
   }
   return $temp;
+}
+
+function getMenuIfNotDeleted($mysqli)
+{
+  try {
+    $sql = "SELECT * FROM menus WHERE isDeleted = 0 ORDER BY id DESC";
+    $stmt = $mysqli->prepare($sql);
+    $stmt->execute();
+      while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    $temp[] = $row;
+  }
+    return $stmt->fetchAll();
+  } catch (PDOException $e) {
+    return $e->getMessage();
+  }
+}
+
+function getMenuById($mysqli, $id)
+{
+  try {
+    $sql = "SELECT * FROM menus WHERE id = :id";
+    $stmt = $mysqli->prepare($sql);
+    $stmt->execute([
+      'id' => $id
+      ]);
+    return $stmt->fetch();
+  } catch (PDOException $e) {
+    return $e->getMessage();
+  }
+}
+
+function editMenu($mysqli)
+{
+  try {
+    $sql = "UPDATE menus SET firstName = :firstName, middleName = :middleName, lastName = :lastName, email = :email, telephone = :telephone, isDeleted = :isDeleted WHERE id = :id";
+    $stmt = $mysqli->prepare($sql);
+    $stmt->execute([
+      'firstName' => $_POST['firstName'],
+      'middleName' => $_POST['middleName'],
+      'lastName' => $_POST['lastName'],
+      'email' => $_POST['email'],
+      'telephone' => $_POST['telephone'],
+      'isDeleted' => $_POST['isDeleted'],
+      'id' => $_POST['id']
+    ]);
+    return true;
+  } catch (PDOException $e) {
+    return $e->getMessage();
+  }
 }
 
 ?>
