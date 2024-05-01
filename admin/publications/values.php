@@ -1,7 +1,7 @@
 <?php include("../common/header.php"); ?>
 <?php include("../common/sidebar.php"); ?>
 
-<?php $res = viewBFARRO($mysqli); ?>
+<?php $res = viewValues($mysqli); ?>
 
 <div class="container-fluid">
   <div class="row mb-2">
@@ -48,10 +48,9 @@
           <tbody>
             <?php foreach ($res as $key => $value) : ?>
               <tr>
-                <td><?php echo strtoupper($value['fullName']); ?></td>
-                <td><?php echo strtoupper($value['designation']); ?></td>
-                <td><?php echo strtoupper($value['emailAddress']); ?></td>
-                <td><?php echo strtoupper($value['telephone']); ?></td>
+                <td><?php echo strtoupper($value['weekNum']); ?></td>
+                <td><?php echo strtoupper($value['valueTitle']); ?></td>
+                <td><?php echo date_format(date_create($value['created_at']), "F d, Y"); ?></td>
                 <td>
                   <div class="d-grid gap-2">
                     <button class="btn btn-primary valuesItem" type="button" name="editData" id="editData" data-id="<?= $value['id'] ?>"><i class="ri-edit-2-line"></i> Edit</button>
@@ -67,7 +66,7 @@
 </div>
 
 <!-- <form id="editform"> -->
-<div class="modal fade" id="editmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="lddap" aria-hidden="true">
+<div class="modal fade" id="editmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="value" aria-hidden="true">
 </div>
 <!-- </form> -->
 
@@ -77,7 +76,7 @@
       var id = $(this).attr('data-id');
 
       $.ajax({
-        url: 'editBFARRO.php',
+        url: 'editValues.php',
         type: 'POST',
         data: {
           id: id

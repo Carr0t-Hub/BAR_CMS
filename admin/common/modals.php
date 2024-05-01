@@ -260,7 +260,7 @@
 </form>
 
 <!-- Value Focus -->
-<form method="POST" action="../process/publication/addCareers.php" enctype="multipart/form-data">
+<form method="POST" action="../process/publication/addValues.php" enctype="multipart/form-data">
   <div class="modal fade" id="valueFocus" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="career" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -281,8 +281,8 @@
               </div>
               <div class="col-10">
                 <div class="form-floating">
-                  <input type="text" class="form-control" id="title" name="title" placeholder="Title">
-                  <label for="title" name="title">Title</label>
+                  <input type="text" class="form-control" id="valueTitle" name="valueTitle" placeholder="Title">
+                  <label for="valueTitle" name="valueTitle">Title</label>
                 </div>
               </div>
             </div>
