@@ -87,18 +87,16 @@ function userLogin($mysqli)
     }
 }
 
-function userLastLogin($mysqli, $id)
+function userLastLogin($mysqli)
 {
     try {
         $sql = "UPDATE credentials SET last_login = NOW() WHERE id = :id";
 
         $stmt = $mysqli->prepare($sql);
 
-        $stmt->execute(
-            array(
-                ':id' => $id
-            )
-        );
+        $stmt->execute([
+            ':id' => $_POST['id']
+        ]);
 
         return "success";
     } catch (PDOException $e) {
