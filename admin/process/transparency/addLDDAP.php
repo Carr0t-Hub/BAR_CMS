@@ -5,10 +5,10 @@ if (isset($_POST['lddap_month'])) {
 
     $result = addLDDAP($mysqli);
 
-    // if ($result) {
-    //     echo "Careers added successfully";
-    // } else {
-    // echo $result;
-    header("Location: ".$_SERVER['HTTP_REFERER']);
-    // }
+    if ($result) {
+        $_SESSION['success'] = "Successfully added";
+    } else {
+        $_SESSION['error'] = "Failed to add";
+    }
+    header("Location: " . $_SERVER['HTTP_REFERER']);
 }

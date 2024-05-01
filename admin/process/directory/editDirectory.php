@@ -6,11 +6,12 @@ if (isset($_SESSION['id'])) {
     $result = editDirectory($mysqli);
     echo $result;
     if ($result) {
-      $_SESSION['success'] = "Successfully updated";
+      $_SESSION['success'] = "Successfully added";
+      header("Location:" . $_SERVER['HTTP_REFERER']);
     } else {
-      $_SESSION['error'] = "Failed to update article";
+      $_SESSION['error'] = "Failed to add";
+      header("Location:" . $_SERVER['HTTP_REFERER']);
     }
-    header("Location:" . $_SERVER['HTTP_REFERER']);
   }
 } else {
   echo "You are not authorized to access this page";

@@ -4,10 +4,10 @@ include('../../functions/functions.php');
 if (isset($_POST['firstName'])) {
     $result = addMenu($mysqli);
 
-    // if ($result) {
-    //     echo "Careers added successfully";
-    // } else {
-    // echo $result;
-    header("Location: ".$_SERVER['HTTP_REFERER']);
-    // }
+    if ($result) {
+        $_SESSION['success'] = "Successfully added";
+    } else {
+        $_SESSION['error'] = "Failed to add directory";
+    }
+    header("Location: " . $_SERVER['HTTP_REFERER']);
 }

@@ -1,14 +1,14 @@
 <?php
-include('../../functions/functions.php');
+  include('../../functions/functions.php');
 
 if (isset($_SESSION['id'])) {
-  if (isset($_POST['valueTitle'])) {
-    $result = editValues($mysqli);
+  if (isset($_POST['disabled'])) {
+    $result = disableUsers($mysqli);
   if ($result) {
-    $_SESSION['success'] = "Successfully updated";
+    $_SESSION['success'] = "Account Status Updated";
     header("Location:" . $_SERVER['HTTP_REFERER']);
   } else {
-    $_SESSION['error'] = "Failed to update article";
+    $_SESSION['error'] = "Failed to update";
     header("Location:" . $_SERVER['HTTP_REFERER']);
   }
 }

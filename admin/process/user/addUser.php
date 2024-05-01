@@ -1,9 +1,9 @@
 <?php
 include('../../functions/functions.php');
 
-if (isset($_POST['codeNo'])) {
+if (isset($_POST['firstName'])) {
 
-    $result = addSo($mysqli);
+    $result = addUser($mysqli);
 
     if ($result) {
         $_SESSION['success'] = "Successfully added";

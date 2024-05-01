@@ -961,6 +961,62 @@
   </div>
 </form>
   
+<!-- User Accounts -->
+<form action="../process/user/addUser.php" class="user" id="saveUser" method="POST" enctype="multipart/form-data">
+  <div class="modal fade" id="addUser" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="user" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-light">
+          <h3 class="modal-title">New User</h3>
+          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"><i class="ri-close-line"></i></span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row mb-2">
+            <div class="col-6">
+              <div class="form-floating">
+                <input type="text" class="form-control" name="firstName" id="firstName" placeholder="First Name" required>
+                <label for="firstName" class="form-control-label">First Name</label>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-floating">
+                <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Last Name" required>
+                <label for="lastName" class="form-control-label">Last Name</label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <div class="form-floating">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email Address" required>
+                <label for="email" class="form-control-label">Email Address</label>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-floating">
+                <input type="text" class="form-control" name="username" id="username" placeholder="Username" required>
+                <label for="username" class="form-control-label">Username</label>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-floating">
+                <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+                <label for="password" class="form-control-label">Password</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal"><i class="ri-close-line"></i>Close</button>
+          <button type="submit" class="btn btn-lg btn-success"><i class="ri-save-line"></i> Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
 <script type="text/javascript" src="../assets/js/formsubmission.js" defer>
 
 </script>
