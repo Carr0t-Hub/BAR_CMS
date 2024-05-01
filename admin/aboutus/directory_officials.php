@@ -48,7 +48,7 @@
   <div class="row">
     <div class="col-lg-12">
       <div class="table-responsive">
-        <table class="table table-bordered table-hover table-striped">
+        <table id="dataTable" class="table table-bordered table-hover table-striped">
           <thead>
             <tr>
               <th class="text-center text-uppercase">Picture</th>

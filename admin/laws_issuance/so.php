@@ -1,7 +1,7 @@
 <?php include("../common/header.php"); ?>
 <?php include("../common/sidebar.php"); ?>
 
-<?php $res = viewAttached($mysqli); ?>
+<?php $res = viewSo($mysqli); ?>
 
 <div class="container-fluid">
   <div class="row mb-2">
@@ -36,11 +36,12 @@
   <div class="row">
     <div class="col-lg-12">
       <div class="table-responsive">
-        <table class="table table-bordered table-hover table-striped">
+        <table id="dataTable" class="table table-bordered table-hover table-striped">
           <thead>
             <tr>
               <th class="text-center text-uppercase">Code No.</th>
               <th class="text-center text-uppercase">Title</th>
+              <th class="text-center text-uppercase">Description</th>
               <th class="text-center text-uppercase">Date</th>
               <th class="text-center text-uppercase">Action</th>
             </tr>
@@ -48,10 +49,10 @@
           <tbody>
             <?php foreach ($res as $key => $value) : ?>
               <tr>
-                <td><?php echo strtoupper($value['designation']); ?></td>
-                <td><?php echo strtoupper($value['position']); ?></td>
-                <td><?php echo strtoupper($value['emailAddress']); ?></td>
-                <td><?php echo strtoupper($value['telephone']); ?></td>
+                <td><?php echo strtoupper($value['codeNo']); ?></td>
+                <td><?php echo strtoupper($value['title']); ?></td>
+                <td><?php echo strtoupper($value['description']); ?></td>
+                <td><?php echo date_format(date_create($value['datePosted']), "F d, Y"); ?></td>
                 <td>
                   <div class="d-grid gap-2">
                     <button class="btn btn-primary soItem" type="button" name="editData" id="editData" data-id="<?= $value['id'] ?>"><i class="ri-edit-2-line"></i> Edit</button>

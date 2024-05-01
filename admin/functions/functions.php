@@ -16,3 +16,4 @@ include('transparencyController.php');
 include('mvvmController.php');
 include('menuController.php');
 include('valuesController.php');
+include('lawsController.php');

@@ -322,16 +322,16 @@
 </form>
 
 <!-- DA - Bureaus, Attached Agencies and Attached Corporations -->
-<div class="modal fade" id="attached" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="attached" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header bg-dark text-light">
-        <h3 class="modal-title">DA - Bureaus, Attached Agencies and Attached Corporations</h3>
-        <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true"><i class="ri-close-line"></i></span>
-        </button>
-      </div>
-      <form action="../process/partners/addAttached.php" class="Attached" id="saveAttached" method="POST">
+<form action="../process/partners/addAttached.php" class="Attached" id="saveAttached" method="POST" enctype="multipart/form-data"s>
+  <div class="modal fade" id="attached" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="attached" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-light">
+          <h3 class="modal-title">DA - Bureaus, Attached Agencies and Attached Corporations</h3>
+          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"><i class="ri-close-line"></i></span>
+          </button>
+        </div>
         <div class="modal-body">
           <div class="container-fluid">
             <div class="row mb-2">
@@ -414,22 +414,22 @@
           <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal"><i class="ri-close-line"></i>Close</button>
           <button type="submit" class="btn btn-lg btn-success"><i class="ri-save-line"></i> Save</button>
         </div>
-      </form>
+      </div>
     </div>
   </div>
-</div>
+</form>
 
 <!-- BFAR - Regional Offices -->
-<div class="modal fade" id="bfarro" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="bfarro" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header bg-dark text-light">
-        <h3 class="modal-title">BFAR - Regional Offices</h3>
-        <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true"><i class="ri-close-line"></i></span>
-        </button>
-      </div>
-      <form action="../process/partners/addBFARRO.php" class="BFARRO" id="saveBFARRO" method="POST">
+<form action="../process/partners/addBFARRO.php" class="BFARRO" id="saveBFARRO" method="POST" enctype="multipart/form-data"s>
+  <div class="modal fade" id="bfarro" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="bfarro" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-light">
+          <h3 class="modal-title">BFAR - Regional Offices</h3>
+          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"><i class="ri-close-line"></i></span>
+          </button>
+        </div>
         <div class="modal-body">
           <div class="container-fluid">
             <div class="row mb-2">
@@ -496,22 +496,22 @@
           <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal"><i class="ri-close-line"></i>Close</button>
           <button type="submit" class="btn btn-lg btn-success"><i class="ri-save-line"></i> Save</button>
         </div>
-      </form>
+      </div>
     </div>
   </div>
-</div>
-
+</form>
+  
 <!-- DA - Regional Field Offices -->
-<div class="modal fade" id="darfo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="darfo" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header bg-dark text-light">
-        <h3 class="modal-title">DA - Regional Field Offices</h3>
-        <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true"><i class="ri-close-line"></i></span>
-        </button>
-      </div>
-      <form action="../process/partners/addDARFO.php" class="DARFO" id="saveDARFO" method="POST">
+<form action="../process/partners/addDARFO.php" class="DARFO" id="saveDARFO" method="POST" enctype="multipart/form-data">
+  <div class="modal fade" id="darfo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="darfo" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-light">
+          <h3 class="modal-title">DA - Regional Field Offices</h3>
+          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"><i class="ri-close-line"></i></span>
+          </button>
+        </div>
         <div class="modal-body">
           <div class="container-fluid">
             <div class="row mb-2">
@@ -635,22 +635,22 @@
           <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal"><i class="ri-close-line"></i>Close</button>
           <button type="submit" class="btn btn-lg btn-success"><i class="ri-save-line"></i> Save</button>
         </div>
-      </form>
+      </div>
     </div>
   </div>
-</div>
-
+</form>
+  
 <!-- List of Due and Demandable Accounts Payable – Advice to Debit Accounts -->
-<div class="modal fade" id="lddap" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="lddap" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header bg-dark text-light">
-        <h3 class="modal-title">List of Due and Demandable Accounts Payable – Advice to Debit Accounts</h3>
-        <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true"><i class="ri-close-line"></i></span>
-        </button>
-      </div>
-      <form action="../process/transparency/addLDDAP.php" class="LDDAP" id="saveLDDAP" method="POST">
+<form action="../process/transparency/addLDDAP.php" class="LDDAP" id="saveLDDAP" method="POST" enctype="multipart/form-data">
+  <div class="modal fade" id="lddap" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="lddap" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-light">
+          <h3 class="modal-title">List of Due and Demandable Accounts Payable – Advice to Debit Accounts</h3>
+          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"><i class="ri-close-line"></i></span>
+          </button>
+        </div>
         <div class="modal-body">
           <div class="container-fluid">
             <div class="row mb-2">
@@ -716,22 +716,22 @@
           <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal"><i class="ri-close-line"></i>Close</button>
           <button type="submit" class="btn btn-lg btn-success"><i class="ri-save-line"></i> Save</button>
         </div>
-      </form>
+      </div>
     </div>
   </div>
-</div>
-
+</form>
+  
 <!-- Directory of Officials -->
-<div class="modal fade" id="directory" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="directory" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header bg-dark text-light">
-        <h3 class="modal-title">Directory of Officials</h3>
-        <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true"><i class="ri-close-line"></i></span>
-        </button>
-      </div>
-      <form action="../process/directory/directories.php" class="Directory" id="saveDirectory" method="POST" enctype="multipart/form-data">
+<form action="../process/directory/directories.php" class="Directory" id="saveDirectory" method="POST" enctype="multipart/form-data">
+  <div class="modal fade" id="directory" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="directory" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-light">
+          <h3 class="modal-title">Directory of Officials</h3>
+          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"><i class="ri-close-line"></i></span>
+          </button>
+        </div>
         <div class="modal-body">
           <div class="container-fluid">
             <div class="row">
@@ -852,28 +852,28 @@
           <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal"><i class="ri-close-line"></i>Close</button>
           <button type="submit" class="btn btn-lg btn-success"><i class="ri-save-line"></i> Save</button>
         </div>
-      </form>
+      </div>
     </div>
   </div>
-</div>
+</form>
 
 <!-- Memorandum -->
-<div class="modal fade" id="memo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="memo" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header bg-dark text-light">
-        <h3 class="modal-title">Memorandum</h3>
-        <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true"><i class="ri-close-line"></i></span>
-        </button>
-      </div>
-      <form action="../process/laws_issuance/memo.php" class="memo" id="saveMemo" method="POST">
+<form action="../process/laws_issuance/addMemo.php" class="memo" id="saveMemo" method="POST" enctype="multipart/form-data">
+  <div class="modal fade" id="memo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="memo" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-light">
+          <h3 class="modal-title">Memorandum</h3>
+          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"><i class="ri-close-line"></i></span>
+          </button>
+        </div>
         <div class="modal-body">
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-3">
                 <div class="form-floating">
-                  <input class="form-control" type="text" name="codeNo" id="codeNo" placeholder="Code Number" required>
+                  <input class="form-control" maxlength="5" type="number" name="codeNo" id="codeNo" placeholder="Code Number" required>
                   <label for="codeNo" class="form-label">Code Number</label>
                 </div>
               </div>
@@ -904,28 +904,28 @@
           <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal"><i class="ri-close-line"></i>Close</button>
           <button type="submit" class="btn btn-lg btn-success"><i class="ri-save-line"></i> Save</button>
         </div>
-      </form>
+      </div>
     </div>
   </div>
-</div>
+</form>
 
 <!-- Special Order -->
-<div class="modal fade" id="so" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="so" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header bg-dark text-light">
-        <h3 class="modal-title">Special Order</h3>
-        <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true"><i class="ri-close-line"></i></span>
-        </button>
-      </div>
-      <form action="../process/laws_issuance/so.php" class="so" id="saveSo" method="POST">
+<form action="../process/laws_issuance/addSo.php" class="so" id="saveSo" method="POST" enctype="multipart/form-data">
+  <div class="modal fade" id="so" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="so" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-light">
+          <h3 class="modal-title">Special Order</h3>
+          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"><i class="ri-close-line"></i></span>
+          </button>
+        </div>
         <div class="modal-body">
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-3">
                 <div class="form-floating">
-                  <input class="form-control" type="text" name="codeNo" id="codeNo" placeholder="Code Number" required>
+                  <input class="form-control" maxlength="5" type="number" name="codeNo" id="codeNo" placeholder="Code Number" required>
                   <label for="codeNo" class="form-label">Code Number</label>
                 </div>
               </div>
@@ -956,11 +956,11 @@
           <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal"><i class="ri-close-line"></i>Close</button>
           <button type="submit" class="btn btn-lg btn-success"><i class="ri-save-line"></i> Save</button>
         </div>
-      </form>
+      </div>
     </div>
   </div>
-</div>
-
+</form>
+  
 <script type="text/javascript" src="../assets/js/formsubmission.js" defer>
 
 </script>

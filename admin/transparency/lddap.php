@@ -32,7 +32,7 @@
   <div class="row">
     <div class="col-12">
       <div class="table-responsive">
-        <table class="table table-bordered table-striped table-hover">
+        <table id="dataTable" class="table table-bordered table-striped table-hover">
           <thead>
             <tr>
               <th>Month</th>
