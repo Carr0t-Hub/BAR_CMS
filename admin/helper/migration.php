@@ -47,6 +47,8 @@ $migration->create('directories', function (Blueprint $table) {
     $table->string('lastName', 100);
     $table->string('division', 100);
     $table->string('section', 100);
+    $table->string('position', 100);
+    $table->string('designation', 100);
     $table->string('email');
     $table->string('telephone', 100);
     $table->integer('attachment');
@@ -140,5 +142,34 @@ $migration->create('laws_issuances', function (Blueprint $table) {
     $table->text('datePosted');
     $table->text('type');
     $table->integer('updatedBy')->nullable();
+    $table->timestamps();
+});
+
+$migration->create('authors', function (Blueprint $table) {
+    $table->id();
+    $table->string('firstName', 100);
+    $table->string('middleName', 100);
+    $table->string('lastName', 100);
+    $table->string('email');
+    $table->string('telephone', 100);
+    $table->boolean('isDeleted')->default('0');
+    $table->timestamps();
+});
+
+$migration->create('sliders', function (Blueprint $table) {
+    $table->id();
+    $table->integer('attachment');
+    $table->text('description');
+    $table->boolean('isDeleted')->default('0');
+    $table->timestamps();
+});
+
+$migration->create('procurement', function (Blueprint $table) {
+    $table->id();
+    $table->text('title');
+    $table->integer('attachment')->nullable();
+    $table->date('datePosted');
+    $table->string('type', 50);
+    $table->boolean('isDeleted')->default('0');
     $table->timestamps();
 });

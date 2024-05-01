@@ -54,7 +54,9 @@
   <!-- Table Editable plugin-->
   <script src="../assets/vendor/jquery-tabledit/jquery.tabledit.min.js"></script>
 
-
+  <script>
+    $('#dataTable').DataTable();
+  </script>
 
   </body>
 

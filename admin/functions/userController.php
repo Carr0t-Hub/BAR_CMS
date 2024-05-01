@@ -1,30 +1,24 @@
 <?php
 
-
 function addUser($mysqli)
 {
-
     try {
-        $firstname = "John";
-        $lastname = "Doe";
-        $username = "jdoe";
-        $password = "foobar";
-        $role = 1;
-
-        $sql = "INSERT INTO credentials (firstname, lastname, username, password, role) VALUES (:firstname, :lastname, :username, :password, :role)";
+        $sql = "INSERT INTO `credentials` 
+        (`firstName`, `lastName`, `email`, `username`, `password`, `role`) 
+            VALUES 
+        (:firstName, :lastName, :email, :username, :password, :role)";
 
         $stmt = $mysqli->prepare($sql);
-
         $stmt->execute(
             array(
-                ':firstname' => $firstname,
-                ':lastname' => $lastname,
-                ':username' => $username,
-                ':password' => $password,
-                ':role' => $role
+                ':firstName' => $_POST['firstName'],
+                ':lastName' => $_POST['lastName'],
+                ':email' => $_POST['email'],
+                ':username' => $_POST['username'],
+                ':password' => $_POST['password'],
+                ':role' => 1
             )
         );
-
         return "success";
     } catch (PDOException $e) {
         return $e->getMessage();
@@ -93,18 +87,16 @@ function userLogin($mysqli)
     }
 }
 
-function userLastLogin($mysqli, $id)
+function userLastLogin($mysqli)
 {
     try {
         $sql = "UPDATE credentials SET last_login = NOW() WHERE id = :id";
 
         $stmt = $mysqli->prepare($sql);
 
-        $stmt->execute(
-            array(
-                ':id' => $id
-            )
-        );
+        $stmt->execute([
+            ':id' => $_POST['id']
+        ]);
 
         return "success";
     } catch (PDOException $e) {
@@ -116,16 +108,13 @@ function updatePassword($mysqli, $id)
 {
 
     try {
-
-        $password = "barpassword";
-
         $sql = "UPDATE credentials SET password = :password, updatePassword = 1 WHERE id = :id";
 
         $stmt = $mysqli->prepare($sql);
 
         $stmt->execute(
             array(
-                ':password' => password_hash($password, PASSWORD_DEFAULT),
+                ':password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
                 ':id' => $id
             )
         );
@@ -139,7 +128,7 @@ function updatePassword($mysqli, $id)
 function getAllUsers($mysqli)
 {
     try {
-        $sql = "SELECT id, firstName, lastName, username, last_login, disabled FROM credentials";
+        $sql = "SELECT id, firstName, lastName, email, username, last_login, disabled FROM credentials";
 
         $stmt = $mysqli->prepare($sql);
 
@@ -153,20 +142,15 @@ function getAllUsers($mysqli)
     }
 }
 
-function disableUsers($mysqli, $id)
+function disableUsers($mysqli)
 {
-
     try {
-
-        $sql = "UPDATE credentials SET disabled = 1 WHERE id = :id";
-
+        $sql = "UPDATE credentials SET disabled = :disabled WHERE id = :id";
         $stmt = $mysqli->prepare($sql);
-
-        $stmt->execute(
-            array(
-                ':id' => $id
-            )
-        );
+        $stmt->execute([
+            ':disabled' => $_POST['disabled'],
+            ':id' => $_POST['id']
+        ]);
 
         return "success";
     } catch (PDOException $e) {
@@ -175,21 +159,17 @@ function disableUsers($mysqli, $id)
 }
 
 
-function resetUserPassword($mysqli, $id)
+function resetUserPassword($mysqli)
 {
     try {
-        $password = "foobar";
-
         $sql = "UPDATE credentials SET password = :password, updatePassword = 0 WHERE id = :id";
 
         $stmt = $mysqli->prepare($sql);
 
-        $stmt->execute(
-            array(
-                ':password' => $password,
-                ':id' => $id
-            )
-        );
+        $stmt->execute([
+            ':password' => $_POST['password'],
+            ':id' => $_POST['id']
+        ]);
 
         return "success";
     } catch (PDOException $e) {
@@ -197,27 +177,39 @@ function resetUserPassword($mysqli, $id)
     }
 }
 
-function updateUserInfo($mysqli, $id)
+function getUserInfoById($mysqli, $id)
 {
     try {
-        $firstname = "Juan";
-        $lastname = "Dela Cruz";
-        $username = "jdelacruz";
-        $role = 1;
+        $sql = "SELECT * FROM credentials WHERE id = :id";
+        $stmt = $mysqli->prepare($sql);
+        $stmt->execute([
+            'id' => $id
+            ]);
+        return $stmt->fetch();
+    } catch (PDOException $e) {
+        return $e->getMessage();
+    }
+}
 
-        $sql = "UPDATE credentials SET firstname = :firstname, lastname = :lastname, username = :username, role = :role WHERE id = :id";
+function editUser($mysqli)
+{
+    try {
+        $sql = "UPDATE `credentials` SET 
+        firstName = :firstName, 
+        lastName = :lastName, 
+        email = :email, 
+        username = :username
+        WHERE id = :id";
 
         $stmt = $mysqli->prepare($sql);
 
-        $stmt->execute(
-            array(
-                ':firstname' => $firstname,
-                ':lastname' => $lastname,
-                ':username' => $username,
-                ':role' => $role,
-                ':id' => $id
-            )
-        );
+        $stmt->execute([
+            ':firstName' => $_POST['firstName'],
+            ':lastName' => $_POST['lastName'],
+            ':email' => $_POST['email'],
+            ':username' => $_POST['username'],
+            ':id' => $_POST['id']
+        ]);
 
         return "success";
     } catch (PDOException $e) {

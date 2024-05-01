@@ -1,6 +1,5 @@
 <?php
 
-// Mission, Vision, Values & Mandates
 function addDirectory($mysqli)
 {
   try {
