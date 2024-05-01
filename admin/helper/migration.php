@@ -144,3 +144,14 @@ $migration->create('laws_issuances', function (Blueprint $table) {
     $table->integer('updatedBy')->nullable();
     $table->timestamps();
 });
+
+$migration->create('authors', function (Blueprint $table) {
+    $table->id();
+    $table->string('firstName', 100);
+    $table->string('middleName', 100);
+    $table->string('lastName', 100);
+    $table->string('email');
+    $table->string('telephone', 100);
+    $table->boolean('isDeleted')->default('0');
+    $table->timestamps();
+});

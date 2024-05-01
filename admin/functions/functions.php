@@ -17,3 +17,4 @@ include('mvvmController.php');
 include('menuController.php');
 include('valuesController.php');
 include('lawsController.php');
+include('authorController.php');

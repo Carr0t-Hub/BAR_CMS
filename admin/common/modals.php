@@ -1017,6 +1017,62 @@
   </div>
 </form>
 
+<!-- Author -->
+<form action="../process/user/addAuthor.php" class="Author" id="saveAuthor" method="POST" enctype="multipart/form-data">
+  <div class="modal fade" id="addAuthor" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="Author" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-light">
+          <h3 class="modal-title">New Author</h3>
+          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"><i class="ri-close-line"></i></span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row mb-2">
+            <div class="col-4">
+              <div class="form-floating">
+                <input type="text" class="form-control" name="firstName" id="firstName" placeholder="First Name" required>
+                <label for="firstName" class="form-control-label">First Name</label>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-floating">
+                <input type="text" class="form-control" name="middleName" id="middleName" placeholder="Middle Name" required>
+                <label for="middleName" class="form-control-label">Middle Name</label>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-floating">
+                <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Last Name" required>
+                <label for="lastName" class="form-control-label">Last Name</label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="form-floating">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email Address" required>
+                <label for="email" class="form-control-label">Email Address</label>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-floating">
+                <input type="text" class="form-control" name="telephone" id="telephone" placeholder="Telephone" required>
+                <label for="telephone" class="form-control-label">Telephone</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal"><i class="ri-close-line"></i>Close</button>
+          <button type="submit" class="btn btn-lg btn-success"><i class="ri-save-line"></i> Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
 <script type="text/javascript" src="../assets/js/formsubmission.js" defer>
 
 </script>
