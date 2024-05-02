@@ -1,7 +1,9 @@
 <?php
 
 $path = $_SERVER['DOCUMENT_ROOT'] . '/BAR_CMS/admin';
+$rootpath = '/BAR_CMS';
 include($path . "/functions/functions.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -17,17 +19,17 @@ include($path . "/functions/functions.php");
   <meta name="author" content="">
 
   <!-- CSS Files -->
-  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" id="bootstrap">
-  <link rel="stylesheet" href="css/plugins.css" type="text/css">
-  <link rel="stylesheet" href="css/style.css" type="text/css">
-  <link rel="stylesheet" href="css/color.css" type="text/css">
+  <link rel="stylesheet" href="<?= $rootpath ?>/css/bootstrap.min.css" type="text/css" id="bootstrap">
+  <link rel="stylesheet" href="<?= $rootpath ?>/css/plugins.css" type="text/css">
+  <link rel="stylesheet" href="<?= $rootpath ?>/css/style.css" type="text/css">
+  <link rel="stylesheet" href="<?= $rootpath ?>/css/color.css" type="text/css">
 
   <!-- supersized -->
-  <link rel='stylesheet' href='js/supersized/css/supersized.css' type='text/css'>
-  <link rel='stylesheet' href='js/supersized/theme/supersized.shutter.css' type='text/css'>
+  <link rel='stylesheet' href='<?= $rootpath ?>/js/supersized/css/supersized.css' type='text/css'>
+  <link rel='stylesheet' href='<?= $rootpath ?>/js/supersized/theme/supersized.shutter.css' type='text/css'>
 
   <!-- color scheme -->
-  <link rel="stylesheet" href="css/colors/brown.css" type="text/css" id="colors">
+  <link rel="stylesheet" href="<?= $rootpath ?>/css/colors/brown.css" type="text/css" id="colors">
 </head>
 <style>
   .line-clamp-3 {
@@ -48,19 +50,19 @@ include($path . "/functions/functions.php");
               <div class="de-flex-col">
                 <div id="logo">
                   <a href="#">
-                    <img class="logo" src="images/logo_DABAR.png" alt="">
+                    <img class="logo" src="<?= $rootpath ?>/images/logo_DABAR.png" alt="">
                   </a>
                 </div>
               </div>
               <div class="de-flex-col">
                 <ul id="mainmenu">
                   <li><a href="https://www.gov.ph">GOVPH</a></li>
-                  <li><a href="index.php">Home</a></li>
+                  <li><a href="<?= $rootpath ?>">Home</a></li>
                   <li>
                     <a href="#">About</a>
                     <ul>
-                      <li><a href="directors_message.php">Director's Message</a></li>
-                      <li><a href="mandates.php">Mission, Vision & Mandates</a></li>
+                      <li><a href="<?= $rootpath ?>/directors_message.php">Director's Message</a></li>
+                      <li><a href="<?= $rootpath ?>/mandates.php">Mission, Vision & Mandates</a></li>
                       <li><a href="#">Directory of Officials</a></li>
                       <li><a href="#">Organizational Chart</a></li>
                     </ul>
@@ -68,13 +70,13 @@ include($path . "/functions/functions.php");
                   <li>
                     <a href="#">Media Resources</a>
                     <ul>
-                      <li><a href="news_events.php">News & Events</a></li>
-                      <li><a href="photo_releases.php">Photo Releases</a></li>
+                      <li><a href="<?= $rootpath ?>/news_events">News & Events</a></li>
+                      <li><a href="<?= $rootpath ?>/photo_releases.php">Photo Releases</a></li>
                       <li>
                         <a href="#">Publications</a>
                         <ul>
-                          <li><a href="digest.php">Digest</a></li>
-                          <li><a href="chronicles.php">Chronicles</a></li>
+                          <li><a href="<?= $rootpath ?>/digest.php">Digest</a></li>
+                          <li><a href="<?= $rootpath ?>/chronicles.php">Chronicles</a></li>
                         </ul>
                       </li>
                       <li><a href="#">Downloadables</a></li>
@@ -101,7 +103,7 @@ include($path . "/functions/functions.php");
                   </li>
                   <li><a href="#">Programs</a></li>
                   <li><a href="#">Partners</a></li>
-                  <li><a href="contact.php">Contact</a></li>
+                  <li><a href="<?= $rootpath ?>/contact.php">Contact</a></li>
                   <li><a href="#" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i> Search</a></li>
                 </ul>
                 <div id="menu-btn"></div>
@@ -122,18 +124,18 @@ include($path . "/functions/functions.php");
             <div class="pt80 pb80">
               <div class="mo-nav text-center">
                 <a href="#">
-                  <img class="logo" src="images/logo_DABAR.png" alt="">
+                  <img class="logo" src="<?= $rootpath ?>/images/logo_DABAR.png" alt="">
                 </a>
                 <div class="spacer-single"></div>
                 <!-- mainmenu begin -->
                 <ul id="mo-menu">
                   <li><a href="https://www.gov.ph">GOVPH</a></li>
-                  <li><a href="index.php">Home</a></li>
+                  <li><a href="<?= $rootpath ?>">Home</a></li>
                   <li>
                     <a href="#">About</a>
                     <ul>
-                      <li><a href="directors_message.php">Director's Message</a></li>
-                      <li><a href="mandates.php">Mission, Vision & Mandates</a></li>
+                      <li><a href="<?= $rootpath ?>/directors_message.php">Director's Message</a></li>
+                      <li><a href="<?= $rootpath ?>/mandates.php">Mission, Vision & Mandates</a></li>
                       <li><a href="#">Directory of Officials</a></li>
                       <li><a href="#">Organizational Chart</a></li>
                     </ul>
@@ -141,13 +143,13 @@ include($path . "/functions/functions.php");
                   <li>
                     <a href="#">Media Resources</a>
                     <ul>
-                      <li><a href="news_events.php">News & Events</a></li>
-                      <li><a href="photo_releases.php">Photo Releases</a></li>
+                      <li><a href="<?= $rootpath ?>/news_events.php">News & Events</a></li>
+                      <li><a href="<?= $rootpath ?>/photo_releases.php">Photo Releases</a></li>
                       <li>
                         <a href="#">Publications</a>
                         <ul>
-                          <li><a href="digest.php">Digest</a></li>
-                          <li><a href="chronicles.php">Chronicles</a></li>
+                          <li><a href="<?= $rootpath ?>/digest.php">Digest</a></li>
+                          <li><a href="<?= $rootpath ?>/chronicles.php">Chronicles</a></li>
                         </ul>
                       </li>
                       <li><a href="#">Downloadables</a></li>

@@ -48,15 +48,14 @@
   <div class="row">
     <div class="col-lg-12">
       <div class="table-responsive">
-        <table id="dataTable" class="table table-bordered table-hover table-striped">
+        <table id="dataTable" class="table table-bordered table-hover">
           <thead>
             <tr>
               <th class="text-center text-uppercase">Picture</th>
               <th class="text-center text-uppercase">First Name</th>
               <th class="text-center text-uppercase">Middle Name</th>
               <th class="text-center text-uppercase">Last Name</th>
-              <th class="text-center text-uppercase">Division</th>
-              <th class="text-center text-uppercase">Section</th>
+              <th class="text-center text-uppercase">Division/Section</th>
               <th class="text-center text-uppercase">Email Address</th>
               <th class="text-center text-uppercase">Telephone Number</th>
               <th class="text-center text-uppercase">Action</th>
@@ -74,8 +73,14 @@
                 <td><?php echo strtoupper($value['firstName']); ?></td>
                 <td><?php echo strtoupper($value['middleName']); ?></td>
                 <td><?php echo strtoupper($value['lastName']); ?></td>
-                <td><?php echo strtoupper($value['division']); ?></td>
-                <td><?php echo strtoupper($value['section']); ?></td>
+                <td>
+                  <span>
+                    <?php echo strtoupper($value['division']); ?>
+                  </span>
+                  <span style="font-size: 14px" class="d-block text-secondary">
+                    <?php echo strtoupper($value['section']); ?>
+                  </span>
+                </td>
                 <td><?php echo strtoupper($value['email']); ?></td>
                 <td><?php echo strtoupper($value['telephone']); ?></td>
                 <td>

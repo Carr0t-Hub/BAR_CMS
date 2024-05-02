@@ -15,12 +15,13 @@
       </div>
       <a href="#" id="back-to-top"></a>
     </footer>
-  </div>
-</body>
+    </div>
+    </body>
 
-  <!-- Javascript Files -->
-  <script src="js/plugins.js"></script>
-  <script src="js/designesia.js"></script>
-  <script src='https://www.google.com/recaptcha/api.js' async defer></script>
-  <script src="form.js"></script>
-</html>
+    <!-- Javascript Files -->
+    <script src="<?= $rootpath ?>/js/plugins.js"></script>
+    <script src="<?= $rootpath ?>/js/designesia.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js' async defer></script>
+    <script src="form.js"></script>
+
+    </html>

@@ -99,19 +99,68 @@ function addCareers($mysqli)
     }
 }
 
-function getPublications($mysqli, $type)
+function getPublications($mysqli, $type = null)
 {
 
     try {
-        $sql = "SELECT * FROM publications WHERE type = :type AND isDeleted = 0 ORDER BY id DESC";
+
+        if ($type == null) {
+            $sql = "SELECT * FROM publications WHERE isDeleted = 0 ORDER BY id DESC";
+            $stmt = $mysqli->prepare($sql);
+            $stmt->execute();
+        } else {
+            $sql = "SELECT * FROM publications WHERE type = :type AND isDeleted = 0 ORDER BY id DESC";
+            $stmt = $mysqli->prepare($sql);
+
+            $stmt->execute([
+                'type' => $type
+            ]);
+        }
+
+
+
+        return $stmt->fetchAll();
+    } catch (PDOException $e) {
+        return $e->getMessage();
+    }
+}
+
+function getPublicationsWithPage($mysqli, $page_number = 1, $limit = 6)
+{
+    try {
+
+        $offset = ($page_number - 1) * $limit;
+
+        $sql = "SELECT COUNT(*) as total FROM publications WHERE isDeleted = 0";
+        $stmt = $mysqli->prepare($sql);
+        $stmt->execute();
+
+
+        $total = $stmt->fetch()['total'];
+        $total_page = ceil($total / $limit);
+
+
+        $sql = "SELECT * FROM publications WHERE isDeleted = 0 ORDER BY id DESC LIMIT $offset, $limit";
 
         $stmt = $mysqli->prepare($sql);
 
-        $stmt->execute([
-            'type' => $type
-        ]);
 
-        return $stmt->fetchAll();
+        $stmt->execute();
+
+
+        return [
+            'total_page' => $total_page,
+            'current_page' => $page_number,
+            'total_items' => $total,
+            'publications' => $stmt->fetchAll(PDO::FETCH_ASSOC)
+        ];
+
+
+        // $sql = "SELECT * FROM publications WHERE isDeleted = 0 ORDER BY id DESC LIMIT :limit OFFSET :offset";
+        // $stmt = $mysqli->prepare($sql);
+        // $stmt->execute();
+
+        // return $stmt->fetchAll();
     } catch (PDOException $e) {
         return $e->getMessage();
     }

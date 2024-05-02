@@ -168,8 +168,13 @@ class Blueprint
     }
 
 
-    public function rawQuery($query)
+    public function rawQuery($query, $name = null)
     {
+
+        if ($this->columnExists($name)) {
+            return $this;
+        }
+
         $this->fields[] = $query;
         return $this;
     }

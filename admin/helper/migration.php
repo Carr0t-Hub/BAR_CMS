@@ -36,7 +36,7 @@ $migration->create('credentials', function (Blueprint $table) {
 });
 
 $migration->alter('credentials', function (Blueprint $table) {
-    $table->rawQuery('ADD last_login TIMESTAMP NULL');
+    $table->rawQuery('ADD last_login TIMESTAMP NULL', 'last_login');
 });
 
 
