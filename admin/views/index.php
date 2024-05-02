@@ -5,8 +5,7 @@
   <div class="row mb-3">
     <div class="col-4">
       <div class="card overflow-hidden border-top-0">
-        <div class="progress progress-sm rounded-0 bg-light" role="progressbar"
-          aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress progress-sm rounded-0 bg-light" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
           <div class="progress-bar bg-success" style="width: 100%"></div>
         </div>
         <div class="card-body">
@@ -24,12 +23,11 @@
             <h3 class="mb-0 d-flex"><button class="rounded-pill btn btn-success" href="../transparency/addProcurement.php"><i class="ri-eye-line"></i>View More</button></h3>
           </div>
         </div>
-      </div> 
+      </div>
     </div>
     <div class="col-4">
       <div class="card overflow-hidden border-top-0">
-        <div class="progress progress-sm rounded-0 bg-light" role="progressbar"
-          aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress progress-sm rounded-0 bg-light" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
           <div class="progress-bar bg-info" style="width: 100%"></div>
         </div>
         <div class="card-body">
@@ -47,12 +45,11 @@
             <h3 class="mb-0 d-flex"><button class="rounded-pill btn btn-info" href="../transparency/addProcurement.php"><i class="ri-eye-line"></i>View More</button></h3>
           </div>
         </div>
-      </div> 
+      </div>
     </div>
     <div class="col-4">
       <div class="card overflow-hidden border-top-0">
-        <div class="progress progress-sm rounded-0 bg-light" role="progressbar"
-          aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress progress-sm rounded-0 bg-light" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
           <div class="progress-bar bg-danger" style="width: 100%"></div>
         </div>
         <div class="card-body">
@@ -70,8 +67,8 @@
             <h3 class="mb-0 d-flex"><button class="rounded-pill btn btn-danger" href="../transparency/addProcurement.php"><i class="ri-eye-line"></i>View More</button></h3>
           </div>
         </div>
-      </div> 
-    </div>   
+      </div>
+    </div>
   </div>
 </div>
 

@@ -46,9 +46,9 @@ function getSliderIfNotDeleted($mysqli)
     $sql = "SELECT * FROM sliders WHERE isDeleted = 0 ORDER BY id DESC";
     $stmt = $mysqli->prepare($sql);
     $stmt->execute();
-      while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    $temp[] = $row;
-  }
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+      $temp[] = $row;
+    }
     return $stmt->fetchAll();
   } catch (PDOException $e) {
     return $e->getMessage();
@@ -65,7 +65,7 @@ function getSliderById($mysqli, $id)
     $stmt = $mysqli->prepare($sql);
     $stmt->execute([
       'id' => $id
-      ]);
+    ]);
     return $stmt->fetch();
   } catch (PDOException $e) {
     return $e->getMessage();
@@ -98,4 +98,23 @@ function editSlider($mysqli)
   }
 }
 
-?>
+function getActiveSlider($mysqli)
+{
+
+
+  try {
+
+    $sql = "SELECT sliders.*, attachments.id as attachment, attachments.fileName, attachments.size, attachments.fileExtension FROM sliders
+            JOIN attachments ON sliders.attachment = attachments.id
+            WHERE isDeleted = 0";
+
+
+    $stmt = $mysqli->prepare($sql);
+
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  } catch (PDOException $e) {
+    return $e->getMessage();
+  }
+}
