@@ -32,8 +32,10 @@ $slider = getActiveSlider($mysqli);
       <ul id="slide-list"></ul>
     </div>
   </div>
+
 </div>
-</div>
+
+
 
 <!-- Modals -->
 <div class="modal fade" id="searchModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
@@ -70,30 +72,20 @@ $slider = getActiveSlider($mysqli);
 <script src='js/supersized/theme/supersized.shutter.min.js'></script>
 
 <script>
-  $sliders = JSON.parse(document.getElementById('sliderimg').value);
-  console.log($sliders)
+  var sliders_images = JSON.parse(document.getElementById('sliderimg').value);
 
 
-  jQuery(function($) {
+  $(function($) {
     var slides = [];
-    // slides.push({
-    //   image: 'images/slider/1.jpg',
-    //   title: "<div class='slider-text'><h2 class='wow fadeInUp'>Relax</h2><a class='btn-line wow fadeInUp' data-wow-delay='.3s' href='about.html'><span>Our Facilities</span></a></div>",
-    //   thumb: '',
-    //   url: ''
-    // });
 
-
-    $sliders.forEach(slider => {
+    sliders_images.forEach(slider => {
       slides.push({
         image: `admin/storage/slider/${slider.fileName}_${slider.size}${slider.attachment}.${slider.fileExtension}`,
-        title: `<div class='slider-text'><h2 class='wow fadeInUp'>${slider.title}</h2><a class='btn-line wow fadeInUp' data-wow-delay='.3s' href='about.html'><span>Our Facilities</span></a></div>`,
+        title: `<div class='slider-text'><h2 class='wow fadeInUp'>DA-BAR</h2><a class='btn-line wow fadeInUp' data-wow-delay='.3s' href='about.html'><span>Our Facilities</span></a></div>`,
         thumb: '',
-        url: ''
+        url: 'google.com'
       });
     });
-
-
 
     $.supersized({
       // Functionality
@@ -108,7 +100,7 @@ $slider = getActiveSlider($mysqli);
       image_protect: 1 // Disables image dragging and right click with Javascript
     });
 
-    jQuery("#pauseplay").toggle(
+    $("#pauseplay").toggle(
       function() {
         jQuery(this).addClass("pause");
       },
@@ -116,13 +108,13 @@ $slider = getActiveSlider($mysqli);
         jQuery(this).removeClass("pause").addClass("play");
       });
 
-    jQuery("#pauseplay").stop().fadeTo(150, .5);
-    jQuery("#pauseplay").hover(
+    $("#pauseplay").stop().fadeTo(150, .5);
+    $("#pauseplay").hover(
       function() {
-        jQuery(this).stop().fadeTo(150, 1);
+        $(this).stop().fadeTo(150, 1);
       },
       function() {
-        jQuery(this).stop().fadeTo(150, .5);
+        $(this).stop().fadeTo(150, .5);
       });
   });
 </script>

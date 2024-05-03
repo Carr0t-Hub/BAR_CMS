@@ -24,10 +24,8 @@ if (!isset($_SESSION['id'])) {
   <!-- Theme Config Js -->
   <script src="../assets/js/config.js"></script>
 
-  <!-- Quill css -->
-  <!-- <link href="../assets/vendor/quill/quill.core.css" rel="stylesheet" type="text/css" />
-  <link href="../assets/vendor/quill/quill.snow.css" rel="stylesheet" type="text/css" />
-  <link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet" type="text/css" /> -->
+  <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 
   <!-- Datatables css -->
   <link href="../assets/vendor/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />

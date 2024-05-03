@@ -38,21 +38,23 @@ function addPhotoRelease($mysqli)
     try {
 
         $title = $_POST['title'];
-        $imagepath = $_POST['imagepath'];
         $datePosted = $_POST['datePosted'];
-        $author = $_POST['author'];
         $status = $_POST['status'];
 
 
-        $sql = "INSERT INTO publications (title, image_path, datePosted, author, status, type) VALUES (:title, :imagepath, :datePosted, :author, :status, :type)";
+        $imagearray = Attachment::UploadMultiple($_FILES['images'], STORAGE_PATH, 'photo_releases', $mysqli, $_SESSION['id']);
+
+
+
+
+        $sql = "INSERT INTO publications (title, image_array, datePosted, status, type) VALUES (:title, :imagearray, :datePosted, :status, :type)";
 
         $stmt = $mysqli->prepare($sql);
 
         $stmt->execute([
             'title' => $title,
-            'imagepath' => $imagepath,
+            'imagearray' => json_encode($imagearray),
             'datePosted' => $datePosted,
-            'author' => $author,
             'status' => $status,
             'type' => 'photorelease'
         ]);
@@ -120,6 +122,38 @@ function getPublications($mysqli, $type = null)
 
 
         return $stmt->fetchAll();
+    } catch (PDOException $e) {
+        return $e->getMessage();
+    }
+}
+
+function getPhotoReleases($mysqli)
+{
+    try {
+
+        $sql = "SELECT * FROM publications WHERE type = 'photorelease' AND isDeleted = 0 ORDER BY id DESC";
+        $stmt = $mysqli->prepare($sql);
+        $stmt->execute();
+
+
+
+        $photorelease = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $sql = "SELECT * FROM attachments WHERE id = :id";
+        $stmt = $mysqli->prepare($sql);
+
+
+        foreach ($photorelease as $key => $value) {
+            foreach (json_decode($value['image_array']) as $key2 => $value2) {
+                $stmt->execute([
+                    'id' => $value2
+                ]);
+                $photorelease[$key]['images'][] = $stmt->fetch(PDO::FETCH_ASSOC);
+            }
+        }
+
+
+        return $photorelease;
     } catch (PDOException $e) {
         return $e->getMessage();
     }

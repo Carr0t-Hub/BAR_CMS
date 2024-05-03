@@ -65,7 +65,7 @@
 </form>
 
 <!-- Photo Releases -->
-<form method="POST" action="../process/publication/addPhotoRelease.php" enctype="multipart/form-data">
+<!-- <form method="POST" action="../process/publication/addPhotoRelease.php" enctype="multipart/form-data">
 
   <div class="modal fade" id="photo_releases" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="photo_releases" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
@@ -76,8 +76,8 @@
             <span aria-hidden="true"><i class="ri-close-line"></i></span>
           </button>
         </div>
-        <div class="modal-body">
-          <div class="container-fluid">
+        <div class="modal-body"> -->
+<!-- <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-12">
                 <div class="form-floating">
@@ -122,7 +122,11 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
+
+<!-- <form action="/target" class="dropzone" id="my-great-dropzone"></form>
+
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal"><i class="ri-close-line"></i>Close</button>
@@ -131,7 +135,7 @@
       </div>
     </div>
   </div>
-</form>
+</form> -->
 
 <!-- Uncategorized Articles -->
 <form method="POST" action="../process/publication/addArticles.php" enctype="multipart/form-data">
@@ -1197,6 +1201,8 @@
     </div>
   </div>
 </form>
+
+
 
 <script type="text/javascript" src="../assets/js/formsubmission.js" defer>
 

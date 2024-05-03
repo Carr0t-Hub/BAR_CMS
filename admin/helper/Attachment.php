@@ -113,5 +113,65 @@ class Attachment
         }
     }
 
+
+    public static function UploadMultiple($file, $destination, $folder, $pdoObject, $userID, $tableName = 'attachments')
+    {
+
+        $uploadDir = $destination . '/' . $folder . '/';
+
+        $uploadedFiles = array();
+
+        $uploadedIds = array();
+
+        $sql = "INSERT INTO $tableName (`fileName`,`fileExtension`,`fileType`,`size`,`uploadedBy`,`uploadDateTime`) VALUES(:myfilename, :myfileextension, :myfiletype, :myfilesize, :uploadedby, NOW())";
+
+
+        $pdoStatement = $pdoObject->prepare($sql);
+
+
+        foreach ($file['name'] as $key => $fileName) {
+
+            $fileExtension  = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+            $fileName =  pathinfo($fileName, PATHINFO_FILENAME);
+
+            $fullFileName = $file['name'][$key];
+            $fileTmpName = $file['tmp_name'][$key];
+            $fileSize = $file['size'][$key];
+            $fileError  = $file['error'][$key];
+            $fileType = $file['type'][$key];
+
+            $pdoStatement->execute([
+                'myfilename' => $fileName,
+                'myfileextension' => $fileExtension,
+                'myfiletype' => $fileType,
+                'myfilesize' => $fileSize,
+                'uploadedby' => $userID,
+            ]);
+
+            $attachmentID = $pdoObject->lastInsertId();
+
+            array_push($uploadedIds, $attachmentID);
+
+
+            $newFullFileName = $fileName . "_" . $fileSize . $attachmentID  . "." . $fileExtension;
+            $fileDestination = $destination . $folder . "/" . $newFullFileName;
+
+            // Check for errors
+            if ($fileError === UPLOAD_ERR_OK) {
+                $uploadFile = $uploadDir . basename($fileName);
+                if (move_uploaded_file($fileTmpName, $fileDestination)) {
+                    $uploadedFiles[] = $uploadFile;
+                } else {
+                    echo "Error uploading file: " . $fileName;
+                }
+            } else {
+                echo "Error uploading file: " . $fileName . " (Error code: " . $fileError . ")";
+            }
+        }
+
+        return $uploadedIds;
+    }
+
+
     //TODO: Research how to produce an encrypted download link (so the users can't see which server directory the files are coming from check php urlencode)
 }

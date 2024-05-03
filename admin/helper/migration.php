@@ -87,6 +87,7 @@ $migration->create('publications', function (Blueprint $table) {
 
 $migration->alter('publications', function (Blueprint $table) {
     $table->addNullColumn('image_path', 'varchar(255)', 'body');
+    $table->addNullColumn('image_array', 'text', 'image_path');
 });
 
 
