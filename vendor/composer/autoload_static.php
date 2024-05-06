@@ -6,6 +6,30 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitd359baac21f520c04e608f4eed750560
 {
+    public static $prefixLengthsPsr4 = array (
+        'L' => 
+        array (
+            'League\\ColorExtractor\\' => 22,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'League\\ColorExtractor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/color-extractor/src',
+        ),
+    );
+
+    public static $prefixesPsr0 = array (
+        'c' => 
+        array (
+            'claviska' => 
+            array (
+                0 => __DIR__ . '/..' . '/claviska/simpleimage/src',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
@@ -13,6 +37,9 @@ class ComposerStaticInitd359baac21f520c04e608f4eed750560
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixLengthsPsr4 = ComposerStaticInitd359baac21f520c04e608f4eed750560::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitd359baac21f520c04e608f4eed750560::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitd359baac21f520c04e608f4eed750560::$prefixesPsr0;
             $loader->classMap = ComposerStaticInitd359baac21f520c04e608f4eed750560::$classMap;
 
         }, null, ClassLoader::class);

@@ -1,15 +1,34 @@
 <?php include("../common/header.php");
 include("../common/sidebar.php");
-$data = getPhotoReleases($mysqli);
+
+$pageno = isset($_GET['pageno']) ? $_GET['pageno'] : 1;
+
+$result = getPhotoReleases($mysqli, $pageno, 10);
+
+
+$data = $result['photoreleases'];
+
+
 
 ?>
 
 <style>
+  .disabledd {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
   .stack-images .image {
     width: 200px !important;
     height: 200px !important;
     position: absolute;
     background: white;
+    border-radius: 10px !important;
+  }
+
+  .image img {
+    border-radius: 10px !important;
   }
 
   .stack-images {
@@ -69,6 +88,11 @@ $data = getPhotoReleases($mysqli);
   .stack-images {
     transition: all 0.2s;
   }
+
+  .primg {
+    image-resolution: 5dpi;
+    image-rendering: pixelated;
+  }
 </style>
 
 <!-- Start Content-->
@@ -111,10 +135,11 @@ $data = getPhotoReleases($mysqli);
 
           if (isset($value['images'])) {
             $image = $value['images'];
+            $dir = '../storage/photo_releases/';
 
-            $firstImage = $image[0]['fileName'] . '_' . $image[0]['size'] . $image[0]['id'] . '.' . $image[0]['fileExtension'];
-            $secondImage = $image[1]['fileName'] . '_' . $image[1]['size'] . $image[1]['id'] . '.' . $image[1]['fileExtension'];
-            $thirdImage = $image[2]['fileName'] . '_' . $image[2]['size'] . $image[2]['id'] . '.' . $image[2]['fileExtension'];
+            $firstImage = $dir . $image[0]['fileName'] . '_' . $image[0]['size'] . $image[0]['id'] . '.' . $image[0]['fileExtension'];
+            $secondImage = $dir . $image[1]['fileName'] . '_' . $image[1]['size'] . $image[1]['id'] . '.' . $image[1]['fileExtension'];
+            $thirdImage = $dir . $image[2]['fileName'] . '_' . $image[2]['size'] . $image[2]['id'] . '.' . $image[2]['fileExtension'];
           }
 
         ?>
@@ -122,16 +147,16 @@ $data = getPhotoReleases($mysqli);
 
             <div class="main-container">
               <div class="stack-images mb-3">
-                <div class=" image shadow img1" style="rotate: 5deg; right: -25px; top: -25px;">
+                <div class="image shadow img1" style="rotate: 5deg; right: -25px; top: -25px;">
 
-                  <img src="../storage/photo_releases/<?= $thirdImage ?>" loading="lazy" class="w-100 h-100" style="object-fit: cover" alt="">
+                  <img src="imagecompressor.php?image=<?= urlencode($thirdImage) ?>" loading="lazy" class="w-100 h-100 primg" style="object-fit: cover" alt="">
                 </div>
-                <div class=" image shadow img2" style="rotate: 2deg; right: -15px;top: -15px">
-                  <img src="../storage/photo_releases/<?= $secondImage ?>" loading="lazy" class="w-100 h-100" style="object-fit: cover" alt="">
+                <div class="image shadow img2" style="rotate: 2deg; right: -15px;top: -15px">
+                  <img src="imagecompressor.php?image=<?= urlencode($secondImage) ?>" loading="lazy" class="w-100 h-100 primg" style="object-fit: cover" alt="">
                 </div>
 
-                <div class=" image shadow img3">
-                  <img src="../storage/photo_releases/<?= $firstImage ?>" loading="lazy" class="w-100 h-100" style="object-fit: cover" alt="">
+                <div class="image shadow img3">
+                  <img src="imagecompressor.php?image=<?= urlencode($firstImage) ?>" loading="lazy" class="w-100 h-100 primg" style="object-fit: cover" alt="">
                 </div>
 
 
@@ -145,7 +170,83 @@ $data = getPhotoReleases($mysqli);
 
         } ?>
       </div>
+      <div class="d-flex justify-content-end">
+        <nav>
+          <ul class="pagination mb-0">
+            <li class="page-item <?php if ($pageno == 1) {
+                                    echo "disabledd";
+                                  } ?>">
+              <a aria-label="Previous" href="?<?php echo http_build_query(array_merge($_GET, ['pageno' => 1])); ?>" class="page-link">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
 
+            <li class="page-item <?php if ($pageno == 1) {
+                                    echo "disabledd";
+                                  } ?>">
+              <a href="<?php if ($pageno <= 1) {
+                          echo '#';
+                        } else {
+                          echo "?" . http_build_query(array_merge($_GET, ['pageno' => $pageno - 1]));
+                        } ?>" class="page-link">
+                <span aria-hidden="true">&lsaquo;</span>
+              </a>
+            </li>
+            <?php
+            $total_pages = $result['total_page'];
+            // Calculate the start and end page numbers
+            $start = $pageno - 2;
+            $end = $pageno + 2;
+
+            // If the current page number is less than 3, always start from 1
+            if ($pageno < 3) {
+              $start = 1;
+              $end = 5;
+            }
+
+            // If the current page number is close to the end, always end at the last page
+            if ($pageno > $total_pages - 2) {
+              $start = $total_pages - 4;
+              $end = $total_pages;
+            }
+
+            // Ensure start and end are within the total pages
+            $start = max(1, $start);
+            $end = min($total_pages, $end);
+
+            for ($i = $start; $i <= $end; $i++) {
+            ?>
+              <li class="page-item <?= $pageno == $i ? 'active' : '' ?>">
+                <a href="?<?= http_build_query(array_merge($_GET, ['pageno' => $i])) ?>" class="page-link">
+                  <?= $i ?>
+                </a>
+              </li>
+            <?php
+            }
+            ?>
+
+
+            <li class="page-item <?php if ($pageno == $total_pages) {
+                                    echo "disabledd";
+                                  } ?>">
+              <a class="page-link" href="<?php if ($pageno >= $total_pages) {
+                                            echo '#';
+                                          } else {
+                                            echo "?" . http_build_query(array_merge($_GET, ['pageno' => $pageno + 1]));
+                                          } ?>">
+                <span aria-hidden="true">&rsaquo;</span>
+              </a>
+            </li>
+            <li class="page-item <?php if ($pageno == $total_pages) {
+                                    echo "disabledd";
+                                  } ?>">
+              <a class="page-link" href="?<?php echo http_build_query(array_merge($_GET, ['pageno' => $total_pages])); ?>" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
 
   </div>

@@ -6,4 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'League\\ColorExtractor\\' => array($vendorDir . '/league/color-extractor/src'),
 );

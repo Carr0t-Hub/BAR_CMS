@@ -127,11 +127,23 @@ function getPublications($mysqli, $type = null)
     }
 }
 
-function getPhotoReleases($mysqli)
+function getPhotoReleases($mysqli, $page_number = 1, $limit = 6)
 {
     try {
+        $offset = ($page_number - 1) * $limit;
 
-        $sql = "SELECT * FROM publications WHERE type = 'photorelease' AND isDeleted = 0 ORDER BY id DESC";
+
+        $sql = "SELECT COUNT(*) as total FROM publications WHERE type= 'photorelease' AND isDeleted = 0";
+        $stmt = $mysqli->prepare($sql);
+        $stmt->execute();
+
+
+        $total = $stmt->fetch()['total'];
+        $total_page = ceil($total / $limit);
+
+
+
+        $sql = "SELECT * FROM publications WHERE type = 'photorelease' AND isDeleted = 0 ORDER BY id DESC LIMIT $offset, $limit";
         $stmt = $mysqli->prepare($sql);
         $stmt->execute();
 
@@ -153,7 +165,12 @@ function getPhotoReleases($mysqli)
         }
 
 
-        return $photorelease;
+        return [
+            'total_page' => $total_page,
+            'current_page' => $page_number,
+            'total_items' => $total,
+            'photoreleases' => $photorelease
+        ];
     } catch (PDOException $e) {
         return $e->getMessage();
     }

@@ -1,2 +1,5 @@
 {
+    "require": {
+        "claviska/simpleimage": "^4.2"
+    }
 }
