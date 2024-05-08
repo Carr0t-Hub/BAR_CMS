@@ -197,6 +197,3 @@ include($path . "/functions/functions.php");
         <a href="https://www.youtube.com/DABAROfficial"><i class="fa fa-youtube fa-lg"></i></a>
       </div>
     </div>
-
-    <div class='slider-overlay'></div>
-    <div id="slidecaption"></div>

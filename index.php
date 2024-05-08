@@ -6,7 +6,8 @@ $slider = getActiveSlider($mysqli);
 
 
 ?>
-
+<div class='slider-overlay'></div>
+<div id="slidecaption"></div>
 <div class="container">
   <div id="prevthumb"></div>
   <div id="nextthumb"></div>
@@ -32,8 +33,9 @@ $slider = getActiveSlider($mysqli);
       <ul id="slide-list"></ul>
     </div>
   </div>
-
 </div>
+
+<!-- <div style="height: 1000px"></div> -->
 
 
 
@@ -61,7 +63,6 @@ $slider = getActiveSlider($mysqli);
 </textarea>
 
 
-</body>
 
 <!-- Javascript Files -->
 <script src="js/plugins.js"></script>
@@ -97,7 +98,10 @@ $slider = getActiveSlider($mysqli);
       autoplay: 1,
       fit_always: 0,
       performance: 0,
-      image_protect: 1 // Disables image dragging and right click with Javascript
+      image_protect: 1, // Disables image dragging and right click with Javascript
+      //do not set to background
+
+
     });
 
     $("#pauseplay").toggle(
@@ -118,5 +122,3 @@ $slider = getActiveSlider($mysqli);
       });
   });
 </script>
-
-</html>

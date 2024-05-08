@@ -138,8 +138,12 @@ $data = $result['photoreleases'];
             $dir = '../storage/photo_releases/';
 
             $firstImage = $dir . $image[0]['fileName'] . '_' . $image[0]['size'] . $image[0]['id'] . '.' . $image[0]['fileExtension'];
-            $secondImage = $dir . $image[1]['fileName'] . '_' . $image[1]['size'] . $image[1]['id'] . '.' . $image[1]['fileExtension'];
-            $thirdImage = $dir . $image[2]['fileName'] . '_' . $image[2]['size'] . $image[2]['id'] . '.' . $image[2]['fileExtension'];
+
+            if (isset($image[1]))
+              $secondImage = $dir . $image[1]['fileName'] . '_' . $image[1]['size'] . $image[1]['id'] . '.' . $image[1]['fileExtension'];
+
+            if (isset($image[2]))
+              $thirdImage = $dir . $image[2]['fileName'] . '_' . $image[2]['size'] . $image[2]['id'] . '.' . $image[2]['fileExtension'];
           }
 
         ?>
@@ -147,13 +151,18 @@ $data = $result['photoreleases'];
 
             <div class="main-container">
               <div class="stack-images mb-3">
-                <div class="image shadow img1" style="rotate: 5deg; right: -25px; top: -25px;">
+                <?php if (isset($image[2])) { ?>
 
-                  <img src="imagecompressor.php?image=<?= urlencode($thirdImage) ?>" loading="lazy" class="w-100 h-100 primg" style="object-fit: cover" alt="">
-                </div>
-                <div class="image shadow img2" style="rotate: 2deg; right: -15px;top: -15px">
-                  <img src="imagecompressor.php?image=<?= urlencode($secondImage) ?>" loading="lazy" class="w-100 h-100 primg" style="object-fit: cover" alt="">
-                </div>
+                  <div class="image shadow img1" style="rotate: 5deg; right: -25px; top: -25px;">
+                    <img src="imagecompressor.php?image=<?= urlencode($thirdImage) ?>" loading="lazy" class="w-100 h-100 primg" style="object-fit: cover" alt="">
+                  </div>
+                <?php } ?>
+
+                <?php if (isset($image[1])) { ?>
+                  <div class="image shadow img2" style="rotate: 2deg; right: -15px;top: -15px">
+                    <img src="imagecompressor.php?image=<?= urlencode($secondImage) ?>" loading="lazy" class="w-100 h-100 primg" style="object-fit: cover" alt="">
+                  </div>
+                <?php } ?>
 
                 <div class="image shadow img3">
                   <img src="imagecompressor.php?image=<?= urlencode($firstImage) ?>" loading="lazy" class="w-100 h-100 primg" style="object-fit: cover" alt="">
