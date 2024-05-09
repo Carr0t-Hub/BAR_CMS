@@ -42,7 +42,8 @@ include($path . "/functions/functions.php");
 
 <body class="has-menu-bar">
   <div id="wrapper">
-    <header class="header-fullwidth menu-expand transparent">
+    <header class="header-fullwidth menu-expand">
+    <!-- <header class="header-fullwidth menu-expand transparent"> -->
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
