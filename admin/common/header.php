@@ -19,28 +19,27 @@ if (!isset($_SESSION['id'])) {
   <meta content="DABAR_IMS" name="author" />
 
   <!-- App favicon -->
-  <link rel="shortcut icon" href="../assets/images/favicon.png">
+  <link rel="shortcut icon" href="<?= ASSET_PATH ?>/images/favicon.png">
 
   <!-- Theme Config Js -->
-  <script src="../assets/js/config.js"></script>
+  <script src="<?= ASSET_PATH ?>/js/config.js"></script>
 
   <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 
   <!-- Datatables css -->
-  <link href="../assets/vendor/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-  <link href="../assets/vendor/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-  <link href="../assets/vendor/datatables.net-fixedcolumns-bs5/css/fixedColumns.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-  <link href="../assets/vendor/datatables.net-fixedheader-bs5/css/fixedHeader.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-  <link href="../assets/vendor/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-  <link href="../assets/vendor/datatables.net-select-bs5/css/select.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-
+  <link href="<?= ASSET_PATH ?>/vendor/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+  <link href="<?= ASSET_PATH ?>/vendor/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+  <link href="<?= ASSET_PATH ?>/vendor/datatables.net-fixedcolumns-bs5/css/fixedColumns.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+  <link href="<?= ASSET_PATH ?>/vendor/datatables.net-fixedheader-bs5/css/fixedHeader.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+  <link href="<?= ASSET_PATH ?>/vendor/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+  <link href="<?= ASSET_PATH ?>/vendor/datatables.net-select-bs5/css/select.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" integrity="sha512-+EoPw+Fiwh6eSeRK7zwIKG2MA8i3rV/DGa3tdttQGgWyatG/SkncT53KHQaS5Jh9MNOT3dmFL0FjTY08And/Cw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- App css -->
-  <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
-  <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+  <link href="<?= ASSET_PATH ?>/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
 
   <!-- Icons css -->
-  <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+  <link href="<?= ASSET_PATH ?>/css/icons.min.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -55,20 +54,20 @@ if (!isset($_SESSION['id'])) {
             <!-- Logo light -->
             <a href="#" class="logo-light">
               <span class="logo-lg">
-                <img src="../assets/images/logo-dark.png" alt="logo">
+                <img src="<?= ASSET_PATH ?>/images/logo-dark.png" alt="logo">
               </span>
               <span class="logo-sm">
-                <img src="../assets/images/logo-sm.png" alt="small logo">
+                <img src="<?= ASSET_PATH ?>/images/logo-sm.png" alt="small logo">
               </span>
             </a>
 
             <!-- Logo Dark -->
             <a href="#" class="logo-dark">
               <span class="logo-lg">
-                <img src="../assets/images/logo-dark.png" alt="dark logo">
+                <img src="<?= ASSET_PATH ?>/images/logo-dark.png" alt="dark logo">
               </span>
               <span class="logo-sm">
-                <img src="../assets/images/logo-sm.png" alt="small logo">
+                <img src="<?= ASSET_PATH ?>/images/logo-sm.png" alt="small logo">
               </span>
             </a>
           </div>
@@ -92,7 +91,7 @@ if (!isset($_SESSION['id'])) {
           <li class="dropdown">
             <a class="nav-link dropdown-toggle arrow-none nav-user" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
               <span class="account-user-avatar">
-                <img src="../assets/images/users/avatar-1.jpg" alt="user-image" width="32" class="rounded-circle">
+                <img src="<?= ASSET_PATH ?>/images/users/avatar-1.jpg" alt="user-image" width="32" class="rounded-circle">
               </span>
               <span class="d-lg-block d-none">
                 <h5 class="my-0 fw-normal">
