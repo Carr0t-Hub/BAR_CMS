@@ -3,7 +3,7 @@
   include('../functions/functions.php');
 
 if (isset($_POST['id'])) {
-  $res = getSoById($mysqli, $_POST['id']);
+  $res = getMemoById($mysqli, $_POST['id']);
 ?>
 <form action="../process/laws_issuance/editMemo.php" class="memo" id="saveMemo" method="POST" enctype="multipart/form-data">
   <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
