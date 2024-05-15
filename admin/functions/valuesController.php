@@ -98,15 +98,16 @@ function editValues($mysqli)
       actionPlan = :actionPlan, 
       prayer = :prayer";
     $stmt = $mysqli->prepare($sql);
-    $stmt->execute([
-      'weekNum' => $_POST['weekNum'],
-      'valueTitle' => $_POST['valueTitle'],
-      'valueDescription' => $_POST['valueDescription'],
-      'actionPlan' => $_POST['actionPlan'],
-      'prayer' => $_POST['prayer'],
-      'id' => $_POST['id']
-    ]);
-    return true;
+    $stmt->execute(
+      array(
+        ':weekNum' => $_POST['weekNum'],
+        ':valueTitle' => $_POST['valueTitle'],
+        ':valueDescription' => $_POST['valueDescription'],
+        ':actionPlan' => $_POST['actionPlan'],
+        ':prayer' => $_POST['prayer']
+      )
+    );
+    return "success";
   } catch (PDOException $e) {
     return $e->getMessage();
   }
