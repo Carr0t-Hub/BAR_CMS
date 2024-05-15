@@ -4,7 +4,6 @@ include("../common/sidebar.php");
 
 $data = getPublications($mysqli, 'careers');
 
-
 ?>
 
 <div class="container-fluid">
@@ -41,18 +40,19 @@ $data = getPublications($mysqli, 'careers');
         <thead>
           <tr>
             <td class="text-center">Title</td>
+            <td class="text-center">Attachment</td>
             <td class="text-center">Date Posted</td>
             <td class="text-center">Post Type</td>
             <td class="text-center">Action</td>
           </tr>
         </thead>
         <tbody>
-          <?php
-          foreach ($data as $key => $value) {
-
+          <?php foreach ($data as $key => $value) :
+            $file = $value['fileName'] . '_' . $value['size'] . $value['attachment'] . '.' . $value['fileExtension'];
           ?>
             <tr>
               <td><?= $value['title'] ?></td>
+              <td><a href="../storage/careers/<?= $file ?>"><?= $value['fileName'] ?></a></td>
               <td>
                 <?= date('M d, Y', strtotime($value['datePosted'])) ?>
               </td>
@@ -63,9 +63,7 @@ $data = getPublications($mysqli, 'careers');
                 </div>
               </td>
             </tr>
-
-          <?php
-          } ?>
+          <?php endforeach; ?>
         </tbody>
       </table>
 
