@@ -889,13 +889,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-3">
-                <div class="form-floating">
-                  <input class="form-control" type="file" name="attachment" id="attachment" placeholder="File Attachment" accept="application/pdf" required>
-                  <label for="attachment" class="form-label">File Attachment</label>
-                </div>
-              </div>
-              <div class="col-6">
+              <div class="col-9">
                 <div class="form-floating">
                   <input class="form-control" type="text" name="description" id="description" placeholder="Description" required>
                   <label for="description" class="form-label">Description</label>
@@ -947,13 +941,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-3">
-                <div class="form-floating">
-                  <input class="form-control" type="file" name="attachment" id="attachment" placeholder="File Attachment" accept="application/pdf" required>
-                  <label for="attachment" class="form-label">File Attachment</label>
-                </div>
-              </div>
-              <div class="col-6">
+              <div class="col-9">
                 <div class="form-floating">
                   <input class="form-control" type="text" name="description" id="description" placeholder="Description" required>
                   <label for="description" class="form-label">Description</label>
@@ -1106,6 +1094,36 @@
               <div id="sliderPreview"></div>
               <input type="file" name="attachment" class="form-control" id="sliderInput" accept="image/jpeg, image/png" required>
             </div>
+            <div class="col-9">
+              <div class="form-floating">
+                <textarea class="form-control" name="description" id="description" style="height: 300px;"></textarea>
+                <label for="middleName" class="form-control-label">Description</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal"><i class="ri-close-line"></i>Close</button>
+          <button type="submit" class="btn btn-lg btn-success"><i class="ri-save-line"></i> Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<!-- Menu Management -->
+<form method="POST" action="../process/page_layout/addMenu.php" enctype="multipart/form-data">
+  <div class="modal fade" id="addMenu" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="Menu" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-light">
+          <h3 class="modal-title">New Menu</h3>
+          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"><i class="ri-close-line"></i></span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row mb-2">
             <div class="col-9">
               <div class="form-floating">
                 <textarea class="form-control" name="description" id="description" style="height: 300px;"></textarea>
