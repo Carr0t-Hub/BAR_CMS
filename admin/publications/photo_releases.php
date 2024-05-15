@@ -11,6 +11,7 @@ $data = $result['photoreleases'];
 
 
 ?>
+
 <style>
   .disabledd {
     opacity: 0.5;

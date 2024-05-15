@@ -4,9 +4,9 @@ function addValues($mysqli)
 {
   try {
     $sql = "INSERT INTO `value_focus`
-      (`weekNum`, `valueTitle`, `valueDescription`, `actionPlan`, `declaration`, `prayer`)
+      (`weekNum`, `valueTitle`, `valueDescription`, `actionPlan`, `prayer`)
         VALUES 
-      (:weekNum, :valueTitle, :valueDescription, :actionPlan, :declaration, :prayer)";
+      (:weekNum, :valueTitle, :valueDescription, :actionPlan, :prayer)";
     $stmt = $mysqli->prepare($sql);
     $stmt->execute(
       array(
@@ -14,7 +14,6 @@ function addValues($mysqli)
         ':valueTitle' => $_POST['valueTitle'],
         ':valueDescription' => $_POST['valueDescription'],
         ':actionPlan' => $_POST['actionPlan'],
-        ':declaration' => $_POST['declaration'],
         ':prayer' => $_POST['prayer']
       )
     );
@@ -82,7 +81,7 @@ function getValuesById($mysqli, $id)
     $stmt = $mysqli->prepare($sql);
     $stmt->execute([
       'id' => $id
-    ]);
+      ]);
     return $stmt->fetch();
   } catch (PDOException $e) {
     return $e->getMessage();

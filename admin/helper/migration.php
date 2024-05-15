@@ -135,10 +135,6 @@ $migration->create('value_focus', function (Blueprint $table) {
     $table->timestamps();
 });
 
-$migration->alter('value_focus', function (Blueprint $table) {
-    $table->addColumn('declaration', 'text', 'actionPlan');
-});
-
 $migration->create('laws_issuances', function (Blueprint $table) {
     $table->id();
     $table->text('codeNo');
