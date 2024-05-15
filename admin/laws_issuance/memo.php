@@ -41,16 +41,20 @@
             <tr>
               <th class="text-center text-uppercase">Code No.</th>
               <th class="text-center text-uppercase">Title</th>
+              <th class="text-center text-uppercase">Attachment</th>
               <th class="text-center text-uppercase">Description</th>
               <th class="text-center text-uppercase">Date</th>
               <th class="text-center text-uppercase">Action</th>
             </tr>
           </thead>
           <tbody>
-            <?php foreach ($res as $key => $value) : ?>
+            <?php foreach ($res as $key => $value) :
+              $img = $value['fileName'] . '_' . $value['size'] . $value['attachment'] . '.' . $value['fileExtension'];
+            ?>
               <tr>
                 <td><?php echo strtoupper($value['codeNo']); ?></td>
                 <td><?php echo strtoupper($value['title']); ?></td>
+                <td><a href="../storage/laws/<?= $img ?>"><?= $value['fileName'] ?></a></td>
                 <td><?php echo strtoupper($value['description']); ?></td>
                 <td><?php echo date_format(date_create($value['datePosted']), "F d, Y"); ?></td>
                 <td>
@@ -68,7 +72,7 @@
 </div>
 
 <!-- <form id="editform"> -->
-<div class="modal fade" id="editmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="memo" aria-hidden="true">
+<div class="modal fade" id="editModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="memo" aria-hidden="true">
 </div>
 <!-- </form> -->
 
@@ -84,8 +88,8 @@
           id: id
         },
         success: function(data) {
-          $('#editmodal').html(data);
-          $('#editmodal').modal('show');
+          $('#editModal').html(data);
+          $('#editModal').modal('show');
         }
       });
     });

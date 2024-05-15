@@ -18,6 +18,8 @@ if (!isset($_SESSION['id'])) {
   <meta content="A fully responsive admin theme which can be used to build CRM, CMS,ERP etc." name="description" />
   <meta content="DABAR_IMS" name="author" />
 
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  
   <!-- App favicon -->
   <link rel="shortcut icon" href="../assets/images/favicon.png">
 

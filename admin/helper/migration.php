@@ -146,6 +146,10 @@ $migration->create('laws_issuances', function (Blueprint $table) {
     $table->timestamps();
 });
 
+$migration->alter('laws_issuances', function (Blueprint $table) {
+    $table->addNullColumn('attachment', 'integer', 'title');
+});
+
 $migration->create('authors', function (Blueprint $table) {
     $table->id();
     $table->string('firstName', 100);
