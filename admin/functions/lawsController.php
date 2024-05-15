@@ -67,11 +67,11 @@ function getMemo($mysqli, $type)
 function getMemoById($mysqli, $id)
 {
   try {
-    // $sql = "SELECT laws.*, att.id as attachment_id, att.size, att.fileName, att.fileExtension 
-    //         FROM laws_issuances as laws
-    //         JOIN attachments as att ON laws.attachment = att.id
-    //         WHERE laws.id = :id";
-    $sql = "SELECT * FROM laws_issuances WHERE id = :id";
+    $sql = "SELECT laws.*, att.id as attachment_id, att.size, att.fileName, att.fileExtension 
+            FROM laws_issuances as laws
+            JOIN attachments as att ON laws.attachment = att.id
+            WHERE laws.id = :id";
+    // $sql = "SELECT * FROM laws_issuances WHERE id = :id";
     $stmt = $mysqli->prepare($sql);
     $stmt->execute([
       'id' => $id

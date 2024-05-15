@@ -4,6 +4,8 @@
 
 if (isset($_POST['id'])) {
   $res = getMemoById($mysqli, $_POST['id']);
+
+  $img = $res['fileName'] . '_' . $res['size'] . $res['attachment'] . '.' . $res['fileExtension'];
 ?>
 <form action="../process/laws_issuance/editMemo.php" class="memo" id="saveMemo" method="POST" enctype="multipart/form-data">
   <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
@@ -32,6 +34,13 @@ if (isset($_POST['id'])) {
             </div>
           </div>
           <div class="row">
+            <div class="">
+              <div class="form-floating">
+                <input class="form-control" type="file" name="attachment" id="attachment" placeholder="File Attachment" accept="application/pdf" hidden>
+                <input type="hidden" name="attachment_id" value="<?= $res['attachment'] ?>">
+                <label for="attachment" class="form-label" hidden>File Attachment</label>
+              </div>
+            </div>
             <div class="col-9">
               <div class="form-floating">
                 <input class="form-control" type="text" name="description" id="description" placeholder="Description" value="<?= $res['description'] ?>">

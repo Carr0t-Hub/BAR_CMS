@@ -2,7 +2,7 @@
   include('../../functions/functions.php');
 
 if (isset($_SESSION['id'])) {
-  if (isset($_POST['type'])) {
+  if (isset($_POST['codeNo'])) {
     $result = editMemo($mysqli);
   if ($result) {
     $_SESSION['success'] = "Successfully updated";

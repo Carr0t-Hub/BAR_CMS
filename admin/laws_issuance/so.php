@@ -54,14 +54,12 @@
               <tr>
                 <td><?php echo strtoupper($value['codeNo']); ?></td>
                 <td><?php echo strtoupper($value['title']); ?></td>
-                <td style="text-align: center;">
-                  <a href="../storage/laws/<?= $img ?>"><?= $value['fileName'] ?></a>
-                </td>
+                <td><a href="../storage/laws/<?= $img ?>"><?= $value['fileName'] ?></a></td>
                 <td><?php echo strtoupper($value['description']); ?></td>
                 <td><?php echo date_format(date_create($value['datePosted']), "F d, Y"); ?></td>
                 <td>
                   <div class="d-grid gap-2">
-                    <button class="btn btn-primary memoItem" type="button" name="editData" id="editData" data-id="<?= $value['id'] ?>"><i class="ri-edit-2-line"></i> Edit</button>
+                    <button class="btn btn-primary soItem" type="button" name="editData" id="editData" data-id="<?= $value['id'] ?>"><i class="ri-edit-2-line"></i> Edit</button>
                   </div>
                 </td>
               </tr>
