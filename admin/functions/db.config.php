@@ -1,9 +1,16 @@
 <?php
 
+//Local Connection
 $host = 'localhost';
 $db = 'bar_cms';
 $username = 'root';
 $password = '';
+
+//Cloud Connection
+// $host = 'localhost';
+// $db = 'bar_cms';
+// $username = 'root';
+// $password = 'tAuZH@DWcvK]#:/S>Th.J!';
 
 
 
