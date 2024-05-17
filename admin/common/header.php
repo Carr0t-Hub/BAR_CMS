@@ -19,7 +19,7 @@ if (!isset($_SESSION['id'])) {
   <meta content="DABAR_IMS" name="author" />
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  
+
   <!-- App favicon -->
   <link rel="shortcut icon" href="../assets/images/favicon.png">
 
@@ -39,6 +39,8 @@ if (!isset($_SESSION['id'])) {
 
   <!-- App css -->
   <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
+  <link href="../assets/css/magnific-popup.css" rel="stylesheet" type="text/css" id="app-style" />
+
   <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
 
   <!-- Icons css -->

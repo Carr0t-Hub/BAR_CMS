@@ -11,6 +11,7 @@ $data = $result['photoreleases'];
 
 
 ?>
+<link href="../assets/css/magnific-popup.css" rel="stylesheet" type="text/css" id="app-style" />
 
 <style>
   .disabledd {
@@ -126,8 +127,6 @@ $data = $result['photoreleases'];
       }
       ?>
       <br>
-
-
       <div class="d-flex flex-wrap gap-2">
         <?php
 
@@ -147,31 +146,44 @@ $data = $result['photoreleases'];
           }
 
         ?>
-          <div class=" p-4">
+          <div class="p-4">
 
-            <div class="main-container">
-              <div class="stack-images mb-3">
-                <?php if (isset($image[2])) { ?>
+            <div class="pr-gallery">
+              <?php
 
-                  <div class="image shadow img1" style="rotate: 5deg; right: -25px; top: -25px;">
-                    <img src="imagecompressor.php?image=<?= urlencode($thirdImage) ?>" loading="lazy" class="w-100 h-100 primg" style="object-fit: cover" alt="">
+              foreach ($image as $key1 => $img) {
+                $img = $dir . $img['fileName'] . '_' . $img['size'] . $img['id'] . '.' . $img['fileExtension'];
+              ?>
+                <a href="<?= $img ?>" class="galleryItem" title="<?= $value['title'] ?>" data-group="<?= $key + 1 ?>">
+                </a>
+              <?php
+              }
+
+              ?>
+              <div class="main-container">
+                <div class="stack-images mb-3">
+                  <?php if (isset($image[2])) { ?>
+
+                    <div class="image shadow img1" style="rotate: 5deg; right: -25px; top: -25px;">
+                      <img src="imagecompressor.php?image=<?= urlencode($thirdImage) ?>" loading="lazy" class="w-100 h-100 primg" style="object-fit: cover" alt="">
+                    </div>
+                  <?php } ?>
+
+                  <?php if (isset($image[1])) { ?>
+                    <div class="image shadow img2" style="rotate: 2deg; right: -15px;top: -15px">
+                      <img src="imagecompressor.php?image=<?= urlencode($secondImage) ?>" loading="lazy" class="w-100 h-100 primg" style="object-fit: cover" alt="">
+                    </div>
+                  <?php } ?>
+
+                  <div class="image shadow img3">
+                    <img src="imagecompressor.php?image=<?= urlencode($firstImage) ?>" loading="lazy" class="w-100 h-100 primg" style="object-fit: cover" alt="">
                   </div>
-                <?php } ?>
 
-                <?php if (isset($image[1])) { ?>
-                  <div class="image shadow img2" style="rotate: 2deg; right: -15px;top: -15px">
-                    <img src="imagecompressor.php?image=<?= urlencode($secondImage) ?>" loading="lazy" class="w-100 h-100 primg" style="object-fit: cover" alt="">
-                  </div>
-                <?php } ?>
 
-                <div class="image shadow img3">
-                  <img src="imagecompressor.php?image=<?= urlencode($firstImage) ?>" loading="lazy" class="w-100 h-100 primg" style="object-fit: cover" alt="">
                 </div>
-
-
-              </div>
-              <div class="" style="width: 200px">
-                <h4 class="line-clamp-2 "><?= $value['title'] ?></h4>
+                <div class="" style="width: 200px">
+                  <h4 class="line-clamp-2 "><?= $value['title'] ?></h4>
+                </div>
               </div>
             </div>
           </div>
@@ -307,6 +319,42 @@ $data = $result['photoreleases'];
     </div>
   </div>
 </div>
+<script src="../assets/js/jquery.magnific-popup.js"></script>
+
+<script>
+  $(document).ready(function() {
+
+
+    $('.pr-gallery').click(function() {
+      var groups = [];
+      $(this).find('.galleryItem').each(function() {
+        groups.push({
+          src: $(this).attr('href'),
+          type: 'image',
+          title: $(this).attr('title')
+        });
+      });
+
+      //use magnific popup to display the images and title
+
+      $.magnificPopup.open({
+        items: groups,
+        gallery: {
+          enabled: true,
+          titleSrc: 'title'
+
+        },
+        type: 'image',
+
+
+      });
+
+
+    });
+
+
+  })
+</script>
 
 
 <script>

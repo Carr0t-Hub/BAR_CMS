@@ -50,6 +50,7 @@
 
   <!-- Datatable Demo Aapp js -->
   <script src="../assets/js/pages/datatable.init.js"></script>
+  <script src="../assets/js/jquery.magnific-popup.js"></script>
 
   <!-- Table Editable plugin-->
   <script src="../assets/vendor/jquery-tabledit/jquery.tabledit.min.js"></script>
