@@ -77,7 +77,7 @@ if (isset($_SESSION['id'])) {
                 </div>
               </div>
               <div class="col-lg-6 d-none d-lg-block">
-                <img src="../admin/assets/images/auth-img.jpg" alt="" class="img-fluid rounded h-100">
+                <img src="../admin/assets/images/BAR_Building.jpg" alt="" class="img-fluid rounded h-100">
               </div>
             </div>
           </div>
