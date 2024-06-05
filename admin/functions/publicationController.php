@@ -269,3 +269,29 @@ function editNewsEventArticle($mysqli)
         return $e->getMessage();
     }
 }
+
+function getAuthors($mysqli)
+{
+    try {
+        $sql = "SELECT * FROM authors";
+        $stmt = $mysqli->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    } catch (PDOException $e) {
+        return $e->getMessage();
+    }
+}
+
+function getAuthorsById($mysqli, $id)
+{
+    try {
+        $sql = "SELECT * FROM authors WHERE id = :id";
+        $stmt = $mysqli->prepare($sql);
+        $stmt->execute([
+            'id' => $id
+        ]);
+        return $stmt->fetch();
+    } catch (PDOException $e) {
+        return $e->getMessage();
+    }
+}

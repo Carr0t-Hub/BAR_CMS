@@ -34,10 +34,12 @@
               </div>
               <div class="col-4">
                 <div class="form-floating">
+                  <?php $res = getAuthors($mysqli); ?>
                   <select name="author" id="author" class="form-control">
                     <option selected>-- Please Choose --</option>
-                    <option value="John Doe">John Doe</option>
-                    <option value="Jane Smith">Jane Smith</option>
+                    <?php foreach($res as $val) : ?>
+                      <option value="<?= $val['firstName']." ".$val['middleName']." ".$val['lastName'] ?>"><?= $val['firstName']." ".$val['middleName']." ".$val['lastName'] ?></option>
+                    <?php endforeach ?>
                   </select>
                   <label for="title" name="title">Author</label>
                 </div>
@@ -174,10 +176,12 @@
               </div>
               <div class="col-4">
                 <div class="form-floating">
+                  <?php $res = getAuthors($mysqli); ?>
                   <select name="author" id="author" class="form-control">
-                    <option selected disabled>-- Please Choose --</option>
-                    <option value="John Doe">John Doe</option>
-                    <option value="Jane Smith">Jane Smith</option>
+                    <option selected>-- Please Choose --</option>
+                    <?php foreach($res as $val) : ?>
+                      <option value="<?= $val['firstName']." ".$val['middleName']." ".$val['lastName'] ?>"><?= $val['firstName']." ".$val['middleName']." ".$val['lastName'] ?></option>
+                    <?php endforeach ?>
                   </select>
                   <label for="title" name="title">Author</label>
                 </div>
