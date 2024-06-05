@@ -37,8 +37,8 @@
                   <?php $res = getAuthors($mysqli); ?>
                   <select name="author" id="author" class="form-control">
                     <option selected>-- Please Choose --</option>
-                    <?php foreach($res as $val) : ?>
-                      <option value="<?= $val['firstName']." ".$val['middleName']." ".$val['lastName'] ?>"><?= $val['firstName']." ".$val['middleName']." ".$val['lastName'] ?></option>
+                    <?php foreach ($res as $val) : ?>
+                      <option value="<?= $val['firstName'] . " " . $val['middleName'] . " " . $val['lastName'] ?>"><?= $val['firstName'] . " " . $val['middleName'] . " " . $val['lastName'] ?></option>
                     <?php endforeach ?>
                   </select>
                   <label for="title" name="title">Author</label>
@@ -179,8 +179,8 @@
                   <?php $res = getAuthors($mysqli); ?>
                   <select name="author" id="author" class="form-control">
                     <option selected>-- Please Choose --</option>
-                    <?php foreach($res as $val) : ?>
-                      <option value="<?= $val['firstName']." ".$val['middleName']." ".$val['lastName'] ?>"><?= $val['firstName']." ".$val['middleName']." ".$val['lastName'] ?></option>
+                    <?php foreach ($res as $val) : ?>
+                      <option value="<?= $val['firstName'] . " " . $val['middleName'] . " " . $val['lastName'] ?>"><?= $val['firstName'] . " " . $val['middleName'] . " " . $val['lastName'] ?></option>
                     <?php endforeach ?>
                   </select>
                   <label for="title" name="title">Author</label>

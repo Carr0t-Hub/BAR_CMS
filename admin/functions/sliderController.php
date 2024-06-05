@@ -30,7 +30,7 @@ function viewSlider($mysqli)
 {
   $sql = "SELECT sld.*, att.id as attachment_id, att.size, att.fileName, att.fileExtension 
         FROM sliders as sld
-        JOIN attachments as att ON sld.attachment = att.id";
+        LEFT JOIN attachments as att ON sld.attachment = att.id";
   $temp = array();
   $stmt = $mysqli->prepare($sql);
   $stmt->execute();
@@ -60,7 +60,7 @@ function getSliderById($mysqli, $id)
   try {
     $sql = "SELECT sld.*, att.id as attachment_id, att.size, att.fileName, att.fileExtension 
             FROM sliders as sld
-            JOIN attachments as att ON sld.attachment = att.id
+            LEFT JOIN attachments as att ON sld.attachment = att.id
             WHERE sld.id = :id";
     $stmt = $mysqli->prepare($sql);
     $stmt->execute([
@@ -105,7 +105,7 @@ function getActiveSlider($mysqli)
   try {
 
     $sql = "SELECT sliders.*, attachments.id as attachment, attachments.fileName, attachments.size, attachments.fileExtension FROM sliders
-            JOIN attachments ON sliders.attachment = attachments.id
+            LEFT JOIN attachments ON sliders.attachment = attachments.id
             WHERE isDeleted = 0";
 
 

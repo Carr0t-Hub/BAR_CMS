@@ -36,7 +36,7 @@ function viewMemo($mysqli)
 {
   $sql = "SELECT laws.*, att.id as attachment_id, att.size, att.fileName, att.fileExtension 
         FROM laws_issuances as laws
-        JOIN attachments as att ON laws.attachment = att.id
+        LEFT JOIN attachments as att ON laws.attachment = att.id
         WHERE type = 'Memorandum'";
   $temp = array();
   $stmt = $mysqli->prepare($sql);
@@ -51,7 +51,7 @@ function getMemo($mysqli, $type)
 {
   try {
     $sql = "SELECT laws.*, att.id as attachment_id, att.size, att.fileName, att.fileExtension FROM laws_issuances as laws
-        JOIN attachments as att ON laws.attachment = att.id
+        LEFT JOIN attachments as att ON laws.attachment = att.id
         WHERE type = :type ORDER BY id DESC";
     // $sql = "SELECT * FROM laws_issuances WHERE type = :type AND isDeleted = 0 ORDER BY id DESC";
     $stmt = $mysqli->prepare($sql);
@@ -69,13 +69,13 @@ function getMemoById($mysqli, $id)
   try {
     $sql = "SELECT laws.*, att.id as attachment_id, att.size, att.fileName, att.fileExtension 
             FROM laws_issuances as laws
-            JOIN attachments as att ON laws.attachment = att.id
+            LEFT JOIN attachments as att ON laws.attachment = att.id
             WHERE laws.id = :id";
     // $sql = "SELECT * FROM laws_issuances WHERE id = :id";
     $stmt = $mysqli->prepare($sql);
     $stmt->execute([
       'id' => $id
-      ]);
+    ]);
     return $stmt->fetch();
   } catch (PDOException $e) {
     return $e->getMessage();
@@ -128,17 +128,17 @@ function addSo($mysqli)
         VALUES 
       (:codeNo, :title, :attachment, :description, :datePosted, :type, :updatedBy)";
     $stmt = $mysqli->prepare($sql);
-      $stmt->execute(
-        array(
-          ':codeNo' => $_POST['codeNo'],
-          ':title' => $_POST['title'],
-          ':attachment' => $attachment_id,
-          ':description' => $_POST['description'],
-          ':datePosted' => $_POST['datePosted'],
-          ':type' => "SO",
-          ':updatedBy' => $_SESSION['name']
-        )
-      );
+    $stmt->execute(
+      array(
+        ':codeNo' => $_POST['codeNo'],
+        ':title' => $_POST['title'],
+        ':attachment' => $attachment_id,
+        ':description' => $_POST['description'],
+        ':datePosted' => $_POST['datePosted'],
+        ':type' => "SO",
+        ':updatedBy' => $_SESSION['name']
+      )
+    );
     return "success";
   } catch (PDOException $e) {
     return $e->getMessage();
@@ -148,7 +148,7 @@ function addSo($mysqli)
 function viewSo($mysqli)
 {
   $sql = "SELECT laws.*, att.id as attachment_id, att.size, att.fileName, att.fileExtension FROM laws_issuances as laws
-        JOIN attachments as att ON laws.attachment = att.id
+        LEFT JOIN attachments as att ON laws.attachment = att.id
         WHERE type = 'SO'";
   $temp = array();
   $stmt = $mysqli->prepare($sql);
@@ -163,7 +163,7 @@ function getSo($mysqli, $type)
 {
   try {
     $sql = "SELECT laws.*, att.id as attachment_id, att.size, att.fileName, att.fileExtension FROM laws_issuances as laws
-        JOIN attachments as att ON laws.attachment = att.id
+        LEFT JOIN attachments as att ON laws.attachment = att.id
         WHERE type = :type AND laws.isDeleted = 0 ORDER BY id DESC";
     $stmt = $mysqli->prepare($sql);
     $stmt->execute([
@@ -179,12 +179,12 @@ function getSoById($mysqli, $id)
 {
   try {
     $sql = "SELECT laws.*, att.id as attachment_id, att.size, att.fileName, att.fileExtension FROM laws_issuances as laws
-            JOIN attachments as att ON laws.attachment = att.id
+            LEFT JOIN attachments as att ON laws.attachment = att.id
             WHERE laws.id = :id";
     $stmt = $mysqli->prepare($sql);
     $stmt->execute([
       'id' => $id
-      ]);
+    ]);
     return $stmt->fetch();
   } catch (PDOException $e) {
     return $e->getMessage();
@@ -219,4 +219,3 @@ function editSo($mysqli)
     return $e->getMessage();
   }
 }
-?>

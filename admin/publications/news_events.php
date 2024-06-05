@@ -36,6 +36,7 @@ $data = getPublications($mysqli, 'newsevent');
       }
       ?>
       <br>
+      <?= json_encode($data) ?>
 
       <table id="pubTable" class=" table table-bordered table-hover table-striped">
         <thead>

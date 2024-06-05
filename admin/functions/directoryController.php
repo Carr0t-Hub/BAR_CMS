@@ -70,7 +70,7 @@ function updateDirectory($mysqli)
 function viewDirectory($mysqli)
 {
   $sql = "SELECT dir.*, att.id as attachment_id, att.size, att.fileName, att.fileExtension FROM directories as dir
-        JOIN attachments as att ON dir.attachment = att.id
+        LEFT JOIN attachments as att ON dir.attachment = att.id
         WHERE dir.isDeleted = 0";
   $temp = array();
   $stmt = $mysqli->prepare($sql);
@@ -100,7 +100,7 @@ function getDirectoryById($mysqli, $id)
   try {
     $sql = "SELECT dir.*, att.id as attachment_id, att.size, att.fileName, att.fileExtension 
             FROM directories as dir
-            JOIN attachments as att ON dir.attachment = att.id
+            LEFT JOIN attachments as att ON dir.attachment = att.id
             WHERE dir.id = :id";
     $stmt = $mysqli->prepare($sql);
     $stmt->execute([

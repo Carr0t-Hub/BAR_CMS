@@ -109,7 +109,7 @@ function getPublications($mysqli, $type = null)
         if ($type == null) {
             $sql = "SELECT pubs.*, att.id as attachment_id, att.size, att.fileName, att.fileExtension 
             FROM publications as pubs
-            JOIN attachments as att ON pubs.attachment = att.id
+            LEFT JOIN attachments as att ON pubs.attachment = att.id
             WHERE pubs.isDeleted = 0 ORDER BY id DESC";
 
             $stmt = $mysqli->prepare($sql);
@@ -117,7 +117,7 @@ function getPublications($mysqli, $type = null)
         } else {
             $sql = "SELECT pubs.*, att.id as attachment_id, att.size, att.fileName, att.fileExtension 
             FROM publications as pubs
-            JOIN attachments as att ON pubs.attachment = att.id
+            LEFT JOIN attachments as att ON pubs.attachment = att.id
             WHERE pubs.type = :type AND pubs.isDeleted = 0 ORDER BY id DESC";
             $stmt = $mysqli->prepare($sql);
 
