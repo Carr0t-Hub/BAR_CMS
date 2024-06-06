@@ -210,7 +210,6 @@
 
 <!-- Career Opportunities -->
 <form method="POST" action="../process/publication/addCareers.php" enctype="multipart/form-data">
-
   <div class="modal fade" id="career" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="career" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
       <div class="modal-content">

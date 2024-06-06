@@ -54,7 +54,7 @@
               <tr>
                 <td><?php echo strtoupper($value['codeNo']); ?></td>
                 <td><?php echo strtoupper($value['title']); ?></td>
-                <td><a href="../storage/laws/<?= $img ?>"><?= $value['fileName'] ?></a></td>
+                <td><a href="../storage/files/laws/<?= $img ?>"><?= $value['fileName'] ?></a></td>
                 <td><?php echo strtoupper($value['description']); ?></td>
                 <td><?php echo date_format(date_create($value['datePosted']), "F d, Y"); ?></td>
                 <td>

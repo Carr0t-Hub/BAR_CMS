@@ -134,7 +134,7 @@ $data = $result['photoreleases'];
 
           if (isset($value['images'])) {
             $image = $value['images'];
-            $dir = '../storage/photo_releases/';
+            $dir = '../storage/files/photo_releases/';
 
             $firstImage = $dir . $image[0]['fileName'] . '_' . $image[0]['size'] . $image[0]['id'] . '.' . $image[0]['fileExtension'];
 
