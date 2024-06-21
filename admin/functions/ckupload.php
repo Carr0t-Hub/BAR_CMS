@@ -5,7 +5,7 @@ include('../helper/Attachment.php');
 //uuid
 
 $id = uniqid();
-$path = '../storage/images/';
+$path = '../storage/files/images/';
 
 $file  = Attachment::Upload($_FILES['upload'], STORAGE_PATH, 'images', $id);
 

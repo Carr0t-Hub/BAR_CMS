@@ -1,4 +1,4 @@
-<?php include("../functions/functions.php");?>
+<?php include("../functions/functions.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +40,7 @@
 </head>
 
 <body>
-<?php $res = viewDirectory($mysqli); ?>
+  <?php $res = viewDirectory($mysqli); ?>
   <div class="row mt-3">
     <div class="col-lg-12">
       <div class="table-responsive">
@@ -61,9 +61,9 @@
             ?>
               <tr>
                 <td>
-                  <img src="../storage/directories/<?= $img ?>" alt="" class="border" style="height: 128px; width: 128px;object-fit: cover">
+                  <img src="../storage/files/directories/<?= $img ?>" alt="" class="border" style="height: 128px; width: 128px;object-fit: cover">
                 </td>
-                <td><?php echo strtoupper($value['firstName'] . " " .$value['middleName']. " " . $value['lastName']); ?></td>
+                <td><?php echo strtoupper($value['firstName'] . " " . $value['middleName'] . " " . $value['lastName']); ?></td>
                 <td>
                   <span>
                     <?php echo strtoupper($value['division']); ?>
@@ -82,4 +82,4 @@
       </div>
     </div>
   </div>
-</div>
+  </div>

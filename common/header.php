@@ -43,7 +43,7 @@ include($path . "/functions/functions.php");
 <body class="has-menu-bar">
   <div id="wrapper">
     <header class="header-fullwidth menu-expand">
-    <!-- <header class="header-fullwidth menu-expand transparent"> -->
+      <!-- <header class="header-fullwidth menu-expand transparent"> -->
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
@@ -62,9 +62,9 @@ include($path . "/functions/functions.php");
                   <li>
                     <a href="#">About</a>
                     <ul>
-                      <li><a href="<?= $rootpath ?>/directors_message.php">Director's Message</a></li>
-                      <li><a href="<?= $rootpath ?>/mandates.php">Mission, Vision & Mandates</a></li>
-                      <li><a href="#">Directory of Officials</a></li>
+                      <li><a href="<?= $rootpath ?>/about/directors_message.php">Director's Message</a></li>
+                      <li><a href="<?= $rootpath ?>/about/mandates.php">Mission, Vision & Mandates</a></li>
+                      <li><a href="<?= $rootpath ?>/about/directory_of_officials.php">Directory of Officials</a></li>
                       <li><a href="#">Organizational Chart</a></li>
                     </ul>
                   </li>

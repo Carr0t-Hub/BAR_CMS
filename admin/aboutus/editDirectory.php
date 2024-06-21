@@ -23,7 +23,7 @@ if (isset($_POST['id'])) {
             <div class="row">
               <div class="col-3">
                 <div id="imagePreview">
-                  <img src="../storage/directories/<?= $img ?>" class="preview-image" alt="Profile Picture">
+                  <img src="../storage/files/directories/<?= $img ?>" class="preview-image" alt="Profile Picture">
                 </div>
                 <input type="file" name="attachment" class="form-control" id="imageInput" accept="image/*">
                 <input type="hidden" name="attachment_id" value="<?= $res['attachment'] ?>">

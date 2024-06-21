@@ -35,7 +35,7 @@ $result = getPhotoReleases($mysqli, $pageno, 10);
         <?php
         foreach ($result['photoreleases'] as $key => $value) {
           $image = $value['images'];
-          $dir = 'admin/storage/photo_releases/';
+          $dir = 'admin/storage/files/photo_releases/';
 
         ?>
 
