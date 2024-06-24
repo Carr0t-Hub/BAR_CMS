@@ -1,7 +1,6 @@
 <?php
-$title = "Directory of Officials";
+$title = "Organizational Chart";
 ob_start();
-
 ?>
 
 HELLO WORLD
