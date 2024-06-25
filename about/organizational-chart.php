@@ -3,7 +3,7 @@ $title = "Organizational Chart";
 ob_start();
 ?>
 
-HELLO WORLD
+
 
 
 <?php

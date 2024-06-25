@@ -1,8 +1,10 @@
-<?php 
-  include("common/header.php"); 
-  
-  $pageno = isset($_GET['pageno']) ? $_GET['pageno'] : 1;
-  $result = getPublicationsWithPage($mysqli, $pageno);  
+<?php
+require_once("admin/functions/functions.php");
+
+include("common/header.php");
+
+$pageno = isset($_GET['pageno']) ? $_GET['pageno'] : 1;
+$result = getPublicationsWithPage($mysqli, $pageno);
 
 ?>
 
@@ -69,7 +71,8 @@
     transition: all 0.4s ease-in-out;
   }
 
-  .slide_btn.active, .slide_btn:hover {
+  .slide_btn.active,
+  .slide_btn:hover {
     color: #428CC6;
     cursor: pointer;
   }
@@ -78,6 +81,7 @@
     .previous_btn {
       left: 50px;
     }
+
     .next_btn {
       right: 50px;
     }
@@ -85,221 +89,221 @@
 </style>
 
 <!-- Video Slider -->
-  <section class="no-top no-bottom jarallax vertical-center" data-video-src="mp4:video/BAR_AVP.mp4"></section>
+<section class="no-top no-bottom jarallax vertical-center" data-video-src="mp4:video/BAR_AVP.mp4"></section>
 
 <!-- Image Slider -->
-  <section class="jarallax">
-    <img src="images/background/4.jpg" class="jarallax-img" alt="">
-    <div class="container">
-      <div class="row gx-4">
-        <div class="slider">
-          <div class="slide_viewer">
-            <div class="slide_group">
-              <div class="slide">
-              </div>
-              <div class="slide">
-              </div>
-              <div class="slide">
-              </div>
-              <div class="slide">
-              </div>
+<section class="jarallax">
+  <img src="images/background/4.jpg" class="jarallax-img" alt="">
+  <div class="container">
+    <div class="row gx-4">
+      <div class="slider">
+        <div class="slide_viewer">
+          <div class="slide_group">
+            <div class="slide">
+            </div>
+            <div class="slide">
+            </div>
+            <div class="slide">
+            </div>
+            <div class="slide">
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
 <!-- Feature Links -->
-  <div class="no-top no-bottom bg-color text-light">
-    <div class="container-fluid">
-      <div class="row g-0">
-        <div class="col-md-4 p-3" data-bgcolor="rgba(0, 0, 0, .2)">
-          <div class="info-box padding20">
-            <i class="icon_clock_alt"></i>
-            <div class="info-box_text">
-              <div class="info-box_title">Opening Times</div>
-              <div class="info-box_subtite">Monday - Friday: 09:00 - 18:00</div>
-            </div>
+<div class="no-top no-bottom bg-color text-light">
+  <div class="container-fluid">
+    <div class="row g-0">
+      <div class="col-md-4 p-3" data-bgcolor="rgba(0, 0, 0, .2)">
+        <div class="info-box padding20">
+          <i class="icon_clock_alt"></i>
+          <div class="info-box_text">
+            <div class="info-box_title">Opening Times</div>
+            <div class="info-box_subtite">Monday - Friday: 09:00 - 18:00</div>
           </div>
         </div>
-
-        <div class="col-md-4 p-3" data-bgcolor="rgba(0, 0, 0, .4)">
-          <div class="info-box padding20">
-            <i class="icon_house_alt"></i>
-            <div class="info-box_text">
-              <div class="info-box_title">Our Location</div>
-              <div class="info-box_subtite">100 S Main St, Los Angeles, CA</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 p-3" data-bgcolor="rgba(0, 0, 0, .6)">
-          <div class="info-box padding20">
-            <i class="icon_headphones"></i>
-            <div class="info-box_text">
-              <div class="info-box_title">Customer Support</div>
-              <div class="info-box_subtite">+208 333 9296</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="clearfix"></div>
       </div>
+
+      <div class="col-md-4 p-3" data-bgcolor="rgba(0, 0, 0, .4)">
+        <div class="info-box padding20">
+          <i class="icon_house_alt"></i>
+          <div class="info-box_text">
+            <div class="info-box_title">Our Location</div>
+            <div class="info-box_subtite">100 S Main St, Los Angeles, CA</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 p-3" data-bgcolor="rgba(0, 0, 0, .6)">
+        <div class="info-box padding20">
+          <i class="icon_headphones"></i>
+          <div class="info-box_text">
+            <div class="info-box_title">Customer Support</div>
+            <div class="info-box_subtite">+208 333 9296</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
     </div>
   </div>
+</div>
 
 <!-- News & Events -->
-  <section class="jarallax">
-    <img src="images/background/10.jpg" class="jarallax-img" alt="">
-    <div class="container">
-      <div class="row gx-4">
-        <div class="col-lg-12 text-center">
-          <h2 class="title center">News & Events
-            <span class="small-border"></span>
-          </h2>
-        </div>
+<section class="jarallax">
+  <img src="images/background/10.jpg" class="jarallax-img" alt="">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-12 text-center">
+        <h2 class="title center">News & Events
+          <span class="small-border"></span>
+        </h2>
+      </div>
 
-        <?php
-          foreach ($result['publications'] as $key => $value) {
-        ?>
-          <div class="col-lg-4">
-            <div class="d-items">
-              <div class="card-image-1 mod-b" style="height: 380px">
-                <a href="news_events/?id=<?= $value['id'] ?>" class="d-text">
-                  <div class="d-inner">
-                    <span class="atr-date"><?= date('M d, Y', strtotime($value['datePosted'])); ?></span>
-                    <h3><?= $value['title'] ?></h3>
-                    <p class="line-clamp-3">
-                      <?= htmlspecialchars(strip_tags($value['body'])) ?>
-                    </p>
-                  </div>
-                </a>
-                <?php
-                  $dir = '';
-                  $output = preg_match_all('/<img.+src=[\'"](?P<src>.+?)[\'"].*>/i', $value['body'], $matches);
-                  $firstImage = $matches['src'][0] ?? "";
-                ?>
-                  <div style='display: flex; justify-content: center; align-items: center;height:100%'>
-                    <img src='../admin/functions/<?= $firstImage ?>' alt='' style='height:100%' loading="lazy">
-                  </div>
-                <?php ?>
+      <?php
+      foreach ($result['publications'] as $key => $value) {
+      ?>
+        <div class="col-lg-4">
+          <div class="d-items">
+            <div class="card-image-1 mod-b" style="height: 380px">
+              <a href="news_events/?id=<?= $value['id'] ?>" class="d-text">
+                <div class="d-inner">
+                  <span class="atr-date"><?= date('M d, Y', strtotime($value['datePosted'])); ?></span>
+                  <h3 class="line-clamp-3"><?= $value['title'] ?></h3>
+                  <p class="line-clamp-3">
+                    <?= htmlspecialchars(strip_tags($value['body'])) ?>
+                  </p>
+                </div>
+              </a>
+              <?php
+              $dir = '';
+              $output = preg_match_all('/<img.+src=[\'"](?P<src>.+?)[\'"].*>/i', $value['body'], $matches);
+              $firstImage = $matches['src'][0] ?? "";
+              ?>
+              <div style='display: flex; justify-content: center; align-items: center;height:100%'>
+                <img src='../admin/functions/<?= $firstImage ?>' alt='' style='height:100%' loading="lazy">
               </div>
+              <?php ?>
             </div>
           </div>
-        <?php
-          }
-        ?>
-      </div>
+        </div>
+      <?php
+      }
+      ?>
     </div>
-  </section>
+  </div>
+</section>
 
 <!-- Photo Releases -->
-  <section id="section-intro" class="pt60" data-bgcolor="#79552A">
-    <div class="container">
-      <div class="row gx-4">
-        <div class="col-lg-12 text-center">
-          <h2 class="title center">Photo Releases
-            <span class="small-border"></span>
-          </h2>
-        </div>
-      </div>
-      <div class="row align-items-center">
-        <div class="col-lg-3 col-6">
-          <div class="spacer-double sm-hide"></div>
-          <img src="images/misc/1.jpg" alt="" class="img-responsive wow fadeInUp" data-wow-duration="1s">
-        </div>
-
-        <div class="col-lg-3 col-6">
-          <img src="images/misc/2.jpg" alt="" class="img-responsive wow fadeInUp" data-wow-duration="1.5s">
-        </div>
-        
-        <div class="col-lg-6 wow fadeIn">
-          <div class="padding20">
-            <h2 class="title mb10">The Luxury Experience<br>You'll Remember
-              <span class="small-border"></span>
-            </h2>
-
-            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-
-            <a href="photo_releases.php" class="btn-line"><span>View All</span></a>
-            
-          </div>
-        </div>
-        
-        <div class="clearfix"></div>
+<section id="section-intro" class="pt60" data-bgcolor="#79552A">
+  <div class="container">
+    <div class="row gx-4">
+      <div class="col-lg-12 text-center">
+        <h2 class="title center">Photo Releases
+          <span class="small-border"></span>
+        </h2>
       </div>
     </div>
-  </section>
+    <div class="row align-items-center">
+      <div class="col-lg-3 col-6">
+        <div class="spacer-double sm-hide"></div>
+        <img src="images/misc/1.jpg" alt="" class="img-responsive wow fadeInUp" data-wow-duration="1s">
+      </div>
+
+      <div class="col-lg-3 col-6">
+        <img src="images/misc/2.jpg" alt="" class="img-responsive wow fadeInUp" data-wow-duration="1.5s">
+      </div>
+
+      <div class="col-lg-6 wow fadeIn">
+        <div class="padding20">
+          <h2 class="title mb10">The Luxury Experience<br>You'll Remember
+            <span class="small-border"></span>
+          </h2>
+
+          <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+
+          <a href="photo_releases.php" class="btn-line"><span>View All</span></a>
+
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</section>
 
 <!-- Search Modal -->
-  <div class="modal fade" id="searchModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-body">
-          <div class="mb-3">
-            <label for="message-text" class="col-form-label text-dark">
-              <h4>Keyword</h4>
-            </label>
-            <textarea class="form-control" id="message-text"></textarea>
-          </div>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-          <button type="button" class="btn btn-primary"><i class="fa fa-search"></i> Search</button>
+<div class="modal fade" id="searchModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="message-text" class="col-form-label text-dark">
+            <h4>Keyword</h4>
+          </label>
+          <textarea class="form-control" id="message-text"></textarea>
         </div>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+        <button type="button" class="btn btn-primary"><i class="fa fa-search"></i> Search</button>
       </div>
     </div>
   </div>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
   $('.slider').each(function() {
-  var $this = $(this);
-  var $group = $this.find('.slide_group');
-  var $slides = $this.find('.slide');
-  var bulletArray = [];
-  var currentIndex = 0;
-  var timeout;
-  
-  function move(newIndex) {
-    var animateLeft, slideLeft;
-    
-    advance();
-    
-    if ($group.is(':animated') || currentIndex === newIndex) {
-      return;
-    }
-    
-    bulletArray[currentIndex].removeClass('active');
-    bulletArray[newIndex].addClass('active');
-    
-    if (newIndex > currentIndex) {
-      slideLeft = '100%';
-      animateLeft = '-100%';
-    } else {
-      slideLeft = '-100%';
-      animateLeft = '100%';
-    }
-    
-    $slides.eq(newIndex).css({
-      display: 'block',
-      left: slideLeft
-    });
-    $group.animate({
-      left: animateLeft
-    }, function() {
-      $slides.eq(currentIndex).css({
-        display: 'none'
-      });
+    var $this = $(this);
+    var $group = $this.find('.slide_group');
+    var $slides = $this.find('.slide');
+    var bulletArray = [];
+    var currentIndex = 0;
+    var timeout;
+
+    function move(newIndex) {
+      var animateLeft, slideLeft;
+
+      advance();
+
+      if ($group.is(':animated') || currentIndex === newIndex) {
+        return;
+      }
+
+      bulletArray[currentIndex].removeClass('active');
+      bulletArray[newIndex].addClass('active');
+
+      if (newIndex > currentIndex) {
+        slideLeft = '100%';
+        animateLeft = '-100%';
+      } else {
+        slideLeft = '-100%';
+        animateLeft = '100%';
+      }
+
       $slides.eq(newIndex).css({
-        left: 0
+        display: 'block',
+        left: slideLeft
       });
-      $group.css({
-        left: 0
+      $group.animate({
+        left: animateLeft
+      }, function() {
+        $slides.eq(currentIndex).css({
+          display: 'none'
+        });
+        $slides.eq(newIndex).css({
+          left: 0
+        });
+        $group.css({
+          left: 0
+        });
+        currentIndex = newIndex;
       });
-      currentIndex = newIndex;
-    });
-  }
-    
+    }
+
     function advance() {
       clearTimeout(timeout);
       timeout = setTimeout(function() {
@@ -310,7 +314,7 @@
         }
       }, 4000);
     }
-    
+
     $('.next_btn').on('click', function() {
       if (currentIndex < ($slides.length - 1)) {
         move(currentIndex + 1);
@@ -318,7 +322,7 @@
         move(0);
       }
     });
-    
+
     $('.previous_btn').on('click', function() {
       if (currentIndex !== 0) {
         move(currentIndex - 1);
@@ -326,10 +330,10 @@
         move(3);
       }
     });
-    
+
     $.each($slides, function(index) {
       var $button = $('<a class="slide_btn">&bull;</a>');
-      
+
       if (index === currentIndex) {
         $button.addClass('active');
       }
@@ -338,7 +342,7 @@
       }).appendTo('.slide_buttons');
       bulletArray.push($button);
     });
-    
+
     advance();
   });
 </script>

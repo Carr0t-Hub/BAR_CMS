@@ -29,6 +29,14 @@ $rootpath = '/BAR_CMS';
 
   <!-- color scheme -->
   <link rel="stylesheet" href="<?= $rootpath ?>/css/colors/brown.css" type="text/css" id="colors">
+
+  <!-- datatable -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css" type="text/css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
+  <!-- <script src="https://cdn.datatables.net/2.0.8/js/dataTables.bootstrap5.min.js"></script> -->
+
+
 </head>
 <style>
   .line-clamp-3 {
@@ -105,8 +113,8 @@ $rootpath = '/BAR_CMS';
                   <li>
                     <a href="#">Partners</a>
                     <ul>
-                      <li><a href="<?= $rootpath ?>/media-resources/partners/international.php">International</a></li>
-                      <li><a href="<?= $rootpath ?>/media-resources/partners/local.php">Local</a></li>
+                      <li><a href="<?= $rootpath ?>/partners/international.php">International</a></li>
+                      <li><a href="<?= $rootpath ?>/partners/local.php">Local</a></li>
                     </ul>
                   </li>
                   <li><a href="<?= $rootpath ?>/contact.php">Contact</a></li>

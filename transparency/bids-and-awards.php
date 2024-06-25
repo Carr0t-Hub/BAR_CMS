@@ -11,7 +11,8 @@ $type = [
     6 => "Bidding Documents"
 ];
 
-
+$background_image = "../images/background/4.jpg";
+$upper_title = "Bid and Awards";
 $title = isset($_GET['type']) ? $type[$_GET['type']] : "Bids and Awards";
 
 ob_start();

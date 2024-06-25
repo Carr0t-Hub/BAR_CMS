@@ -8,7 +8,15 @@ $title = "TRANSPARENCY SEAL";
 ob_start();
 ?>
 
-TRANSPARENCY SEAL
+<div class="row">
+    <div class="col-lg-12">
+        <div class="de-content-overlay">
+
+
+
+        </div>
+    </div>
+</div>
 <?php
 $content = ob_get_clean();
 require_once("../common/layout.php");

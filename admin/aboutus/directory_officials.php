@@ -65,6 +65,7 @@
             <?php foreach ($res as $key => $value) :
               $img = $value['fileName'] . '_' . $value['size'] . $value['attachment'] . '.' . $value['fileExtension'];
 
+
             ?>
               <tr>
                 <td>
