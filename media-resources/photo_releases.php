@@ -4,7 +4,6 @@ require_once("../common/config.php");
 $upper_title = "Latest";
 $title = "Photo Releases";
 
-
 $pageno = isset($_GET['pageno']) ? $_GET['pageno'] : 1;
 $result = getPhotoReleases($mysqli, $pageno, 10);
 ob_start();

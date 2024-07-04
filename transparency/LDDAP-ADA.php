@@ -4,7 +4,7 @@ require_once("../common/config.php");
 $lddap = viewLDDAP($mysqli);
 
 $title = "LDDAP-ADA";
-$background_image = "../images/background/4.jpg";
+$background_image = "../images/background/10.jpg";
 
 ob_start();
 ?>

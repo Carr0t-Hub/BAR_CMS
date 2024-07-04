@@ -3,7 +3,7 @@ require_once("../common/config.php");
 $type = isset($_GET['type']) ? $_GET['type'] : "Purchase Order";
 
 
-$background_image = "../images/background/4.jpg";
+$background_image = "../images/background/10.jpg";
 $upper_title = "Bid and Awards";
 $title = isset($_GET['type']) ? $type : "Bids and Awards";
 
