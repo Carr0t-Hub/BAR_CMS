@@ -1,7 +1,7 @@
 <?php
 require_once 'header.php';
 
-$background_image = isset($background_image) ? $background_image : $rootpath . "/images/background/9.jpg";
+$background_image = isset($background_image) ? $background_image : $rootpath . "/images/background/10.jpg";
 
 ?>
 <div id="background" data-bgimage="url(<?= $background_image ?>) fixed"></div>
