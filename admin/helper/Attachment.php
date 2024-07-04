@@ -69,7 +69,7 @@ class Attachment
             //error codes: https://www.php.net/manual/en/features.file-upload.errors.php
             if ($fileError === 0) {
                 //file size must not exceed 5mb
-                if ($fileSize < 5000000) {
+                if ($fileSize < 15000000) {
                     if (!file_exists($destination . $folder)) {
                         //i'm using an error control operator '@' https://www.php.net/manual/en/language.operators.errorcontrol.php
                         //mkdir will produce an error if the initial folders are missing (e.g. uploads/wfh_request/99 - if the wfh_request folder is missing this will throw an exception)

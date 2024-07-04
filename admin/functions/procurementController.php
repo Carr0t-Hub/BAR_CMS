@@ -64,7 +64,7 @@ function getProcurementById($mysqli, $id)
     $sql = "SELECT procure.*, att.id as attachment_id, att.size, att.fileName, att.fileExtension 
             FROM procurement as procure
             LEFT JOIN attachments as att ON procure.attachment = att.id
-            WHERE procure.id = :id";
+            WHERE procure.id = :id AND procure.isDeleted = 0";
     $stmt = $mysqli->prepare($sql);
     $stmt->execute([
       'id' => $id
@@ -74,6 +74,24 @@ function getProcurementById($mysqli, $id)
     return $e->getMessage();
   }
 }
+
+function getProcurementByType($mysqli, $type)
+{
+  try {
+    $sql = "SELECT procure.*, att.id as attachment_id, att.size, att.fileName, att.fileExtension 
+            FROM procurement as procure
+            LEFT JOIN attachments as att ON procure.attachment = att.id
+            WHERE procure.type = :type AND procure.isDeleted = 0 ORDER BY procure.datePosted DESC";
+    $stmt = $mysqli->prepare($sql);
+    $stmt->execute([
+      'type' => $type
+    ]);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  } catch (PDOException $e) {
+    return $e->getMessage();
+  }
+}
+
 
 function editProcurement($mysqli)
 {

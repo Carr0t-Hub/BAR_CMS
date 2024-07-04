@@ -39,6 +39,10 @@ $rootpath = '/BAR_CMS';
 
 </head>
 <style>
+  * {
+    /* --bg-dark-color: 5, 46, 22; */
+  }
+
   .line-clamp-3 {
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -48,7 +52,7 @@ $rootpath = '/BAR_CMS';
 </style>
 
 <body class="has-menu-bar">
-  <div id="wrapper">
+  <div id="wrapper" style="background: red;">
     <header class="header-fullwidth menu-expand">
       <!-- <header class="header-fullwidth menu-expand transparent"> -->
       <div class="container-fluid">
@@ -96,13 +100,13 @@ $rootpath = '/BAR_CMS';
                       <li>
                         <a href="#">Bids and Awards</a>
                         <ul>
-                          <li><a href="<?= $rootpath ?>/transparency/bids-and-awards.php?type=0">Purchase Order</a></li>
-                          <li><a href="<?= $rootpath ?>/transparency/bids-and-awards.php?type=1">Invitation to BID</a></li>
-                          <li><a href="<?= $rootpath ?>/transparency/bids-and-awards.php?type=2">Notice of Award</a></li>
-                          <li><a href="<?= $rootpath ?>/transparency/bids-and-awards.php?type=3">BAC Resolution</a></li>
-                          <li><a href="<?= $rootpath ?>/transparency/bids-and-awards.php?type=4">Notice to Proceed</a></li>
-                          <li><a href="<?= $rootpath ?>/transparency/bids-and-awards.php?type=5">Work Order</a></li>
-                          <li><a href="<?= $rootpath ?>/transparency/bids-and-awards.php?type=6">Bidding Documents</a></li>
+                          <li><a href="<?= $rootpath ?>/transparency/bids-and-awards.php?type=Purchase Order">Purchase Order</a></li>
+                          <li><a href="<?= $rootpath ?>/transparency/bids-and-awards.php?type=Invitation to BID">Invitation to BID</a></li>
+                          <li><a href="<?= $rootpath ?>/transparency/bids-and-awards.php?type=Notice of Awards">Notice of Award</a></li>
+                          <li><a href="<?= $rootpath ?>/transparency/bids-and-awards.php?type=BAC Resolution">BAC Resolution</a></li>
+                          <li><a href="<?= $rootpath ?>/transparency/bids-and-awards.php?type=Notice to Proceed">Notice to Proceed</a></li>
+                          <li><a href="<?= $rootpath ?>/transparency/bids-and-awards.php?type=Work Order">Work Order</a></li>
+                          <li><a href="<?= $rootpath ?>/transparency/bids-and-awards.php?type=Bidding Documents">Bidding Documents</a></li>
                         </ul>
                       </li>
                       <li><a href="<?= $rootpath ?>/transparency/transparency-seal.php">Transparency Seal</a></li>
