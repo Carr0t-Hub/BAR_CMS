@@ -1,5 +1,8 @@
 <?php
+
+
 include("functions/functions.php");
+
 
 
 if (isset($_SESSION['id'])) {

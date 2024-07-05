@@ -149,16 +149,18 @@ class Attachment
             $newFullFileName = $fileName . "_" . $fileSize . $attachmentID  . "." . $fileExtension;
             $fileDestination = $destination . $folder . "/" . $newFullFileName;
 
+
             // Check for errors
             if ($fileError === UPLOAD_ERR_OK) {
                 $uploadFile = $uploadDir . basename($fileName);
                 if (move_uploaded_file($fileTmpName, $fileDestination)) {
                     $uploadedFiles[] = $uploadFile;
                 } else {
-                    echo "Error uploading file: " . $fileName;
+                    throw new Exception("Error uploading file: " . $fileName . " Extension: " . $fileExtension);
                 }
             } else {
-                echo "Error uploading file: " . $fileName . " (Error code: " . $fileError . ")";
+                // echo "Error uploading file: " . $fileName . " (Error code: " . $fileError . ")";
+                throw new Exception("Error uploading file: " . $fileName . " (Error code: " . $fileError . ")");
             }
         }
 

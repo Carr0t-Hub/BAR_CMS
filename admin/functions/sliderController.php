@@ -22,7 +22,7 @@ function addSlider($mysqli)
     );
     return true;
   } catch (PDOException $e) {
-    return false;
+    return $e->getMessage();
   }
 }
 

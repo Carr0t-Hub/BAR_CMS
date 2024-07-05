@@ -7,28 +7,29 @@ ob_start();
 <div class="row">
   <div class="col-md-6">
     <div class="box-icon">
-      <span class="icon bg-color"><img src="../images/svg/restaurant-svgrepo-com.svg" alt=""></span>
+      <span class="icon bg-color"><img src="../images/svg/mission.svg" alt=""></span>
       <div class="text">
         <h3 class="style-1">Mission</h3>
-        <p>We coordinate, integrate, fund, and manage the Research for Development (R4D) system to ensure its optimum utility for the agriculture and fisheries sector.</p>
+        <p style="font-size: 16px">We coordinate, integrate, fund, and manage the Research for Development (R4D) system to ensure its optimum utility for the agriculture and fisheries sector.</p>
       </div>
     </div>
   </div>
   <div class="col-md-6">
     <div class="box-icon">
-      <span class="icon bg-color"><img src="../images/svg/swimming-pool-svgrepo-com.svg" alt=""></span>
+      <span class="icon bg-color"><img src="../images/svg/vision.svg" alt=""></span>
       <div class="text">
         <h3 class="style-1">Vision</h3>
-        <p>The lead Research for Development (R4D) coordinating agency towards a technology-empowered agriculture and fisheries sector contributory to inclusive growth.</p>
+        <p style="font-size: 16px">The lead Research for Development (R4D) coordinating agency towards a technology-empowered agriculture and fisheries sector contributory to inclusive growth.</p>
       </div>
     </div>
   </div>
   <div class="col-md-12">
+    <br>
     <div class="box-icon">
-      <span class="icon bg-color"><img src="../images/svg/fitness-gym-svgrepo-com.svg" alt=""></span>
+      <span class="icon bg-color"><img src="../images/svg/mandate.svg" alt=""></span>
       <div class="text">
         <h3 class="style-1">Mandate</h3>
-        <p>
+        <p style="font-size: 16px">
           The Bureau of Agricultural Research (BAR) was created by virtue of Executive Order 116 signed in 1987 under the Freedom Constitution. Under this EO, the government addressed the lack of coordination and integration of agriculture research and development among the existing bureaus, councils, and agencies by creating BAR under the Research, Training, and Extension Group.
 
           BAR’s specific mandate to coordinate agricultural research was affirmed by EO 292, otherwise known as the Administrative Code of 1987. BAR’s specific mandate is to:“(1) ensure that all agricultural research is coordinated and undertaken for maximum utility to agriculture (Section 22).”

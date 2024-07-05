@@ -44,9 +44,6 @@ function addPhotoRelease($mysqli)
 
         $imagearray = Attachment::UploadMultiple($_FILES['images'], STORAGE_PATH, 'photo_releases', $mysqli, $_SESSION['id']);
 
-
-
-
         $sql = "INSERT INTO publications (title, image_array, datePosted, status, type) VALUES (:title, :imagearray, :datePosted, :status, :type)";
 
         $stmt = $mysqli->prepare($sql);
@@ -178,6 +175,38 @@ function getPhotoReleases($mysqli, $page_number = 1, $limit = 6)
             'total_items' => $total,
             'photoreleases' => $photorelease
         ];
+    } catch (PDOException $e) {
+        return $e->getMessage();
+    }
+}
+
+function getLatestPhotoRelease($mysqli)
+{
+
+    try {
+
+        $sql = "SELECT * FROM  publications  WHERE type='photorelease' AND isDeleted = 0 AND status = 'published' ORDER BY id DESC LIMIT 3";
+
+        $stmt = $mysqli->prepare($sql);
+        $stmt->execute();
+        $photorelease = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+        $sql = "SELECT * FROM attachments WHERE id = :id";
+        $stmt = $mysqli->prepare($sql);
+
+
+        foreach ($photorelease as $key => $value) {
+            foreach (json_decode($value['image_array']) as $key2 => $value2) {
+                $stmt->execute([
+                    'id' => $value2
+                ]);
+                $photorelease[$key]['images'][] = $stmt->fetch(PDO::FETCH_ASSOC);
+            }
+        }
+
+
+        return $photorelease;
     } catch (PDOException $e) {
         return $e->getMessage();
     }

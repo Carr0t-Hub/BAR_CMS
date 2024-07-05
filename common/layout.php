@@ -5,6 +5,7 @@ $background_image = isset($background_image) ? $background_image : $rootpath . "
 
 ?>
 <div id="background" data-bgimage="url(<?= $background_image ?>) fixed"></div>
+
 <div id="content-absolute">
     <section id="subheader" class="no-bg">
         <div class="container">
@@ -28,7 +29,6 @@ $background_image = isset($background_image) ? $background_image : $rootpath . "
             <?php echo $content; ?>
         </div>
     </section>
-
 </div>
 <?php
 require_once 'footer.php';

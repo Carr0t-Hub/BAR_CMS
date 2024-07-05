@@ -5,6 +5,8 @@ include("common/header.php");
 
 $pageno = isset($_GET['pageno']) ? $_GET['pageno'] : 1;
 $result = getPublicationsWithPage($mysqli, $pageno);
+$photos = getLatestPhotoRelease($mysqli);
+$slider = getActiveSlider($mysqli);
 
 ?>
 
@@ -99,14 +101,21 @@ $result = getPublicationsWithPage($mysqli, $pageno);
       <div class="slider">
         <div class="slide_viewer">
           <div class="slide_group">
-            <div class="slide">
-            </div>
-            <div class="slide">
-            </div>
-            <div class="slide">
-            </div>
-            <div class="slide">
-            </div>
+            <?php
+
+            foreach ($slider as $key => $value) {
+              $dir = 'admin/storage/files/slider/';
+              $img = $dir . $value['fileName'] . '_' . $value['size'] . $value['attachment'] . '.' . $value['fileExtension'];
+
+            ?>
+              <div class="slide">
+                <img src="<?= $img ?>" class="img-fluid h-100 w-100" alt="">
+
+              </div>
+            <?php
+            }
+            ?>
+
           </div>
         </div>
       </div>
@@ -200,6 +209,7 @@ $result = getPublicationsWithPage($mysqli, $pageno);
 
 <!-- Photo Releases -->
 <section id="section-intro" class="pt60" data-bgcolor="#79552A">
+
   <div class="container">
     <div class="row gx-4">
       <div class="col-lg-12 text-center">
@@ -209,29 +219,41 @@ $result = getPublicationsWithPage($mysqli, $pageno);
       </div>
     </div>
     <div class="row align-items-center">
-      <div class="col-lg-3 col-6">
-        <div class="spacer-double sm-hide"></div>
-        <img src="images/misc/1.jpg" alt="" class="img-responsive wow fadeInUp" data-wow-duration="1s">
+
+      <div class="row g-4">
+        <?php
+        foreach ($photos as $key => $value) {
+          $image = $value['images'][0];
+
+          $dir = 'admin/storage/files/photo_releases/';
+
+          $img = $dir . $image['fileName'] . '_' . $image['size'] . $image['id'] . '.' . $image['fileExtension'];
+
+          $datePosted = date('M d, Y', strtotime($value['datePosted']));
+
+        ?>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="d-items">
+              <div class="card-image-1">
+                <a href="blog-single.html" class="d-text">
+                  <div class="d-flex flex-column justify-content-center">
+                    <span class="atr-date"><?= $datePosted ?></span>
+                    <h3>
+                      <?= $value['title'] ?>
+                    </h3>
+                  </div>
+                </a>
+                <img src="<?= $img ?>" class="img-fluid" alt="" style="height: 380px; width: 400px; object-fit:cover">
+              </div>
+            </div>
+          </div>
+        <?php
+        }
+        ?>
+
+
       </div>
-
-      <div class="col-lg-3 col-6">
-        <img src="images/misc/2.jpg" alt="" class="img-responsive wow fadeInUp" data-wow-duration="1.5s">
-      </div>
-
-      <div class="col-lg-6 wow fadeIn">
-        <div class="padding20">
-          <h2 class="title mb10">The Luxury Experience<br>You'll Remember
-            <span class="small-border"></span>
-          </h2>
-
-          <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-
-          <a href="photo_releases.php" class="btn-line"><span>View All</span></a>
-
-        </div>
-      </div>
-
-      <div class="clearfix"></div>
     </div>
   </div>
 </section>

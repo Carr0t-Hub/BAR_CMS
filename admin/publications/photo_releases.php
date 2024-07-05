@@ -102,7 +102,7 @@ $data = $result['photoreleases'];
     <div class="col-12">
       <div class="d-flex justify-content-between mb-2">
         <div>
-          <h3>Photo Releases</h3><?= $result['total_page']  ?>
+          <h3>Photo Releases</h3>
         </div>
         <div>
           <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#photo_releases"><i class="ri-file-add-line"></i> Add New</button>
@@ -129,6 +129,7 @@ $data = $result['photoreleases'];
       <br>
       <div class="d-flex flex-wrap gap-2">
         <?php
+
 
         foreach ($data as $key => $value) {
 
@@ -389,6 +390,7 @@ $data = $result['photoreleases'];
 
     dropzoneFiles.forEach(function(file) {
       formData.append('images[]', file);
+      console.log(file)
     });
 
     $.ajax({
@@ -405,6 +407,10 @@ $data = $result['photoreleases'];
         } else {
           alert('Error');
         }
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        console.error("Upload failed: ", textStatus, errorThrown);
+        alert('Error uploading file: ' + textStatus);
       }
     });
 

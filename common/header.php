@@ -39,10 +39,6 @@ $rootpath = '/BAR_CMS';
 
 </head>
 <style>
-  * {
-    /* --bg-dark-color: 5, 46, 22; */
-  }
-
   .line-clamp-3 {
     display: -webkit-box;
     -webkit-line-clamp: 3;

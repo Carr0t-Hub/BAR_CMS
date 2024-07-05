@@ -24,7 +24,6 @@
   <script src="../assets/vendor/lucide/umd/lucide.min.js"></script>
   <!-- <script src="https://cdn.ckeditor.com/ckeditor5/41.3.1/super-build/ckeditor.js"></script> -->
   <script src="https://cdn.ckeditor.com/ckeditor5/41.3.1/classic/ckeditor.js"></script>
-
   <!-- App js -->
   <script src="../assets/js/app.min.js"></script>
   <script src="../assets/js/formsubmission.js"></script>
