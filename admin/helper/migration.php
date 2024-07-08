@@ -71,6 +71,8 @@ $migration->create('local_partners', function (Blueprint $table) {
     $table->timestamps();
 });
 
+
+
 $migration->create('publications', function (Blueprint $table) {
     $table->id();
     $table->text('title');
@@ -175,6 +177,34 @@ $migration->create('procurement', function (Blueprint $table) {
     $table->integer('attachment')->nullable();
     $table->date('datePosted');
     $table->string('type', 50);
+    $table->boolean('isDeleted')->default('0');
+    $table->timestamps();
+});
+
+
+$migration->create('header_groups', function (Blueprint $table) {
+    $table->id();
+    $table->string('title');
+
+    /**
+     * 1 - local_partners
+     * 2 - transparency_seal
+     * ...
+     */
+    $table->string('type', 50);
+
+
+
+    $table->boolean('isDeleted')->default('0');
+    $table->timestamps();
+});
+
+
+$migration->create('international_partner', function (Blueprint $table) {
+    $table->id();
+    $table->string('name');
+    $table->string('link');
+    $table->integer('thumbnail');
     $table->boolean('isDeleted')->default('0');
     $table->timestamps();
 });

@@ -65,10 +65,11 @@
             <?php foreach ($res as $key => $value) :
               $img = $value['fileName'] . '_' . $value['size'] . $value['attachment'] . '.' . $value['fileExtension'];
 
+
             ?>
               <tr>
                 <td>
-                  <img src="../storage/directories/<?= $img ?>" alt="" class="border" style="height: 128px; width: 128px;object-fit: cover">
+                  <img src="../storage/files/directories/<?= $img ?>" alt="" class="border" style="height: 128px; width: 128px;object-fit: cover">
                 </td>
                 <td><?php echo strtoupper($value['firstName']); ?></td>
                 <td><?php echo strtoupper($value['middleName']); ?></td>

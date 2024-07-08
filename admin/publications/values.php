@@ -70,6 +70,73 @@
 </div>
 <!-- </form> -->
 
+<form method="POST" action="../process/publication/addValues.php" enctype="multipart/form-data">
+  <div class="modal fade" id="valueFocus" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="career" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-light">
+          <h3 class="modal-title">Value Focus</h3>
+          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"><i class="ri-close-line"></i></span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row mb-2 gap-2">
+              <div class="col-2">
+                <div class="form-floating">
+                  <input type="number" maxlength="3" class="form-control" id="weekNum" name="weekNum" placeholder="Week Number">
+                  <label for="weekNum" name="weekNum">Week Number</label>
+                </div>
+              </div>
+              <div class="col-9">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="valueTitle" name="valueTitle" placeholder="Title">
+                  <label for="valueTitle" name="valueTitle">Title</label>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-floating">
+                  <textarea class="form-control" id="valueDescription" name="valueDescription" placeholder="Description" style="height: 100px"></textarea>
+                  <label for="valueDescription" name="valueDescription">Description</label>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-floating">
+                  <textarea class="form-control" id="actionPlan" name="actionPlan" placeholder="Action Plan" style="height: 100px"></textarea>
+                  <label for="actionPlan" name="actionPlan">Action Plan</label>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-floating">
+                  <textarea class="form-control" id="declaration" name="declaration" placeholder="Declaration" style="height: 100px"></textarea>
+                  <label for="declaration" name="actionPlan">Declaration</label>
+                </div>
+              </div>
+
+
+              <div class="col-12">
+                <div class="form-floating">
+                  <textarea class="form-control" id="prayer" name="prayer" placeholder="Prayer" style="height: 100px"></textarea>
+                  <label for="prayer" name="prayer">Prayer</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal"><i class="ri-close-line"></i>Close</button>
+          <button type="submit" class="btn btn-lg btn-success"><i class="ri-save-line"></i> Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+
 <script>
   $(document).ready(function() {
     $('.valuesItem').click(function() {

@@ -2,16 +2,15 @@
 
 $path = $_SERVER['DOCUMENT_ROOT'] . '/BAR_CMS/admin';
 $rootpath = '/BAR_CMS';
-include($path . "/functions/functions.php");
-
 ?>
+
 
 <!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="utf-8">
-  <title>DA-BAR Officials</title>
+  <title> <?= isset($title) ?  $title :   "DA-BAR Officials" ?></title>
   <link rel="icon" href="images/favicon.png" type="image/gif" sizes="16x16">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
@@ -30,6 +29,14 @@ include($path . "/functions/functions.php");
 
   <!-- color scheme -->
   <link rel="stylesheet" href="<?= $rootpath ?>/css/colors/brown.css" type="text/css" id="colors">
+
+  <!-- datatable -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css" type="text/css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
+  <!-- <script src="https://cdn.datatables.net/2.0.8/js/dataTables.bootstrap5.min.js"></script> -->
+
+
 </head>
 <style>
   .line-clamp-3 {
@@ -43,7 +50,7 @@ include($path . "/functions/functions.php");
 <body class="has-menu-bar">
   <div id="wrapper">
     <header class="header-fullwidth menu-expand">
-    <!-- <header class="header-fullwidth menu-expand transparent"> -->
+      <!-- <header class="header-fullwidth menu-expand transparent"> -->
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
@@ -62,25 +69,25 @@ include($path . "/functions/functions.php");
                   <li>
                     <a href="#">About</a>
                     <ul>
-                      <li><a href="<?= $rootpath ?>/directors_message.php">Director's Message</a></li>
-                      <li><a href="<?= $rootpath ?>/mandates.php">Mission, Vision & Mandates</a></li>
-                      <li><a href="#">Directory of Officials</a></li>
-                      <li><a href="#">Organizational Chart</a></li>
+                      <li><a href="<?= $rootpath ?>/about/directors_message.php">Director's Message</a></li>
+                      <li><a href="<?= $rootpath ?>/about/mandates.php">Mission, Vision & Mandates</a></li>
+                      <li><a href="<?= $rootpath ?>/about/directory_of_officials.php">Directory of Officials</a></li>
+                      <li><a href="<?= $rootpath ?>/about/organizational-chart.php">Organizational Chart</a></li>
                     </ul>
                   </li>
                   <li>
                     <a href="#">Media Resources</a>
                     <ul>
-                      <li><a href="<?= $rootpath ?>/news_events">News & Events</a></li>
-                      <li><a href="<?= $rootpath ?>/photo_releases.php">Photo Releases</a></li>
+                      <li><a href="<?= $rootpath ?>/media-resources/news_events">News & Events</a></li>
+                      <li><a href="<?= $rootpath ?>/media-resources/photo_releases.php">Photo Releases</a></li>
                       <li>
                         <a href="#">Publications</a>
                         <ul>
-                          <li><a href="<?= $rootpath ?>/digest.php">Digest</a></li>
-                          <li><a href="<?= $rootpath ?>/chronicles.php">Chronicles</a></li>
+                          <li><a href="<?= $rootpath ?>/media-resources/publications/digest.php">Digest</a></li>
+                          <li><a href="<?= $rootpath ?>/media-resources/publications/chronicles.php">Chronicles</a></li>
                         </ul>
                       </li>
-                      <li><a href="#">Downloadables</a></li>
+                      <li><a href="<?= $rootpath ?>/media-resources/downloadables.php">Downloadables</a></li>
                     </ul>
                   </li>
                   <li>
@@ -89,21 +96,27 @@ include($path . "/functions/functions.php");
                       <li>
                         <a href="#">Bids and Awards</a>
                         <ul>
-                          <li><a href="#">Purchase Order</a></li>
-                          <li><a href="#">Invitation to BID</a></li>
-                          <li><a href="#">Notice of Award</a></li>
-                          <li><a href="#">BAC Resolution</a></li>
-                          <li><a href="#">Notice to Proceed</a></li>
-                          <li><a href="#">Work Order</a></li>
-                          <li><a href="#">Bidding Documents</a></li>
+                          <li><a href="<?= $rootpath ?>/transparency/bids-and-awards.php?type=0">Purchase Order</a></li>
+                          <li><a href="<?= $rootpath ?>/transparency/bids-and-awards.php?type=1">Invitation to BID</a></li>
+                          <li><a href="<?= $rootpath ?>/transparency/bids-and-awards.php?type=2">Notice of Award</a></li>
+                          <li><a href="<?= $rootpath ?>/transparency/bids-and-awards.php?type=3">BAC Resolution</a></li>
+                          <li><a href="<?= $rootpath ?>/transparency/bids-and-awards.php?type=4">Notice to Proceed</a></li>
+                          <li><a href="<?= $rootpath ?>/transparency/bids-and-awards.php?type=5">Work Order</a></li>
+                          <li><a href="<?= $rootpath ?>/transparency/bids-and-awards.php?type=6">Bidding Documents</a></li>
                         </ul>
                       </li>
-                      <li><a href="#">Transparency Seal</a></li>
-                      <li><a href="#">LDDAP-ADA</a></li>
+                      <li><a href="<?= $rootpath ?>/transparency/transparency-seal.php">Transparency Seal</a></li>
+                      <li><a href="<?= $rootpath ?>/transparency/LDDAP-ADA.php">LDDAP-ADA</a></li>
                     </ul>
                   </li>
-                  <li><a href="#">Programs</a></li>
-                  <li><a href="#">Partners</a></li>
+                  <li><a href="<?= $rootpath ?>/programs">Programs</a></li>
+                  <li>
+                    <a href="#">Partners</a>
+                    <ul>
+                      <li><a href="<?= $rootpath ?>/partners/international.php">International</a></li>
+                      <li><a href="<?= $rootpath ?>/partners/local.php">Local</a></li>
+                    </ul>
+                  </li>
                   <li><a href="<?= $rootpath ?>/contact.php">Contact</a></li>
                   <li><a href="#" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i> Search</a></li>
                 </ul>

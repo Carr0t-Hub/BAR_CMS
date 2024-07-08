@@ -210,7 +210,6 @@
 
 <!-- Career Opportunities -->
 <form method="POST" action="../process/publication/addCareers.php" enctype="multipart/form-data">
-
   <div class="modal fade" id="career" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="career" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -268,66 +267,7 @@
 </form>
 
 <!-- Value Focus -->
-<form method="POST" action="../process/publication/addValues.php" enctype="multipart/form-data">
-  <div class="modal fade" id="valueFocus" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="career" aria-hidden="true">
-    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header bg-dark text-light">
-          <h3 class="modal-title">Value Focus</h3>
-          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true"><i class="ri-close-line"></i></span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="container-fluid">
-            <div class="row mb-2">
-              <div class="col-2">
-                <div class="form-floating">
-                  <input type="number" maxlength="3" class="form-control" id="weekNum" name="weekNum" placeholder="Week Number">
-                  <label for="weekNum" name="weekNum">Week Number</label>
-                </div>
-              </div>
-              <div class="col-10">
-                <div class="form-floating">
-                  <input type="text" class="form-control" id="valueTitle" name="valueTitle" placeholder="Title">
-                  <label for="valueTitle" name="valueTitle">Title</label>
-                </div>
-              </div>
-            </div>
-            <div class="row mb-2">
-              <div class="col-12">
-                <div class="form-floating">
-                  <textarea class="form-control" id="valueDescription" name="valueDescription" placeholder="Description" style="height: 100px"></textarea>
-                  <label for="valueDescription" name="valueDescription">Description</label>
-                </div>
-              </div>
-            </div>
-            <div class="row mb-2">
-              <div class="col-12">
-                <div class="form-floating">
-                  <textarea class="form-control" id="actionPlan" name="actionPlan" placeholder="Action Plan" style="height: 100px"></textarea>
-                  <label for="actionPlan" name="actionPlan">Action Plan</label>
-                </div>
-              </div>
-            </div>
-            <div class="row mb-2">
-              <div class="col-12">
-                <div class="form-floating">
-                  <textarea class="form-control" id="prayer" name="prayer" placeholder="Prayer" style="height: 100px"></textarea>
-                  <label for="prayer" name="prayer">Prayer</label>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal"><i class="ri-close-line"></i>Close</button>
-          <button type="submit" class="btn btn-lg btn-success"><i class="ri-save-line"></i> Save</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</form>
+
 
 <!-- DA - Bureaus, Attached Agencies and Attached Corporations -->
 <form method="POST" action="../process/partners/addAttached.php" enctype="multipart/form-data">
@@ -648,86 +588,7 @@
   </div>
 </form>
 
-<!-- List of Due and Demandable Accounts Payable – Advice to Debit Accounts -->
-<form method="POST" action="../process/transparency/addLDDAP.php" enctype="multipart/form-data">
-  <div class="modal fade" id="lddap" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="lddap" aria-hidden="true">
-    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header bg-dark text-light">
-          <h3 class="modal-title">List of Due and Demandable Accounts Payable – Advice to Debit Accounts</h3>
-          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true"><i class="ri-close-line"></i></span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="container-fluid">
-            <div class="row mb-2">
-              <div class="col-6">
-                <div class="form-floating">
-                  <select name="lddap_month" id="lddap_month" class="form-control">
-                    <option disabled selected>-- Please Choose --</option>
-                    <option value="January">January</option>
-                    <option value="February">February</option>
-                    <option value="March">March</option>
-                    <option value="April">April</option>
-                    <option value="May">May</option>
-                    <option value="June">June</option>
-                    <option value="July">July</option>
-                    <option value="August">August</option>
-                    <option value="September">September</option>
-                    <option value="October">October</option>
-                    <option value="November">November</option>
-                    <option value="December">December</option>
-                  </select>
-                  <label for="lddap_month" class="form-label">Month</label>
-                </div>
-              </div>
-              <div class="col-6">
 
-                <div class="form-floating">
-                  <select name="lddap_year" id="lddap_year" class="form-control">
-                    <option selected disabled>-- Please Choose Year --</option>
-
-                    <?php
-
-                    $year = date('Y');
-
-                    for ($i = 0; $i < 10; $i++) {
-                      echo '<option value="' . $year . '">' . $year . '</option>';
-                      $year--;
-                    }
-
-                    ?>
-                  </select>
-                  <label for="lddap_year">Year</label>
-                </div>
-
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-6">
-                <div class="form-floating">
-                  <input type="text" class="form-control" name="lddap_no" id="lddap_no" placeholder="LDDAP-ADA No.">
-                  <label for="lddap_no" class="form-label">LDDAP-ADA No.</label>
-                </div>
-              </div>
-              <div class="col-6">
-                <div class="form-floating">
-                  <input type="date" class="form-control" name="lddap_post" id="lddap_post" placeholder="Date Posted">
-                  <label for="lddap_post" class="form-label">Date Posted</label>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-lg btn-danger" data-bs-dismiss="modal"><i class="ri-close-line"></i>Close</button>
-          <button type="submit" class="btn btn-lg btn-success"><i class="ri-save-line"></i> Save</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</form>
 
 <!-- Directory of Officials -->
 <form method="POST" action="../process/directory/directories.php" enctype="multipart/form-data">

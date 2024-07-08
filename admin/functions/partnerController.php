@@ -8,20 +8,20 @@ function addAttached($mysqli)
         VALUES 
       (:agencyName, :officeAddress, :fullName, :designation, :position, :emailAddress, :telephone, :type)";
     $stmt = $mysqli->prepare($sql);
-      foreach($_POST['fullName'] as  $key => $value){
-        $stmt->execute(
-          array(
-            ':agencyName' => $_POST['agencyName'],
-            ':officeAddress' => $_POST['officeAddress'],
-            ':fullName' => $_POST['fullName'][$key],
-            ':designation' => $_POST['designation'][$key],
-            ':position' => $_POST['position'][$key],
-            ':emailAddress' => $_POST['emailAddress'][$key],
-            ':telephone' => $_POST['telephone'][$key],
-            ':type' => "Attached_Agency"
-          )
-        );
-      }
+    foreach ($_POST['fullName'] as  $key => $value) {
+      $stmt->execute(
+        array(
+          ':agencyName' => $_POST['agencyName'],
+          ':officeAddress' => $_POST['officeAddress'],
+          ':fullName' => $_POST['fullName'][$key],
+          ':designation' => $_POST['designation'][$key],
+          ':position' => $_POST['position'][$key],
+          ':emailAddress' => $_POST['emailAddress'][$key],
+          ':telephone' => $_POST['telephone'][$key],
+          ':type' => "Attached_Agency"
+        )
+      );
+    }
     return "success";
   } catch (PDOException $e) {
     return $e->getMessage();
@@ -61,8 +61,22 @@ function getAttachedById($mysqli, $id)
     $stmt = $mysqli->prepare($sql);
     $stmt->execute([
       'id' => $id
-      ]);
+    ]);
     return $stmt->fetch();
+  } catch (PDOException $e) {
+    return $e->getMessage();
+  }
+}
+function getLocalByType($mysqli, $type)
+{
+
+  try {
+    $sql = "SELECT * FROM local_partners WHERE type = :type AND isDeleted = 0 ORDER BY id DESC";
+    $stmt = $mysqli->prepare($sql);
+    $stmt->execute([
+      'type' => $type
+    ]);
+    return $stmt->fetchAll();
   } catch (PDOException $e) {
     return $e->getMessage();
   }
@@ -98,18 +112,18 @@ function addBFARRO($mysqli)
         VALUES 
       (:regionalOffice, :officeAddress, :fullName, :designation, :position, :emailAddress, :telephone, :type)";
     $stmt = $mysqli->prepare($sql);
-      $stmt->execute(
-        array(
-          ':regionalOffice' => $_POST['regionalOffice'],
-          ':officeAddress' => $_POST['officeAddress'],
-          ':fullName' => $_POST['fullName'],
-          ':designation' => $_POST['designation'],
-          ':position' => $_POST['position'],
-          ':emailAddress' => $_POST['emailAddress'],
-          ':telephone' => $_POST['telephone'],
-          ':type' => "BFAR_RO"
-        )
-      );
+    $stmt->execute(
+      array(
+        ':regionalOffice' => $_POST['regionalOffice'],
+        ':officeAddress' => $_POST['officeAddress'],
+        ':fullName' => $_POST['fullName'],
+        ':designation' => $_POST['designation'],
+        ':position' => $_POST['position'],
+        ':emailAddress' => $_POST['emailAddress'],
+        ':telephone' => $_POST['telephone'],
+        ':type' => "BFAR_RO"
+      )
+    );
     return "success";
   } catch (PDOException $e) {
     return $e->getMessage();
@@ -149,7 +163,7 @@ function getBFARROById($mysqli, $id)
     $stmt = $mysqli->prepare($sql);
     $stmt->execute([
       'id' => $id
-      ]);
+    ]);
     return $stmt->fetch();
   } catch (PDOException $e) {
     return $e->getMessage();
@@ -186,7 +200,7 @@ function addDARFO($mysqli)
         VALUES 
       (:regionalOffice, :officeAddress, :fullName, :designation, :position, :emailAddress, :telephone, :type)";
     $stmt = $mysqli->prepare($sql);
-    foreach($_POST['fullName'] as  $key => $value){
+    foreach ($_POST['fullName'] as  $key => $value) {
       $stmt->execute(
         array(
           ':regionalOffice' => $_POST['regionalOffice'],
@@ -239,7 +253,7 @@ function getDARFOById($mysqli, $id)
     $stmt = $mysqli->prepare($sql);
     $stmt->execute([
       'id' => $id
-      ]);
+    ]);
     return $stmt->fetch();
   } catch (PDOException $e) {
     return $e->getMessage();
@@ -267,4 +281,64 @@ function editDARFO($mysqli)
   }
 }
 
-?>
+function addInternationalPartner($mysqli)
+{
+  try {
+
+    $attachment = Attachment::constructStatement($mysqli, 'attachments', $_FILES['thumbnail'], 1);
+    $attachment->execute();
+    $attachment_id = $mysqli->lastInsertId();
+
+    Attachment::Upload($_FILES['thumbnail'], STORAGE_PATH, 'partners', $attachment_id);
+
+
+
+
+    $sql = "INSERT INTO `international_partner`
+      (`name`, `link`, `thumbnail`)
+        VALUES 
+      (:name, :link, :thumbnail)";
+
+    $stmt = $mysqli->prepare($sql);
+    $stmt->execute(
+      array(
+        ':name' => $_POST['name'],
+        ':link' => $_POST['link'],
+        ':thumbnail' => $attachment_id,
+      )
+    );
+    return true;
+  } catch (PDOException $e) {
+    return $e->getMessage();
+  }
+}
+
+function getInternationalPartner($mysqli)
+{
+  try {
+    $sql = "SELECT ip.*, att.id as attachment_id, att.size, att.fileName, att.fileExtension FROM international_partner as ip
+            LEFT JOIN attachments as att ON ip.thumbnail = att.id
+            WHERE ip.isDeleted = 0 ORDER BY ip.id DESC";
+    $stmt = $mysqli->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll();
+  } catch (PDOException $e) {
+    return $e->getMessage();
+  }
+}
+
+function getInternationalById($mysqli, $id)
+{
+  try {
+    $sql = "SELECT ip.*, att.id as attachment_id, att.size, att.fileName, att.fileExtension FROM international_partner as ip
+            LEFT JOIN attachments as att ON ip.thumbnail = att.id
+            WHERE ip.id = :id";
+    $stmt = $mysqli->prepare($sql);
+    $stmt->execute([
+      'id' => $id
+    ]);
+    return $stmt->fetch();
+  } catch (PDOException $e) {
+    return $e->getMessage();
+  }
+}

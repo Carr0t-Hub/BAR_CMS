@@ -102,7 +102,7 @@ $data = $result['photoreleases'];
     <div class="col-12">
       <div class="d-flex justify-content-between mb-2">
         <div>
-          <h3>Photo Releases</h3>
+          <h3>Photo Releases</h3><?= $result['total_page']  ?>
         </div>
         <div>
           <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#photo_releases"><i class="ri-file-add-line"></i> Add New</button>
@@ -134,7 +134,7 @@ $data = $result['photoreleases'];
 
           if (isset($value['images'])) {
             $image = $value['images'];
-            $dir = '../storage/photo_releases/';
+            $dir = '../storage/files/photo_releases/';
 
             $firstImage = $dir . $image[0]['fileName'] . '_' . $image[0]['size'] . $image[0]['id'] . '.' . $image[0]['fileExtension'];
 
@@ -247,7 +247,7 @@ $data = $result['photoreleases'];
             ?>
 
 
-            <li class="page-item <?php if ($pageno == $total_pages) {
+            <li class="page-item <?php if ($total_pages == 0  || ($pageno == $total_pages)) {
                                     echo "disabledd";
                                   } ?>">
               <a class="page-link" href="<?php if ($pageno >= $total_pages) {
@@ -258,7 +258,7 @@ $data = $result['photoreleases'];
                 <span aria-hidden="true">&rsaquo;</span>
               </a>
             </li>
-            <li class="page-item <?php if ($pageno == $total_pages) {
+            <li class="page-item <?php if ($total_pages == 0  || ($pageno == $total_pages)) {
                                     echo "disabledd";
                                   } ?>">
               <a class="page-link" href="?<?php echo http_build_query(array_merge($_GET, ['pageno' => $total_pages])); ?>" aria-label="Next">
@@ -271,7 +271,6 @@ $data = $result['photoreleases'];
     </div>
 
   </div>
-</div>
 </div>
 
 

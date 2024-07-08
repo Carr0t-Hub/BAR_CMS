@@ -37,28 +37,28 @@
       <li class="side-nav-title">Extra Pages</li>
       <!-- About Us -->
       <li class="side-nav-item">
-          <a data-bs-toggle="collapse" href="#about-us" aria-expanded="false" aria-controls="about-us" class="side-nav-link">
-            <i class="ri-information-line"></i>
-            <span> About Us </span>
-            <span class="menu-arrow"></span>
-          </a>
-          <div class="collapse" id="about-us">
-            <ul class="side-nav-second-level">
-              <li class="side-nav-item">
+        <a data-bs-toggle="collapse" href="#about-us" aria-expanded="false" aria-controls="about-us" class="side-nav-link">
+          <i class="ri-information-line"></i>
+          <span> About Us </span>
+          <span class="menu-arrow"></span>
+        </a>
+        <div class="collapse" id="about-us">
+          <ul class="side-nav-second-level">
+            <!-- <li class="side-nav-item">
                 <a class="side-nav-link" href="../aboutus/mvvm.php">Mission & Vision</a>
-              </li>   
-              <li class="side-nav-item">
-                <a class="side-nav-link" href="../aboutus/directory_officials.php">Directory of Officials</a>
-              </li>   
-              <li class="side-nav-item">
-                <a class="side-nav-link" href="../aboutus/org_chart.php">Organizational Chart</a>
-              </li>
-              <li class="side-nav-item">
-                <a class="side-nav-link" href="../aboutus/contact.php">Contact Us</a>
-              </li>     
-            </ul>
-          </div>
-        </li>
+              </li>    -->
+            <li class="side-nav-item">
+              <a class="side-nav-link" href="../aboutus/directory_officials.php">Directory of Officials</a>
+            </li>
+            <li class="side-nav-item">
+              <a class="side-nav-link" href="../aboutus/org_chart.php">Organizational Chart</a>
+            </li>
+            <li class="side-nav-item">
+              <a class="side-nav-link" href="../aboutus/contact.php">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </li>
       <!-- PUBLICATIONS -->
       <li class="side-nav-item">
         <a data-bs-toggle="collapse" href="#publications" aria-expanded="false" aria-controls="publications" class="side-nav-link">

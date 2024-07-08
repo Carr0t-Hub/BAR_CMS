@@ -52,7 +52,7 @@ $data = getPublications($mysqli, 'careers');
           ?>
             <tr>
               <td><?= $value['title'] ?></td>
-              <td><a href="../storage/careers/<?= $file ?>"><?= $value['fileName'] ?></a></td>
+              <td><a href="../storage/files/careers/<?= $file ?>"><?= $value['fileName'] ?></a></td>
               <td>
                 <?= date('M d, Y', strtotime($value['datePosted'])) ?>
               </td>

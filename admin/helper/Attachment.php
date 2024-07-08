@@ -52,13 +52,6 @@ class Attachment
      */
     public static function Upload($file, $destination, $folder, $attachmentID)
     {
-        //TODO: there's an issue here where the file fails to upload but no error/warnings
-        //TODO: add checking function to confirm is the file is really uploaded in the server
-        //https://stackoverflow.com/questions/946418/how-to-check-whether-the-user-uploaded-a-file-in-php/42833866
-
-        //I could use an optional parameter for the $allowedTypes, so anyone who uses this upload can choose their own types to allow.
-        //I can also use an optional parameter for file size
-
         $fullFileName = $file['name'];
         $fileTmpName = $file['tmp_name'];
         $fileSize = $file['size'];

@@ -7,15 +7,26 @@ function addLDDAP($mysqli)
       (`lddap_month`, `lddap_year`, `lddap_no`, `lddap_post`)
         VALUES 
       (:lddap_month, :lddap_year, :lddap_no, :lddap_post)";
-    $stmt = $mysqli->prepare($sql);
-    $stmt->execute(
-      array(
-        ':lddap_month' => $_POST['lddap_month'],
-        ':lddap_year' => $_POST['lddap_year'],
-        ':lddap_no' => $_POST['lddap_no'],
-        ':lddap_post' => $_POST['lddap_post']
-      )
-    );
+
+
+    $year = $_POST['lddap_year'];
+    $month = $_POST['lddap_month'];
+
+    foreach ($_POST['lddap_no'] as $key => $value) {
+      $lddap_no = $_POST['lddap_no'][$key];
+      $lddap_post = $_POST['lddap_post'][$key];
+
+
+      $stmt = $mysqli->prepare($sql);
+      $stmt->execute(
+        array(
+          ':lddap_month' => $month,
+          ':lddap_year' => $year,
+          ':lddap_no' => $lddap_no,
+          ':lddap_post' => $lddap_post
+        )
+      );
+    }
     return "success";
   } catch (PDOException $e) {
     return $e->getMessage();
