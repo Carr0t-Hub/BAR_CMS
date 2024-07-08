@@ -7,15 +7,15 @@ if (isset($_SESSION['id'])) {
 
         $result = editNewsEventArticle($mysqli);
 
-        echo json_encode($result);
+        // echo json_encode($result);
 
-        // if ($result) {
-        //     $_SESSION['success'] = "Article successfully updated";
-        //     header("Location:" . $_SERVER['HTTP_REFERER']);
-        // } else {
-        //     $_SESSION['error'] = "Failed to update article";
-        //     header("Location:" . $_SERVER['HTTP_REFERER']);
-        // }
+        if ($result) {
+            $_SESSION['success'] = "Article successfully updated";
+            header("Location:" . $_SERVER['HTTP_REFERER']);
+        } else {
+            $_SESSION['error'] = "Failed to update article";
+            header("Location:" . $_SERVER['HTTP_REFERER']);
+        }
     }
 } else {
     echo "You are not authorized to access this page";
