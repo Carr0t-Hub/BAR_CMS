@@ -45,10 +45,12 @@ if (isset($_POST['id'])) {
                             </div>
                             <div class="col-4">
                                 <div class="form-floating">
-                                    <select name="author" id="author" class="form-control" value="<?= $data['author'] ?>">
-                                        <option selected disabled>-- Please Choose --</option>
-                                        <option value="John Doe" <?= $data['author'] == "John Doe" ? "selected" : "" ?>>John Doe</option>
-                                        <option value="Jane Smith" <?= $data['author'] == "Jane Smith" ? "selected" : "" ?>>Jane Smith</option>
+                                    <?php $res = getAuthors($mysqli); ?>
+                                    <select name="author" id="author" class="form-control">
+                                        <option selected>-- Please Choose --</option>
+                                        <?php foreach ($res as $val) : ?>
+                                        <option value="<?= $val['firstName'] . " " . $val['middleName'] . " " . $val['lastName'] ?>"><?= $val['firstName'] . " " . $val['middleName'] . " " . $val['lastName'] ?></option>
+                                        <?php endforeach ?>
                                     </select>
                                     <label for="title" name="title">Author</label>
                                 </div>
