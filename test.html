@@ -1,219 +1,1201 @@
-<style>
-    * {
-        font-family: Roboto;
-    }
+<!DOCTYPE html>
+<html>
 
-    table {
-        border-collapse: collapse;
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base target="_blank">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.4/css/dataTables.dataTables.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.datatables.net/2.0.4/js/dataTables.js">
+    </script>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            box-sizing: border-box;
+            padding: 10px
+        }
 
-    }
-</style>
+        /* Style the tab */
+        .tab {
+            overflow: auto;
+            white-space: nowrap;
+            display: flex;
+            align-items: end;
+            gap: 2px;
+        }
 
-<p><span style="font-size: 12pt;"><strong><span style="font-family: verdana, geneva, sans-serif;">WE ARE
-                HIRING!</span></strong></span></p>
-<p><span style="font-size: 12pt;"><strong><span style="font-family: verdana, geneva, sans-serif;">We are looking for the
-                following:</span></strong></span></p>
-<center>
-    <table style="border-color: #000000; border-width: 1px; margin-left: auto; margin-right: auto;" border="3"
-        cellspacing="5" cellpadding="5">
-        <thead>
-            <tr style="border-color: #000000; border-width: 1px;">
-                <td style="text-align: center;"><strong>POSITION</strong></td>
-                <td style="text-align: center;"><strong>OFFICE</strong></td>
-                <td style="text-align: center;"><strong>STATUS</strong></td>
-                <td style="text-align: center;"><strong>DATE POSTED</strong></td>
-                <td style="text-align: center;"><strong>DEADLINE OF SUBMISSION</strong></td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr style="border-color: #000000; border-width: 1px;">
-                <td>
-                    <a href="https://drive.google.com/file/d/1dPIaeNFaWnUgTG-lGIdIH0N_mabSgPa8/view?usp=sharing">
-                        Project Evaluation Officer II (1 vacant)
-                    </a>
-                </td>
-                <td>Program Monitoring, Evaluation and Linkaging Division</td>
-                <td>Contract of Service</td>
-                <td>July 5, 2024</td>
-                <td>July 12, 2024</td>
-            </tr>
-            <tr style="border-color: #000000; border-width: 1px;">
-                <td>
-                    <a href="https://drive.google.com/file/d/1dPIaeNFaWnUgTG-lGIdIH0N_mabSgPa8/view?usp=sharing">
-                        Information Officer II (1 vacant)
-                    </a>
-                </td>
-                <td>Knowledge Management and Information Systems Division- Applied Communication Section</td>
-                <td>Contract of Service</td>
-                <td>July 5, 2024</td>
-                <td>July 12, 2024</td>
-            </tr>
-            <tr style="border-color: #000000; border-width: 1px;">
-                <td>
-                    <a href="https://drive.google.com/file/d/1dPIaeNFaWnUgTG-lGIdIH0N_mabSgPa8/view?usp=sharing">
-                        Administrative Assistant II (1 vacant)
-                    </a>
-                </td>
-                <td>Administrative and Finance Division- Human Resource Management</td>
-                <td>Contract of Service</td>
-                <td>July 5, 2024</td>
-                <td>July 12, 2024</td>
-            </tr>
-            <tr style="border-color: #000000; border-width: 1px;">
-                <td><a
-                        href="https://docs.google.com/document/d/1YSS7XEEPFxkwDytW1EDoTHuSGA8LB9IG/edit?usp=sharing&ouid=117246452495639539758&rtpof=true&sd=true">Project
-                        Evaluation Officer II (Two vacancies)</a></td>
-                <td>Program Monitoring, Evaluation and Linkaging Division</td>
-                <td>Contract of Service</td>
-                <td>June 25, 2024</td>
-                <td>July 2, 2024</td>
-            </tr>
-            <tr style="border-color: #000000; border-width: 1px;">
-                <td><a href="https://drive.google.com/file/d/15zCK_gw-iqYYjFGbeo_bhy_VLecBZJxl/view?usp=drive_link">Agriculturist
-                        II</a></td>
-                <td>Program Monitoring, Evaluation and Linkaging Division</td>
-                <td>Plantilla Position</td>
-                <td>June 10, 2024</td>
-                <td>June 21, 2024</td>
-            </tr>
-            <tr style="border-color: #000000; border-width: 1px;">
-                <td><a href="https://drive.google.com/file/d/1ZrX1NaeJNK34F6uVRdT3SU2xItQhBZkR/view?usp=drive_link">Planning
-                        Officer III</a></td>
-                <td>Planning and Monitoring Unit</td>
-                <td>Contract of Service</td>
-                <td>June 10, 2024</td>
-                <td>June 17, 2024</td>
-            </tr>
-            <tr style="border-color: #000000; border-width: 1px;">
-                <td><a href="https://drive.google.com/file/d/1ZrX1NaeJNK34F6uVRdT3SU2xItQhBZkR/view?usp=drive_link">Information
-                        Systems Analyst II</a></td>
-                <td>Knowledge Management and Information Systems Division - Information Management Section</td>
-                <td>Contract of Service</td>
-                <td>June 10, 2024</td>
-                <td>June 17, 2024</td>
-            </tr>
-            <tr style="border-color: #000000; border-width: 1px;">
-                <td><a href="https://drive.google.com/file/d/1ZrX1NaeJNK34F6uVRdT3SU2xItQhBZkR/view?usp=drive_link">Information
-                        Officer II</a></td>
-                <td>Knowledge Management and Information Systems Division - Applied Communication Section</td>
-                <td>Contract of Service</td>
-                <td>June 10, 2024</td>
-                <td>June 17, 2024</td>
-            </tr>
-            <tr style="border-color: #000000; border-width: 1px;">
-                <td><a href="https://drive.google.com/file/d/1ZrX1NaeJNK34F6uVRdT3SU2xItQhBZkR/view?usp=drive_link">Project
-                        Development Officer I</a></td>
-                <td>ACEF reporting to DA-BAR</td>
-                <td>Contract of Service</td>
-                <td>June 10, 2024</td>
-                <td>June 17, 2024</td>
-            </tr>
-            <tr style="border-color: #000000; border-width: 1px;">
-                <td><a href="https://drive.google.com/file/d/1ZrX1NaeJNK34F6uVRdT3SU2xItQhBZkR/view?usp=drive_link">Artist
-                        Illustrator III</a></td>
-                <td>Knowledge Management and Information Systems Division - Applied Communication Section</td>
-                <td>Contract of Service</td>
-                <td>June 10, 2024</td>
-                <td>June 17, 2024</td>
-            </tr>
-            <tr style="border-color: #000000; border-width: 1px;">
-                <td><a href="https://drive.google.com/file/d/1ZrX1NaeJNK34F6uVRdT3SU2xItQhBZkR/view?usp=drive_link">Administrative
-                        Assistant V</a></td>
-                <td>Program Development Division</td>
-                <td>Contract of Service</td>
-                <td>June 10, 2024</td>
-                <td>June 17, 2024</td>
-            </tr>
-            <tr style="border-color: #000000; border-width: 1px;">
-                <td><a href="https://drive.google.com/file/d/1ZrX1NaeJNK34F6uVRdT3SU2xItQhBZkR/view?usp=drive_link">Administrative
-                        Assistant V</a></td>
-                <td>Administrative and Finance Division - Accounting Unit</td>
-                <td>Contract of Service</td>
-                <td>June 10, 2024</td>
-                <td>June 17, 2024</td>
-            </tr>
-            <tr style="border-color: #000000; border-width: 1px;">
-                <td><a href="https://drive.google.com/file/d/1TgSKmB7giWWZlYLU4julUs6qUwEXJhke/view?usp=drive_link">On-the-Job
-                        Trainee (1)</a></td>
-                <td>Program Development Division -Project Packaging and Evaluation Section</td>
-                <td>Trainee</td>
-                <td>June 10, 2024</td>
-                <td>June 17, 2024</td>
-            </tr>
-            <tr style="border-color: #000000; border-width: 1px;">
-                <td><a href="https://drive.google.com/file/d/1TgSKmB7giWWZlYLU4julUs6qUwEXJhke/view?usp=drive_link">On-the-Job
-                        Trainee (2)</a></td>
-                <td>Knowledge Management and Information Systems Division - Scientific Literature System Section</td>
-                <td>Trainee</td>
-                <td>June 10, 2024</td>
-                <td>June 17, 2024</td>
-            </tr>
-            <tr style="border-color: #000000; border-width: 1px;">
-                <td><a href="https://drive.google.com/file/d/1TgSKmB7giWWZlYLU4julUs6qUwEXJhke/view?usp=drive_link">On-the-Job
-                        Trainee (5)</a></td>
-                <td>Knowledge Management and Information Systems Division - Information Management Section</td>
-                <td>Trainee</td>
-                <td>June 10, 2024</td>
-                <td>June 17, 2024</td>
-            </tr>
-            <tr style="border-color: #000000; border-width: 1px;">
-                <td><a href="https://drive.google.com/file/d/1TgSKmB7giWWZlYLU4julUs6qUwEXJhke/view?usp=drive_link">On-the-Job
-                        Trainee (3)</a></td>
-                <td>Knowledge Management and Information Systems Division - Applied Communication Section</td>
-                <td>Trainee</td>
-                <td>June 10, 2024</td>
-                <td>June 17, 2024</td>
-            </tr>
-        </tbody>
-    </table>
-</center>
-<p> </p>
-<p>
-    <span style="font-size: 12pt;">
-        <strong>
-            <span style="font-family: verdana, geneva, sans-serif;">
-                Application Requirements:
-            </span>
-        </strong>
-    </span>
-</p>
-<ol>
-    <li>
-        <span style="font-family: verdana, geneva, sans-serif; font-size: 12pt;">
-            Fully Accomplished Personal Data Sheet (PDS) with recent passport sized picture (CS Form No. 212, Revised
-            2017)
-        </span>
-    </li>
-    <li>
-        <span style="font-family: verdana, geneva, sans-serif; font-size: 12pt;">
-            Certificate of eligibility / rating / license;
-        </span>
-    </li>
-    <li>
-        <span style="font-family: verdana, geneva, sans-serif; font-size: 12pt;">
-            Scholastic Records (Diploma, Transcript of Records)
-        </span>
-    </li>
-    <li>
-        <span style="font-family: verdana, geneva, sans-serif; font-size: 12pt;">Training Certificates</span>
-    </li>
-</ol>
-<p><span style="font-family: verdana, geneva, sans-serif; font-size: 12pt;">Interested and qualified applicants should
-        signify their interest in writing and attach the following documents to the application letter and send to the
-        address below:</span></p>
-<table style="height: 137px; margin-left: auto; margin-right: auto;" border="1" width="492">
-    <tbody>
-        <tr style="height: 78.0625px;">
-            <td style="width: 482px; height: 78.0625px;"><br />
-                <p style="text-align: center;"><span
-                        style="font-family: verdana, geneva, sans-serif; font-size: 12pt;"><strong>JUNEL B. SORIANO,
-                            PhD</strong></span></p>
-                <p style="text-align: center;"><span
-                        style="font-family: verdana, geneva, sans-serif; font-size: 12pt;">Director</span></p>
-                <p style="text-align: center;"><span
-                        style="font-family: verdana, geneva, sans-serif; font-size: 12pt;">RDMIC Bldg., Elliptical Road
-                        corner Visayas Avenue, Diliman, Quezon City</span></p>
-            </td>
-        </tr>
-    </tbody>
-</table>
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            background-color: inherit;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            height: fit-content;
+            padding: 12px 16px;
+            transition: 0.3s;
+            font-size: 14px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            background-color: #F4F4F5;
+            margin: 0;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: #DCFCE7;
+            font-size: 16px;
+            padding: 14px 16px;
+
+
+        }
+
+        /* Create an active/current tablink class */
+        .tab button.active {
+            background-color: #16A34A;
+            color: white;
+            border-bottom: 0;
+            padding: 14px 16px;
+            font-size: 16px;
+
+
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            /*  border: 1px solid #ccc;*/
+            border-top: none;
+        }
+
+        table,
+        th,
+        td {
+            /* border: 1px solid black; */
+            border-collapse: collapse;
+            font-family: Roboto;
+        }
+
+        th {
+            background-color: #27272A;
+            color: white;
+            text-align: start;
+        }
+
+        th,
+        td {
+            padding: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'app')" id="defaultOpen">Annual Procurement Plan</button>
+        <button class="tablinks" onclick="openCity(event, 'bidBulletin')">Bid Bulletin</button>
+        <button class="tablinks" onclick="openCity(event, 'bidInvitation')">Invitation to Bid</button>
+        <button class="tablinks" onclick="openCity(event, 'publicBidding')">Bidding Document</button>
+        <button class="tablinks" onclick="openCity(event, 'rfq')">Request for Quotations</button>
+        <button class="tablinks" onclick="openCity(event, 'nop')">Notice of Postponement</button>
+        <button class="tablinks" onclick="openCity(event, 'nofb')">Notice of Failure of Bidding</button>
+        <button class="tablinks" onclick="openCity(event, 'reso')">BAC Resolution</button>
+        <button class="tablinks" onclick="openCity(event, 'noa')">Notice of Award</button>
+        <button class="tablinks" onclick="openCity(event, 'ntp')">Notice to Proceed</button>
+        <button class="tablinks" onclick="openCity(event, 'powo')">Purchase Order | Work Order | Contract</button>
+        <button class="tablinks" onclick="openCity(event, 'noc')">Notice of Cancellation</button>
+    </div>
+
+    <!-- Annual Procurement Plan Start-->
+    <div id="app" class="tabcontent">
+        <table width="100%" id="" class="display">
+            <thead>
+                <tr>
+                    <th style="width: 80%">Particulars</th>
+                    <th>Date Posted</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1SyI6cxQy7KhkzXn71EJ2DmaKsuj1EuH0/view?usp=drive_link">2024
+                            Annual Procurement Plan</a></td>
+                    <td>04 January 2024</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- Annual Procurement Plan Ends-->
+    <!-- Bid Bulletin Starts-->
+    <div id="bidBulletin" class="tabcontent">
+        <table width="100%" id="" class="display">
+            <thead>
+                <tr>
+                    <th style="width: 80%">Particulars</th>
+                    <th>Date Posted</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1eophJ2trZukoOSPNZZhEWOgSLec72PZ9/view?usp=drive_link">Bid
+                            Bulletin No. 2024-11 Provision of Security Services for DA-BAR CY 2024</a></td>
+                    <td>13 May 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1PTG3dPDBneGFEKHdBJLqqz3gQZH9hBYQ/view?usp=drive_link">Bid
+                            Bulletin No. 2024-10 Provision of Janitorial Services for CY 2024</a></td>
+                    <td>13 May 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/14RuU2WjMDdOmuwT4K7GD0L701m8WAcwT/view?usp=sharing">Notice
+                            of Failure of Bidding - Procurement of Desktops and Laptops for DA-BAR for CY 2024</a></td>
+                    <td>07 May 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1B22ugKfSuluMliWlmGCC4qilTX8d-dB4/view?usp=drive_link">Bid
+                            Bulletin No. 2024-09 Procurement of Desktops and Laptops for DA-BAR CY 2024</a></td>
+                    <td>06 May 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1LFmK1UcSUtzrryTU7HNmMO0pWsBms-Xe/view?usp=sharing">Bid
+                            Bulletin No. 2024-08 Procurement of Petroleum, Oil, and Lubricant (POL) Products for DA-BAR
+                            CY 2024</a></td>
+                    <td>26 April 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1uJzQFNMoA-KhMDy4QMXz-EUhsfiHsS89/view?usp=sharing">Bid
+                            Bulletin No. 2024-07 Procurement of Desktops and Laptops for DA-BAR CY 2024</a></td>
+                    <td>26 April 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1i6Ff9auWhG2XHFUILnwyMKvHDlocy23k/view?usp=drive_link">Bid
+                            Bulletin No. 2024-06 Submission and Opening of Quotations for the Failed Biddings
+                            (Negotiated Procurement) for the Procurement of Motor Vehicle for DA-BAR CY 2024</a></td>
+                    <td>03 March 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1Sehs71pr7s2_7Tk1uOIe8N8hNrrExCSZ/view?usp=sharing">Bid
+                            Bulletin No. 2024-05 Procurement Activity for Consolidated ICT Equipment for DA-BAR CY
+                            2024</a></td>
+                    <td>29 February 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1xaZvbR6GcjX_AAafCaJaXwTOBgs_-Lg-/view?usp=sharing">Bid
+                            Bulletin No. 2024-04 Procurement Activity for Consolidated ICT Equipment for DA-BAR CY
+                            2024</a></td>
+                    <td>28 February 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/156xchueNjnu35PJ17N_X2U5e2IN__0xM/view?usp=drive_link">Bid
+                            Bulletin No. 2024-03 Early Procurement Activity for the Provision of Janitorial Services for
+                            DA-BAR CY 2024</a></td>
+                    <td>08 January 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1ncfVUTNSgMMHLa00HxGwJpz4HNtc63Ud/view?usp=drive_link">Bid
+                            Bulletin No. 2024-02 Early Procurement Activity for the Provision of Janitorial Services for
+                            DA-BAR CY 2024</a></td>
+                    <td>03 January 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1OtsvTf6HY8oHBKhaPVCr6unn63Er-MfR/view?usp=sharing">Bid
+                            Bulletin No. 2024-01 Early Procurement Activity for the Provision of Security Services for
+                            DA-BAR CY 2024</a></td>
+                    <td>03 January 2024</td>
+                </tr>
+            </tbody>
+        </table>
+        </p>
+    </div>
+    <!-- Bid Bulletin Ends-->
+    <!-- Invitation to Bid STarts-->
+    <div id="bidInvitation" class="tabcontent">
+
+        <table width="100%" id="" class="display">
+            <thead>
+                <tr>
+                    <th style="width: 80%">Particulars</th>
+                    <th>Date Posted</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/10wRIuDx0o74saeaiPxDANDSpKI1lgL_i/view?usp=drive_link">Disposal
+                            of Unserviceable Vehicles and Other Properties</a></td>
+                    <td>24 June 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/13nQxWMwkAoWm1LMtRZaLzN4vtE7XRwFJ/view?usp=drive_link">Procurement
+                            of Petroleum, Oil, and Lubricant Products (Re-Bidding)</a></td>
+                    <td>24 May 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/14-_c1X2aVzyYPaO-WyBQJaVKqmh81Nij/view?usp=sharing">Provision
+                            of Security Services for DA-BAR CY 2024</a></td>
+                    <td>30 April 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1zvagwqzC6P35nUkRC9WzY7Zv496HzanC/view?usp=sharing">Provision
+                            of Janitorial Services for DA-BAR CY 2024</a></td>
+                    <td>30 April 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/11cP0TOsAASNMKs8eY9MdojchLx0xIuBH/view?usp=drive_link">Procurement
+                            of Petroleum, Oil, and Lubricant Products</a></td>
+                    <td>16 April 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1pnSK9f9nLNgBQZUBM51lbr74aDyh0zQg/view?usp=drive_link">Procurement
+                            of Desktops and Laptops</a></td>
+                    <td>16 April 2024</td>
+                </tr>
+                <td><a href="https://drive.google.com/file/d/1y4Kao2o5EeUDABOuBys6mSl5B4z8eBnF/view?usp=sharing">Negotiated
+                        Procurement of Motor Vehicle due to Two-Failed Biddings</a></td>
+                <td>26 February 2024</td>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1iqgHOoVdcL87uLA6txcavbAc_hu6Dbn9/view?usp=sharing">Procurement
+                            of Consolidated ICT Equipment</a></td>
+                    <td>15 February 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1iqgHOoVdcL87uLA6txcavbAc_hu6Dbn9/view?usp=sharing">Procurement
+                            of Motor Vehicle (Re-Bidding)</a></td>
+                    <td>25 January 2024</td>
+                </tr>
+            </tbody>
+        </table>
+        </p>
+    </div>
+    <!-- Invitation to Bid Ends-->
+    <!-- Bidding Documents Starts-->
+    <div id="publicBidding" class="tabcontent">
+
+        <table width="100%" id="" class="display">
+            <thead>
+                <tr>
+                    <th style="width: 80%">Particulars</th>
+                    <th>Date Posted</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a
+                            href="https://drive.google.com/drive/folders/10DaQKng29RqK-9zVZkF39cSeUUb-KgqA?usp=drive_link">Procurement
+                            of Petroleum, Oil, and Lubricant Products (Re-Bidding)</a></td>
+                    <td>24 May 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/drive/folders/1Ipo8fRC7yL7h-RPxWrExKvUwMJA2ke_V?usp=sharing">Provision
+                            of Security Services</a></td>
+                    <td>30 April 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/drive/folders/1fNQa301fuT57ayVLGYQ1iKJ2XrvhdIh_?usp=sharing">Provision
+                            of Janitorial Services</a></td>
+                    <td>30 April 2024</td>
+                </tr>
+                <tr>
+                    <td><a
+                            href="https://drive.google.com/drive/folders/1448oBOo2V2sDAVbrhboSDWgGVbkgsZGm?usp=drive_link">Procurement
+                            of Petroleum, Oil, and Lubricant Products</a></td>
+                    <td>16 April 2024</td>
+                </tr>
+                <tr>
+                    <td><a
+                            href="https://drive.google.com/drive/folders/1aa641bTs244Mlae8HHYZofWwS_ExUcFW?usp=drive_link">Procurement
+                            of Desktops and Laptops</a></td>
+                    <td>16 April 2024</td>
+                </tr>
+                <td><a href="https://drive.google.com/drive/folders/15sux95DEq0ZaRYVwtZbGdx1VSr-2sVnO?usp=drive_link">Negotiated
+                        Procurement of Motor Vehicle due to Two-Failed Biddings</a></td>
+                <td>26 February 2024</td>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1iqgHOoVdcL87uLA6txcavbAc_hu6Dbn9/view?usp=drive_link">Procurement
+                            of Consolidated ICT Equipment</a></td>
+                    <td>15 February 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1maxaoVMsj4JbBsw0kd3rLGMfmPIlSyjA/view?usp=drive_link">Procurement
+                            of Motor Vehicle (Re-Bidding)</a></td>
+                    <td>25 January 2024</td>
+                </tr>
+            </tbody>
+        </table>
+        </p>
+    </div>
+    <!-- Bidding Documents Ends-->
+    <!-- Request for Quotations Starts-->
+    <div id="rfq" class="tabcontent">
+
+        <table width="100%" id="" class="display">
+            <thead>
+                <tr>
+                    <th style="width: 80%">Particulars</th>
+                    <th>Date Posted</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1IXbhreiWTK_WYFD6Z3MX_ukPgNisVKI9/view?usp=sharing">
+                            RFQ-93: Procurement of One(1) Year Subscription Services</a>
+                    </td>
+                    <td>05 July 2024</td>
+                </tr>
+
+
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1WRfY7Z_1jJOqCECmqqGsynzAgOdCqNpn/view?usp=sharing">RFQ-92:
+                            Token for DA-BAR Staff, VIP and Guest for the Conduct of the 37th DA-BAR Anniversary</a>
+                    </td>
+                    <td>04 July 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1RTyi3CvYtanluv49u8Yj737Ca6MDd0Rd/view?usp=sharing">RFQ-91:
+                            Meals for the conduct of DA-BAR PCR Assessment</a></td>
+                    <td>04 July 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1iu53Ut_wSBCZpT-HTjaKajybLBX67Bir/view?usp=sharing">RFQ-90:
+                            Meals for the conduct of CGUARD TWG Meeting and Planning Workshop in Baguio City</a></td>
+                    <td>04 July 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1d1Nt3nfpAvVgc_dOiwfbPxdcoJUHOIw8/view?usp=sharing">RFQ-89:
+                            Meals for DA-BIOTECHNOLOGY Program Series of Workshops</a></td>
+                    <td>04 July 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1YEsfKtijOq25edOqBFh6WwggcfJYYksF/view?usp=sharing">RFQ-88:
+                            Supply and Delivery of Office Supplies</a></td>
+                    <td>04 July 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/18VwtNpjwOswMwIiSzItbM6fNM4W3LyUt/view?usp=sharing">RFQ-87:
+                            Supply and Delivery of Office Supplies</a></td>
+                    <td>25 June 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1f8W9MfGN8VUeeyFbHulnHzVEC1giuoPI/view?usp=sharing">RFQ-86:
+                            Printer Rental for Official Use of the HRMU</a></td>
+                    <td>24 June 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1RVEDsZqsU8DJJw6bqPREUr7HKZixFMHN/view?usp=drive_link">RFQ-85:
+                            Printing of 2023 BAR Annual Report</a></td>
+                    <td>24 June 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1tbasTzdErriQSOcWrc7uj9auz28tx1JW/view?usp=sharing">RFQ-84:
+                            Transportation Service for the conduct of DA-BPO Strategic Planning for the 2nd Semester of
+                            FY 2024</a></td>
+                    <td>18 June 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1vMC-TvBND611vRWim46WGzHtncvt8rG0/view?usp=sharing">RFQ-83:
+                            Purchase of Furnitures and Fixtures for BAR Office</a></td>
+                    <td>18 June 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1GdgXAlCJ5iWU_TqhHrvIhgwOgvP97gUE/view?usp=sharing">RFQ-82:
+                            Purchase of Ink for Epson Workforce Pro WF-C878R, High Capacity Ink, T05B</a></td>
+                    <td>18 June 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1gJzMIpF3yfhQATY4t0pNPA9F9ZzhlOIY/view?usp=drive_link">RFQ-81:
+                            Purchase of Furnitures and Fixtures for BAR Office</a></td>
+                    <td>05 June 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1kZNDSZTVG7YPluLMnZRgc1-Op2q-Yhmo/view?usp=sharing">RFQ-80:
+                            Purchase of Ink for Epson Workforce Pro WF-C878R, High Capacity Ink, T05B</a></td>
+                    <td>04 June 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/19BJ5YqoYBHyQpST1r23U3FTD_PAwDNF9/view?usp=drive_link">RFQ-79:
+                            Supply and Delivery: Materials for the Repair of Comfort Rooms, Including Ceiling and
+                            Electrical Works</a></td>
+                    <td>04 June 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1pQgm7h5yZzAFOfrFwhL9K5wyVpcovPU-/view?usp=drive_link">RFQ-78:
+                            Rental: Multi-puropose Copier with OCR from July to December 2024 (6 Months)</a></td>
+                    <td>04 June 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1Vu2Dr_-qnP7TNCSH1X1iAk3ca63ubypX/view?usp=sharing">RFQ-77:
+                            Printing of BAR R4D Digest January - March 2024</a></td>
+                    <td>03 June 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1TBn6VB_dO459ssDkjG7-us0B4xERgcul/view?usp=drive_link">RFQ-76:
+                            Parts and Services: BAR Vehicle (Toyota Grandia UIJ-237)</a></td>
+                    <td>03 June 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/15kWNAsjfmooJhdZvd4pBBJmDUyMVvqlV/view?usp=drive_link">RFQ-75:
+                            Medical Kit</a></td>
+                    <td>31 May 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/13Bl0CHzpxMMyW656faBmIGRt6t6uH3qz/view?usp=drive_link">RFQ-74:
+                            Supply and Delivery: Materials for the Repair of Comfort Rooms, Including Ceiling and
+                            Electrical Works</a></td>
+                    <td>30 May 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/15l_XL3z8CTIt4y_ktj-ygk7C6oiOt3KO/view?usp=sharing">RFQ-72:
+                            Various ICT Subscriptions</a></td>
+                    <td>20 May 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1Xexsm0g9PMRmtkdkDxg06zNjVICRRMnS/view?usp=sharing">RFQ-71:
+                            High Capacity Ink for Epson Workforce Pro WF-C878R</a></td>
+                    <td>20 May 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1hoAfacWikTdWvB7UwFQAHolV0Ftz_ctz/view?usp=sharing">RFQ-70:
+                            Supply and Installation: Glass Doors of RDMIC Building</a></td>
+                    <td>20 May 2024</td>
+                </tr>
+
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1lndGTId4Lz7m66b5QOVMbdrjhHXXLwCD/view?usp=sharing">RFQ-69:
+                            Supply and Delivery: Hardware and Electrical Materials</a></td>
+                    <td>17 May 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1ZlnRYP_BICyPuUjY6xyzHGoo1bMTBDvh/view?usp=sharing">RFQ-68:
+                            Medical Kit</a></td>
+                    <td>16 May 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1WghGVQ1Cd1Z2YzKBpqepXLqcu-I1wXua/view?usp=drive_link">RFQ-67:
+                            Meals</a></td>
+                    <td>15 May 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1HQzHO3yqlsCOxLWsUQNkG-hMBUl3QwMo/view?usp=sharing">RFQ-66:
+                            Purchase of Portable Booth/Exhibit Display for the NAFTE 2024</a></td>
+                    <td>14 May 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1h_xzlHEpHaNDo8M4HE4K8gFU8nTABoP0/view?usp=sharing">RFQ-65:
+                            Supply and Delivery of Medical Supplies</a></td>
+                    <td>06 May 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1PAYbCutgcXjk5KFisT7HIWJ_oN2Gzklm/view?usp=sharing">RFQ-64:
+                            Supply and Delivery of Hardware Materials</a></td>
+                    <td>06 May 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1H4_VR2F3siSQDPB6Lqzjq60Co--4w885/view?usp=sharing">RFQ-61:
+                            Supply and Delivery of Office Supplies</a></td>
+                    <td>26 April 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1pwFNiDOaFiDZnDNQnqHm2Kvey-dsW17Z/view?usp=sharing">RFQ-60:
+                            Supply and Delivery of Aircon Installation Materials</a></td>
+                    <td>26 April 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1EIwOGp88R0tB6I7OhO2HOwhCZJi8Hn8o/view?usp=sharing">RFQ-59:
+                            Hardware Materials</a></td>
+                    <td>24 April 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1GI7EefLDM0IC8NpE-Y43ilfV8nGePxVD/view?usp=sharing">RFQ-58:
+                            Supply and Delivery of Network Attached Storage Disk Drives</a></td>
+                    <td>24 April 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1GI7EefLDM0IC8NpE-Y43ilfV8nGePxVD/view?usp=sharing">RFQ-57:
+                            Microsoft 365 (Business Standard)</a></td>
+                    <td>24 April 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1sZBJCbu3Nkt1uOUZyJNw8d0cWD2Iv0AR/view?usp=sharing">RFQ-56:
+                            Supply and Delivery of Ink</a></td>
+                    <td>24 April 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1OXbt1GvKN_z1rryZYEth-k4ccEYrZfz9/view?usp=drive_link">RFQ-53:
+                            Transport Service</a></td>
+                    <td>12 April 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/12pUBO_r2DkRp4r6AIbdsYXRuUSJwsDnM/view?usp=drive_link">RFQ-52:
+                            Repainting and Tinsmithing</a></td>
+                    <td>04 April 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1JikHF-9Y38WPYGpr2QrMmAiqjCkoJ3zv/view?usp=drive_link">RFQ-51:
+                            Bus Rental</a></td>
+                    <td>04 April 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/14gequuoO0g-kqZUHJFi17_GCGlHQsp5w/view?usp=sharing">RFQ-50:
+                            Printing of Customized Shirt</a></td>
+                    <td>01 April 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1sGqVh9x8Qy_nvygqocYKQEQJhvCpbr-t/view?usp=sharing">RFQ-49:
+                            Paper Shredder</a></td>
+                    <td>22 March 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1zBuAHcHrWeGrXio6an_NTrrzN3AaWU81/view?usp=sharing">RFQ-48:
+                            Parts ans Services for BAR Vehicle</a></td>
+                    <td>21 March 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1aNHBXicNQth4oztkWaahRiiQLxS6YskX/view?usp=sharing">RFQ-47:
+                            Supplies and Fixtures</a></td>
+                    <td>20 March 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1zeQ9G6JgDdUO6J1DdKGETwsD59DjNCtF/view?usp=sharing">RFQ-46:
+                            Car Tires</a></td>
+                    <td>19 March 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/11KHrTdqwOIaZZdNdzCs3qFQTAmJP14kw/view?usp=sharing">RFQ-45:
+                            Transport Service</td>
+                    <td>19 March 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1g4cM2xBppayDhOnyu52-TrniTKXQ4VVw/view?usp=sharing">RFQ-44:
+                            Sports Uniform</td>
+                    <td>19 March 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1sZBuHWt1n6qr_dSjkVGxzbyGA74NZXfL/view?usp=sharing">RFQ-43:
+                            Various Inks</td>
+                    <td>18 March 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1OFqEKnfHZ4Sa-NMsmg_wB8BmcgeS0LJ6/view?usp=sharing">RFQ-42:
+                            Biometric Device</td>
+                    <td>14 March 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1Sa6PrsCGWbxayKU7fQoQTNB3Sr36gDrn/view?usp=sharing">RFQ-41:
+                            Car Tires</td>
+                    <td>14 March 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1tKZlZ4mt51jx1e1HwvHyu1u0J9-pTOMT/view?usp=sharing">RFQ-40:
+                            Newspaper Advertisement</td>
+                    <td>14 March 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1YQxZBmFLjA8aO7B0oTLbERIfMceTPUCa/view?usp=sharing">RFQ-39:
+                            Printing</td>
+                    <td>08 March 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1hN77gLRmYSRH0zJKfYT3iyeImTQ771Eg/view?usp=sharing">RFQ-38:
+                            Executive Chair</td>
+                    <td>07 March 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/11CNTjpL_3c1QIwf_oFoF6-JpjSO6u0RQ/view?usp=sharing">RFQ-37:
+                            Customized Polo Shirt</td>
+                    <td>07 March 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/15uIoUC6DtxLuM48K5RoLGTOZPZ_burBm/view?usp=sharing">RFQ-36:
+                            Various Inks</td>
+                    <td>07 March 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1DTjRudX9b0A7GWaqEfyqr23YPGTnVoUz/view?usp=drive_link">RFQ-35:
+                            Various Inks</td>
+                    <td>05 March 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1bgW9H8FMJD6rqM1WDINp_fbo3pOz-_oW/view?usp=sharing">RFQ-34:
+                            Meals</td>
+                    <td>03 March 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1O8cEwCrsTs70RRR18GsIQh-MOhEe6N-E/view?usp=sharing">RFQ-33:
+                            Office Supplies</td>
+                    <td>01 March 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1wnIk5jWiCyae3G-UCn0NYoz5Pe2riyQ_/view?usp=sharing">RFQ-32:
+                            Spare Parts for EPSON WF-C869 Printer</td>
+                    <td>29 February 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/169Py3lbF6Mg3dynIvumyRHXB1KOgSgrR/view?usp=sharing">RFQ-31:
+                            Office Supplies</td>
+                    <td>29 February 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1hxyRtwWrw5eVNr0ef5PY2LXnQJlDFoK8/view?usp=sharing">RFQ-30:
+                            Meals</td>
+                    <td>28 February 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1h9zejLDD97P9-Eq3UWvbW9n_4lSUKf4l/view?usp=sharing">RFQ-29:
+                            Car Tires</td>
+                    <td>27 February 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1PPt9RwNAI7sj_SuQ-cFmN4fslFlnwsjZ/view?usp=sharing">RFQ-28:
+                            Printing</td>
+                    <td>27 February 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1_rYnXS9IyGTBt_5n2fueu-jC3pgO4xI0/view?usp=sharing">RFQ-26:
+                            Ink for EPSON WF-C869R Printer</td>
+                    <td>20 February 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1QtbVQJcnFymy2b3wN3-1ZzksyPr6Rucb/view?usp=sharing">RFQ-25:
+                            Spare Parts for EPSON WF-C869 Printer</td>
+                    <td>20 February 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/16zlu4X6fapDuvi9SKIPDIB6Bq7z5w2nI/view?usp=sharing">RFQ-24:
+                            Printing</td>
+                    <td>20 February 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1Bwwa8fC6UvqlJFZ9Wy9I87gEwR3KZEx4/view?usp=sharing">RFQ-23:
+                            ICT Office Supplies</td>
+                    <td>19 February 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1BBfDwL7yk_ncdrPKNjJvunQUcflaRZmX/view?usp=sharing">RFQ-21:
+                            Polo Shirts</td>
+                    <td>15 February 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1BBfDwL7yk_ncdrPKNjJvunQUcflaRZmX/view?usp=sharing">RFQ-19:
+                            Hardware Supplies</td>
+                    <td>01 February 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1fMDLWOkm5DJ7SrTFkWfBnf6BlU8e-WpH/view?usp=sharing">RFQ-18:
+                            Furnitures and Fixtures</td>
+                    <td>26 January 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1MmoQQmzzZAPqtuWWobX_I6_wxosMS-Ct/view?usp=sharing">RFQ-16:
+                            Furnitures</td>
+                    <td>24 January 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1jQj0HCa2W9gu8fG6DJtLV1-znvEwU0EM/view?usp=sharing">RFQ-15:
+                            Biometrics Software</td>
+                    <td>22 January 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1EwzzPbTWzojpF8JJlqO9UVklFe90Du7s/view?usp=sharing">RFQ-14:
+                            Certificate Holder</td>
+                    <td>22 January 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1EwzzPbTWzojpF8JJlqO9UVklFe90Du7s/view?usp=sharing">RFQ-13:
+                            Meals</td>
+                    <td>19 January 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/19psD5WfTyu9iWJt_nOwFgOoiGHIBjNzx/view?usp=sharing">RFQ-12:
+                            Car Batteries</td>
+                    <td>19 January 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/11b_2qdjFmOBkSBHQ39yv-9TyMNXgZktr/view?usp=sharing">RFQ-11:
+                            Vitamins for Staff Medical Kit</td>
+                    <td>19 January 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1alo7jGN6PH3r8VDErpYWtsnmpkYFjtoW/view?usp=sharing">RFQ-10:
+                            Office Supplies and Equipment</td>
+                    <td>16 January 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1qzJAE4ZpFRscWF_t901OQVzFWILXJyh7/view?usp=sharing">RFQ-09:
+                            Printing</td>
+                    <td>16 January 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/16WR22shT_8xvAepYkOZsyO2MKI3eSI5F/view?usp=sharing">RFQ-08:
+                            Corporate Vest</td>
+                    <td>15 January 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1-FMmFoXujsyhy6FtW2ehXGZ7f5yqSIJp/view?usp=sharing">RFQ-07:
+                            Termite Control</td>
+                    <td>10 January 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1Yj8tOzpTe2SPbKOwUVdfrTMxcomWw-QH/view?usp=sharing">RFQ-06:
+                            Hardware Supplies</td>
+                    <td>10 January 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1Uj_WXVq8pO9PAeoJpZ6hgawtPYDN3Rel/view?usp=sharing">RFQ-05:
+                            Construction Materials</td>
+                    <td>10 January 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1Cu_F6IUxCM_yxyCAp8GUEYn80kYmv_V-/view?usp=sharing">RFQ-04:
+                            Common-Used Office Supplies</td>
+                    <td>09 January 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/18OlCI06UFJMKLem9n_soLwJsrFAHInfL/view?usp=sharing">RFQ-03:
+                            Printing</td>
+                    <td>05 January 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1zUOMNRYpfvkySUg8NwenLRYQvpH1C91d/view?usp=sharing">RFQ-02:
+                            Print Head for Photocopying Machine</td>
+                    <td>05 January 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1Pu4tjI5u_OLxeBEZuDoLizhBcrzHtufo/view?usp=sharing">RFQ-01:
+                            Purified Drinking Water</td>
+                    <td>05 January 2024</td>
+                </tr>
+            </tbody>
+        </table>
+        </p>
+    </div>
+
+    <!-- Request for Quotations Ends-->
+    <!-- Notice of Postponement Start-->
+    <div id="nop" class="tabcontent">
+
+        <table width="100%" id="" class="display">
+            <thead>
+                <tr>
+                    <th style="width: 80%">Particulars</th>
+                    <th>Date Posted</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/17_kyTtSzPToF3IZBkuxthne0hp0tTD5m/view?usp=sharing">Notice
+                            of Postponement of the Scheduled Bidding Activities for Procurement of Desktops and Laptops
+                            for DA-BAR for CY 2024</a></td>
+                    <td>06 May 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1fVhzyT3MexhUnbTwUeh-2n3wGYAFS6cq/view?usp=sharing">Notice
+                            of Postponement of Meeting for the Submission and Opening of Bid fot the Early Procurement
+                            Activity for the Provision of Janitorial Services</a></td>
+                    <td>08 January 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/14X3PdhA5kCWkkpWVz9Cm9TjRFXqu-ikE/view?usp=sharing">Notice
+                            of Postponement of Meeting for the Submission and Opening of Opening of Quotations for the
+                            Two Failed Biddings (Negotiated Procurement) for the Procurement of Motor Vehicle for CY
+                            2024</a></td>
+                    <td>05 March 2024</td>
+                </tr>
+            </tbody>
+        </table>
+        </p>
+    </div>
+    <!-- Notice of Postponement Ends-->
+    <!-- Notice of Failure of Bidding Start-->
+    <div id="nofb" class="tabcontent">
+
+        <table width="100%" id="" class="display">
+            <thead>
+                <tr>
+                    <th style="width: 80%">Particulars</th>
+                    <th>Date Posted</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1f0lnDvKH_64Sw1QI9IDkXzIJZY4pqc9c/view?usp=sharing">NOTICE
+                            OF FAILURE OF BIDDING - PROCUREMENT OF PETROLEOUM, OIL, AND LUBRICANTS FOR DA-BAR FOR CY
+                            2024</a></td>
+                    <td>23 May 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1X2KqFvc_vnosUBf1__dUV9aay4GrpRWy/view?usp=drive_link">NOTICE
+                            OF FAILURE OF BIDDING - PROCUREMENT OF DESKTOPS AND LAPTOPS FOR DA-BAR FOR CY 2024</a></td>
+                    <td>06 May 2024</td>
+                </tr>
+
+            </tbody>
+        </table>
+        </p>
+    </div>
+    <!-- Notice of Failure of Bidding Ends-->
+    <!-- BAC Resolution Start-->
+    <div id="reso" class="tabcontent">
+
+        <table width="100%" id="" class="display">
+            <thead>
+                <tr>
+                    <th style="width: 80%">Particulars</th>
+                    <th>Date Posted</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/17lqwvBa-gn1dp3Yt_q4dLaRlrFRlrFy1/view?usp=sharing">BAC
+                            Resolution No.78: Recommendation on the Award of Contract for the Provision of Janitorial
+                            Services for DA-BAR CY 2024</a></td>
+                    <td>7 June 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1LXxTIBr0mKBstYfz8uHvHBKU4OCT9mX-/view?usp=sharing">BAC
+                            Resolution No.77: Recommendation on the Award of Contract for the Provision of Security
+                            Services for DA-BAR CY 2024</a></td>
+                    <td>24 May 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1U3d_CLQHFKYgdvwi00BERasEBKfI7SgQ/view?usp=sharing">BAC
+                            Resolution No.65: Recommending the Award of Contract to MOSTACO Marketing for the Supply and
+                            Delivery of Office Supplies</a></td>
+                    <td>10 May 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1J7YTHkasiX0puwNyqFRmT_v1MuwXbjGd/view?usp=sharing">BAC
+                            Resolution No.64: Recommending the Award of Contract to APEX Office Supplies and Equipment
+                            Trading for the Supply and Delivery of Inks and Toners for Office Printers</a></td>
+                    <td>08 May 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/16BzU6LkU1sZppJJLxp8TaXeYYHxsO5hA/view?usp=sharing">BAC
+                            Resolution No.055: Recommendation on the Award of Contract GOOD HAND Security Products Corp.
+                            for the Purchase of Biometrics to be Used for DA-BAR Staff Attendance Monitoring</a></td>
+                    <td>15 April 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1lTL1--Jg9kQwjLXXxdN5yg8q6ifn5Nj4/view?usp=sharing">BAC
+                            Resolution No.046: Recommendation on the Award of Contract to GOLDDENN Office and School
+                            Supplies Trading for the Purchase of Executive Chairs for BAR Staff</a></td>
+                    <td>22 March 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1dZaQyGeiliA_N4zGQoQS1z6V7XBM1zrv/view?usp=sharing">BAC
+                            Resolution No.034: Recommendation on the Award of Contract RIELOU General Merchandise for
+                            the Purchase of Consolidated Office Supplies</a></td>
+                    <td>11 March 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1Nj_cg_w8cGT34El7WNFc1aGtc0CgGbdd/view?usp=drive_link">BAC
+                            Resolution No.053: Recommendation on the Award of Contract GOLDDEN Office and School
+                            Supplies for the Purchase of Paper Shredder for BAR Office Use</a></td>
+                    <td>12 April 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1LGgefs6lji_YUloqCMFqcieW45zcUMd5/view?usp=sharing">BAC
+                            Resolution No.029: Recommending the Award of Contract to ZASHEN Fashions for the Purchase of
+                            Polo Shirt for National Women's Month Celebration 2024</a></td>
+                    <td>21 February 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1cHfOLf5tDuKGuKS5EWXs7IqaRNxzI4W3/view?usp=sharing">BAC
+                            Resolution No.021: Recommending the Award of Contract to BOXDEL Printing Services for
+                            Printing of BAR R4D Digest October-December 2023</a></td>
+                    <td>31 January 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1tZGfmfLFWWEpvHeNPWQoZj09wIVCT5Rt/view?usp=sharing">BAC
+                            Resolution No.20: Recommending the Award of Contract to BOXDEL Printing Services for
+                            Printing of BAR R4D Digest October-December 2023</a></td>
+                    <td>25 January 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/15neThqMlvoOEEDw0wDbrJF2upwVhMhI1/view?usp=sharing">BAC
+                            Resolution No.18: Recommending the Award of Contract to ELEV8 Trading and Marketing Corp.
+                            for the Purchase of Corporate Vest for Official Use of BAR</a></td>
+                    <td>23 January 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1M4ZPFH-vlMxy1osQ7bhkqb_jSfUjvUPf/view?usp=sharing">BAC
+                            Resolution No.12: Recommending the Award of Contract to King of Kings Trading for the
+                            Printing of DA-BAR Eco Bag with Cloth Tie</a></td>
+                    <td>12 January 2024</td>
+                </tr>
+
+            </tbody>
+        </table>
+        </p>
+    </div>
+    <!-- BAC Resolution Ends-->
+    <!-- Notice of Award Start-->
+    <div id="noa" class="tabcontent">
+
+        <table width="100%" id="" class="display">
+            <thead>
+                <tr>
+                    <th style="width: 80%">Particulars</th>
+                    <th>Date Posted</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1lMzNLlPlDYIe3fnVUph_Ih8zrcR5DBhr/view?usp=sharing">Provision
+                            of Janitorial Services For DA-BAR CY 2024</a></td>
+                    <td>07 June 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1XOArh1qgyO9uY4spKGpLL72hAx7iu2Pm/view?usp=sharing">Provision
+                            of Security Services For DA-BAR CY 2024</a></td>
+                    <td>07 June 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1CtDdMJkpALnHHiaUb_PILd75Ez8aIOeq/view?usp=sharing">Supply
+                            and Delivery of Office Supplies</a></td>
+                    <td>10 May 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1Xe13N07IxL14FVI7tO3uzSENJEwPg_lI/view?usp=sharing">Delivery
+                            of Inks and Toners for Office Printers</a></td>
+                    <td>08 May 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1TU6F3HrkM40Djqu8CxqSzMJskUHHI0i6/view?usp=sharing">Purchase
+                            of Biometrics to be Used for DA-BAR Staff Attendance and Monitoring</a></td>
+                    <td>April 15 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1xRozYIqJSS0is7DNic4GPoz86HLmkwlZ/view?usp=sharing">Purchase
+                            of Paper Shredder for BAR Office Use</a></td>
+                    <td>April 12 2024</td>
+                </tr>
+                <tr>
+                    <td><a
+                            href="https://drive.google.com/file/d/1xG-7iJGVRLztmszZw8kSW_X52I8mHKBF/view?fbclid=IwAR3jYOnuXjhAqUroP-2YsFBC5duyVJIAwGALrFf7Eo1DpFxdEF58sFmy4-I">Procurement
+                            of Consolidated ICT Equipment for CY 2024</a></td>
+                    <td>26 March 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1MOliLSb4JKk7JIDEbmCGiE2O6EoRLa8O/view?usp=sharing">Purchase
+                            of Executive Chairs for BAR Staff</a></td>
+                    <td>22 March 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1mWE8x2KV8_zF7u0vjtw75uussjvODm5z/view?usp=sharing">Procurement
+                            of Motor Vehicle for DA-BAR for CY 2024</a></td>
+                    <td>13 March 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/16sZS8B_OZKK53DxxX37xpsnH2zN56YtD/view?usp=sharing">Purchase
+                            of Consolidated Office Supplies</a></td>
+                    <td>11 March 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1LE7zlAta93QSQGZKfCNxp4iO7yWOn2IJ/view?usp=sharing">Purchase
+                            of Polo Shirt for National Women's Month Celebration 2024</a></td>
+                    <td>20 February 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1PmzEpLkIT9C1kMwnVtgzgtm4t8TGY2K7/view?usp=sharing">Purchase
+                            of Certificate Holder for BAR Use</a></td>
+                    <td>31 January 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1cuUlqL-Ox2tygzXj_37DqVPlOjBaahIc/view?usp=sharing">Printing
+                            of BAR R4D Digest October-December 2023</a></td>
+                    <td>25 January 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1_d2Jw-vGldCjwvwCBWHC_uTd-MZFI938/view?usp=sharing">Purchase
+                            of Corporate Vest for Official Use</a></td>
+                    <td>23 January 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/10-hIZRe35ehHEuTz1GWZqqpc7AEitsm_/view?usp=sharing">Printing
+                            of DA-BAR Eco Bag with Cloth Tie</a></td>
+                    <td>16 January 2024</td>
+                </tr>
+            </tbody>
+        </table>
+        </p>
+    </div>
+
+    <!-- Notice of Award Ends-->
+    <!-- Notice to Proceed Start-->
+    <div id="ntp" class="tabcontent">
+
+        <table width="100%" id="" class="display">
+            <thead>
+                <tr>
+                    <th style="width: 80%">Particulars</th>
+                    <th>Date Posted</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1yvB-DnKnzJbRulMOU6aXnyUAczTYniHi/view?usp=sharing">Provision
+                            of Security Services for DA-BAR</a></td>
+                    <td>24 June 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1DTfY5rfri7EM-6qZQEtRR1iqapSd26bX/view?usp=sharing">Provision
+                            of Janitorial Services for DA-BAR</a></td>
+                    <td>24 June 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1LNRbVppDYrE9o494TLEGGt-6HbrjonG9/view?usp=sharing">Procurement
+                            of Consolidated ICT Equipment for CY 2024</a></td>
+                    <td>08 April 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1tTk2ZnCf-1YffgIOWmPn2znwePRSW9iH/view?usp=sharing">Procurement
+                            of Motor Vehicle for DA-BAR for CY 2024</a></td>
+                    <td>15 March 2024</td>
+                </tr>
+            </tbody>
+        </table>
+        </p>
+    </div>
+    <!-- Notice to Proceed Ends-->
+    <!-- Purchase Order | Work Order Start-->
+    <div id="powo" class="tabcontent">
+
+        <table width="100%" id="" class="display">
+            <thead>
+                <tr>
+                    <th style="width: 80%">Particulars</th>
+                    <th>Date Posted</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1Fy6GfrrqTX04awLfwu4IIY5Q3Kfetjb8/view?usp=sharing">P.O.
+                            No. 2024-05-0019: MOSTACO MARKETING</a></td>
+                    <td>31 May 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/12-2B3TpLOwsdoDtu_EL2GPogq2g6NAD2/view?usp=sharing">P.O.
+                            No. 2024-05-0018: APEX OFFICE SUPPLIES AND EQUIPMENT TRADING</a></td>
+                    <td>03 June 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1QgdNEJR1M5AuS86IsMN3Q1bxhDabLhGn/view?usp=sharing">P.O.
+                            No. 2024-04-16: GOLDDENN OFFICE & SCHOOL SUPPLIES TRADING</a></td>
+                    <td>08 May 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1KJRy6wPX0pnTEoVaxkDEzp8sVWChzzzQ/view?usp=sharing">P.O.
+                            No. 2024-04-15: GOOD HAND SECURITY PRODUCTS</a></td>
+                    <td>06 May 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1gei60aQSXekwPljYU837OEn5um9xqUBh/view?usp=sharing">W.O.
+                            No. 2024-03-12: RIELOU GENERAL MERCHANDISE</a></td>
+                    <td>04 April 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1znIXXvGRuNmxiM_GSA0Mxg4S8POC3uHY/view?usp=sharing">W.O.
+                            No. 2024-02-0022: ZASHEN FASHIONS</a></td>
+                    <td>08 March 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1i-6d22SwRzSVE8vhDiVEA2HaL0R-ZFCr/view?usp=sharing">W.O.
+                            No. 2024-02-0022: ZASHEN FASHIONS</a></td>
+                    <td>08 March 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1znIXXvGRuNmxiM_GSA0Mxg4S8POC3uHY/view?usp=sharing">W.O.
+                            No. 2024-02-0016: ATR MULTITRADE CONCEPT, INC.</a></td>
+                    <td>28 February 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1zvxb4SO2-_axTgahvy76YpmUlK487UEc/view?usp=sharing">W.O.
+                            No. 2024-02-0013: GOLDDENN OFFICE & SCHOOL SUPPLIES TRADING</a></td>
+                    <td>12 April 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1qiOMhuPdonaGPD8W13xOv_T1KF6qUdk6/view?usp=sharing">W.O.
+                            No. 2024-01-0011: BOXDEL PRINTING SERVICES</a></td>
+                    <td>23 February 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/18v1-yZYtWICQqzAqO0vyneYZCo6MiMku/view?usp=sharingg">W.O.
+                            No. 2024-01-0010: ELEV8 TRADING AND MARKETING CORP.</a></td>
+                    <td>15 April 2024</td>
+                </tr>
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1DARMQUoDJ1pr9AgWCLVZPKz97E6HVjWM/view?usp=sharing">W.O.
+                            No. 2024-01-04: KING OF KINGS TRADING</a></td>
+                    <td>21 February 2024</td>
+                </tr>
+                <tr>
+                    <td><a href=https://drive.google.com/file/d/1i8rcKoGfgUaVJ8CQyITqOdLlQMOGZ2My/view?usp=sharing">CONTRACT:
+                            Provision of Security Services for DA-BAR CY 2024</a></td>
+                    <td>21 June 2024</td>
+                </tr>
+                <tr>
+                    <td><a href=https://drive.google.com/file/d/1KOBVBBRc3XGYIMVtvIWZMz-HHRkg0rJZ/view?usp=sharing">CONTRACT:
+                            Provision of Janitorial Services for DA-BAR CY 2024</a></td>
+                    <td>21 June 2024</td>
+                </tr>
+            </tbody>
+        </table>
+        </p>
+    </div>
+    <!-- Purchase Order | Work Order Ends-->
+
+    <!-- Purchase Order | Work Order Start-->
+    <div id="noc" class="tabcontent">
+
+        <table width="100%" id="" class="display">
+            <thead>
+                <tr>
+                    <th style="width: 80%">Particulars</th>
+                    <th>Date Posted</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td><a href="https://drive.google.com/file/d/1gvfxSASUBMdsYpco8u3jV1E3dzNi-Aq1/view?usp=sharing">Public
+                            Bidding for the Disposal by Sale of Unserviceable Vehicle and Other Unserviceable
+                            Properties</a></td>
+                    <td>04 July 2024</td>
+                </tr>
+
+            </tbody>
+        </table>
+        </p>
+    </div>
+    <!-- Purchase Order | Work Order Ends-->
+
+    <script>
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        document.getElementById("defaultOpen").click();
+    </script>
+    <script>
+        new DataTable('table.display', {
+            order: [
+                [3, 'desc']
+            ]
+        });
+    </script>
+
+</body>
+
+</html>
