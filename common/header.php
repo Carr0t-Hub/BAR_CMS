@@ -39,6 +39,14 @@ $rootpath = '/BAR_CMS';
 
 </head>
 <style>
+  * {
+    /* --bg-dark-color: 24, 24, 27; */
+  }
+
+  header {
+    background: rgba(var(--bg-dark-color), .8);
+  }
+
   .line-clamp-3 {
     display: -webkit-box;
     -webkit-line-clamp: 3;

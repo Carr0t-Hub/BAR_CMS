@@ -9,16 +9,19 @@ ob_start();
 
 <div class="row g-4">
 
-    <?php foreach ($directories as $directory) : ?>
+    <?php
+    foreach ($directories as $directory) : ?>
         <?php
 
         $img = $directory['fileName'] . '_' . $directory['size'] . $directory['attachment'] . '.' . $directory['fileExtension'];
         $middlename = isset($directory['middleName']) ? '' : $directory['middleName'];
 
         $fullName = $directory['firstName'] . ' ' . $middlename . ' ' . $directory['lastName'];
+
         ?>
+
         <div class="col-lg-3">
-            <div class="de-room">
+            <div class="de-room h-100">
                 <div class="d-image">
 
                     <a href="room-single.html">
@@ -28,14 +31,14 @@ ob_start();
                     </a>
                 </div>
 
-                <div class="d-text">
+                <div class="d-text ">
                     <h3>
                         <?= $fullName ?>
                     </h3>
-                    <div class=""><?php echo strtoupper($directory['division']); ?></div>
+                    <div class=""><?php echo $directory['division']; ?></div>
                     <div class="" style="font-size: 14px">
                         <i class="fa fa-envelope mr-2"></i>
-                        <?php echo strtoupper($directory['email']); ?>
+                        <?php echo $directory['email']; ?>
                     </div>
                     <div class="">
                         <i class="fa fa-phone mr-2"></i>
@@ -45,7 +48,10 @@ ob_start();
             </div>
         </div>
 
-    <?php endforeach; ?>
+    <?php
+
+    endforeach;
+    ?>
 </div>
 
 <?php
