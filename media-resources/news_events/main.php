@@ -2,7 +2,7 @@
 
 $pageno = isset($_GET['pageno']) ? $_GET['pageno'] : 1;
 
-$result = getPublicationsWithPage($mysqli);
+$result = getPublicationsWithPage($mysqli, $pageno);
 $upper_title = "Latest";
 $title = "News & Events";
 $background_image = "../../images/background/10.jpg";
@@ -25,7 +25,7 @@ ob_start();
     foreach ($result['publications'] as $key => $value) {
     ?>
         <div class="col-lg-4 col-md-6">
-            <div class="d-items">
+            <div class="d-items rounded">
                 <div class="card-image-1 mod-b" style="height: 380px">
                     <a href="?id=<?= $value['id'] ?>" class="d-text">
                         <div class="d-inner">
