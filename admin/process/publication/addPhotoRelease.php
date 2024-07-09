@@ -10,10 +10,12 @@ if (isset($_POST['title'])) {
 
     if ($result) {
         $_SESSION['success'] = "Photo release successfully added";
-        header("Location:" . $_SERVER['HTTP_REFERER']);
+        // header("Location:" . $_SERVER['HTTP_REFERER']);
+        echo "success";
     } else {
         $_SESSION['error'] = "Failed to add photo release";
-        header("Location:" . $_SERVER['HTTP_REFERER']);
+        // header("Location:" . $_SERVER['HTTP_REFERER']);
+        echo "error";
     }
 } else {
     echo "You are not authorized to access this page";
