@@ -8,12 +8,11 @@ ob_start();
 <div class="de-content-">
   <div class="row align-items-center">
 
-    <div class="col-lg-3 col-3">
-      <img src="../images/misc/4.jpg" alt="" class="img-responsive wow fadeInUp" data-wow-duration="1.5s">
-    </div>
-    <div class="col-lg-9 wow fadeIn">
+    <!-- <div class="col-lg-2 col-3"> -->
+      <img src="../images/misc/6.jpg" alt="" class="wow fadeInUp" data-wow-duration="1.5s" height="100%" width="100%">
+    <!-- </div> -->
+    <!-- <div class="col-lg-10 wow fadeIn"> -->
       <div class="padding20" style="font-size: 16px">
-
         <p>
           Warm greetings from the Department of Agriculture-Bureau of Agricultural Research (DA-BAR)!
           <br>
@@ -30,7 +29,7 @@ ob_start();
           We, at DA-BAR, recognize the importance of providing easily accessible and factual information. As we establish our enhanced website, the bureau also vows to uphold credibility in providing resources vital to our agri-fishery sector– an extra mile we take directed towards our efforts in improving the lives of our farmers and fisherfolks.
         </p>
       </div>
-    </div>
+    <!-- </div> -->
     <div class="clearfix"></div>
   </div>
 </div>
