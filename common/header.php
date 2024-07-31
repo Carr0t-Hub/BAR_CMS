@@ -65,8 +65,13 @@ $rootpath = '/BAR_CMS';
             <div class="de-flex">
               <div class="de-flex-col">
                 <div id="logo">
-                  <a href="#">
-                    <img class="logo" src="<?= $rootpath ?>/images/logo_DABAR.png" alt="">
+                  <a href="#" class="d-flex py-2 align-items-center gap-2">
+                    <img class="logo" src="<?= $rootpath ?>/images/Bagong_Pilipinas_logo.png" alt="" style="height: 56px">
+                    <img class="logo" src="<?= $rootpath ?>/images/logo copy.png" alt="" style="height: 56px">
+                    <div class="d-flex flex-column">
+                      <span>Department of Agriculture</span>
+                      <span style="line-height: 12px; font-size: 24px" class="fw-bold">Bureau of Agricultural Research</span>
+                    </div>
                   </a>
                 </div>
               </div>

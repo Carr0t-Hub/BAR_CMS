@@ -218,7 +218,7 @@ function getPublicationsWithPage($mysqli, $page_number = 1, $limit = 6)
 
         $offset = ($page_number - 1) * $limit;
 
-        $sql = "SELECT COUNT(*) as total FROM publications WHERE isDeleted = 0";
+        $sql = "SELECT COUNT(*) as total FROM publications WHERE isDeleted = 0 AND type = 'newsevent'";
         $stmt = $mysqli->prepare($sql);
         $stmt->execute();
 
@@ -227,7 +227,7 @@ function getPublicationsWithPage($mysqli, $page_number = 1, $limit = 6)
         $total_page = ceil($total / $limit);
 
 
-        $sql = "SELECT * FROM publications WHERE isDeleted = 0 ORDER BY id DESC LIMIT $offset, $limit";
+        $sql = "SELECT * FROM publications WHERE isDeleted = 0 AND type = 'newsevent' ORDER BY id DESC LIMIT $offset, $limit";
 
         $stmt = $mysqli->prepare($sql);
 
